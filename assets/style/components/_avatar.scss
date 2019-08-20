@@ -1,0 +1,36 @@
+.avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: rem(28px);
+  min-height: rem(28px);
+  border-radius: 100%;
+  border: 1px solid $dark-grey;
+  font-size: rem(14px);
+  font-weight: bold;
+  background-color: $dark-grey;
+  color: $white;
+}
+
+.avatar,
+.avatar-img {
+  &__xxs {
+    @include SQUARE_SIZE(28px);
+    font-size: rem(16px);
+  }
+
+  &--xs {
+    @include SQUARE_SIZE(40px);
+    font-size: rem(16px);
+  }
+
+  &--sm {
+    @include SQUARE_SIZE(48px);
+    font-size: rem(18px);
+  }
+}
+
+.avatar-img {
+  border-radius: 100%;
+  border: 1px solid $dark-grey;
+}
