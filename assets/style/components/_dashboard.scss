@@ -4,7 +4,71 @@
     font-weight: bold;
   }
   &__setup {
+    font-size: rem(25px);
     margin-top: rem(48px);
     margin-bottom: rem(72px);
+  }
+  &__setup-avatar {
+    height: rem(48px);
+    width: rem(48px);
+    border-radius: 100%;
+    background: #FF6A00;
+  }
+  &__progress-container {
+    display: flex;
+    align-items: center;
+    width: rem(232px);
+    height: rem(16px);
+    margin-right: rem(52px);
+  }
+  &__progress-bar {
+    border-radius: rem(10px);
+  }
+  &__continue-btn {
+    font-size: rem(20.25px) !important;
+  }
+  &__btn.v-btn {
+    font-size: rem(20px);
+  }
+  &__subheaders {
+    font-weight: bold;
+    font-size: rem(25px);
+    line-height: rem(30px);
+    margin-left: rem(16px);
+  }
+  &__jobs-count {
+    font-size: rem(48.83px);
+    line-height: rem(59px);
+  }
+  &__job-title {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(24px);
+  }
+  &__job-proposals {
+    margin-left: rem(24px);
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: #FF6A00;
+  }
+  &__job-new-proposals {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: #0A91FF;
+
+  }
+  &__link {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    margin-left: rem(16px);
+    color: #0A91FF;
+  }
+  &__card {
+    height: 100%;
+  }
+  &__first-row {
+    height: rem(171px) !important;
   }
 }
