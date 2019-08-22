@@ -112,7 +112,7 @@
   }
 
   &__card-content {
-    padding-left: rem(36px) !important;
+    padding: 0 rem(36px) !important;
     height: calc(100% - 62px - 92px) !important;
   }
 
@@ -195,15 +195,17 @@
       line-height: rem(24px);
       color: #FF6A00;
     }
-
     &__card-content {
       padding: rem(16px) !important;
-      height: 100% !important;
-    }
-
-    &__card-content {
-      padding-left: rem(36px) !important;
       height: calc(100% - 85px - 92px) !important;
+    }
+    &__link {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      padding-left: rem(8px) !important;
+      color: #0A91FF;
     }
   }
 }
@@ -230,7 +232,7 @@
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      padding-left: rem(26px) !important;
+      padding-left: rem(6px) !important;
       color: #0A91FF;
     }
   }
