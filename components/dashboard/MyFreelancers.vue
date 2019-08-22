@@ -9,7 +9,7 @@
       <v-layout row wrap>
         <v-flex v-for="item in myFreelancersList" :key="item.name" xs12>
           <v-layout row wrap align-center>
-            <v-flex xs>
+            <v-flex>
               <avatar size="xs" :img="item.img" />
             </v-flex>
             <v-flex md8 xs9>
@@ -20,7 +20,7 @@
                 {{ item.speciality }} <span class="dashboard__job-proposals">({{ item.hours }})</span>
               </p>
             </v-flex>
-            <v-flex xs>
+            <v-flex>
               <v-btn
                 flat
                 round
@@ -33,14 +33,18 @@
           </v-layout>
         </v-flex>
       </v-layout>
+    </v-card-text>
+    <v-card-actions>
       <v-layout row wrap>
         <v-flex>
           <a class="dashboard__link">Hired Freelancers (15)</a>
-          <v-spacer />
-          <a class="dashboard__link">Find New Freelancers</a>
+        </v-flex>
+        <v-spacer />
+        <v-flex class="text-xs-right">
+          <a class="dashboard__link"><v-icon>search</v-icon> Find New Freelancers</a>
         </v-flex>
       </v-layout>
-    </v-card-text>
+    </v-card-actions>
   </v-card>
 </template>
 
