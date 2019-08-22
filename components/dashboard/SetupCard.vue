@@ -4,18 +4,18 @@
       <v-layout row wrap align-start>
         <v-flex xs11>
           <v-layout row wrap align-center>
-            <v-flex xs3 sm2>
+            <v-flex xs3 sm2 lg1>
               <v-icon class="dashboard__setup-avatar" large dark>
                 person
               </v-icon>
             </v-flex>
-            <v-flex sm2>
+            <v-flex sm2 md3 lg2>
               Set-Up in Progress
             </v-flex>
-            <v-flex class="dashboard__progress-container">
+            <v-flex md3 class="dashboard__progress-container">
               <v-progress-linear v-model="currentProgress" class="dashboard__progress-bar" />
             </v-flex>
-            <v-flex xs12 sm2>
+            <v-flex xs12 sm2 md3>
               <v-btn
                 flat
                 round
