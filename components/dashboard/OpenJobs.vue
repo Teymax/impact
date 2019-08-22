@@ -40,22 +40,18 @@
       </v-layout>
       <v-divider />
       <v-layout row wrap>
-        <template
-          v-for="item in openJobsList.jobs"
-        >
-          <v-flex :key="item.title" xs12>
-            <v-layout row wrap>
-              <p>
-                <span class="dashboard__job-title">{{ item.title }}</span>
-                <span class="dashboard__job-proposals">{{ item.proposals }}</span>
-                <template v-if="item.new > 0">
-                  (<span class="dashboard__job-new-proposals">{{ `${item.new} new` }}</span>)
-                </template>
-                Proposals
-              </p>
-            </v-layout>
-          </v-flex>
-        </template>
+        <v-flex v-for="item in openJobsList.jobs" :key="item.title" xs12>
+          <v-layout row wrap>
+            <p>
+              <span class="dashboard__job-title">{{ item.title }}</span>
+              <span class="dashboard__job-proposals">{{ item.proposals }}</span>
+              <template v-if="item.new > 0">
+                (<span class="dashboard__job-new-proposals">{{ `${item.new} new` }}</span>)
+              </template>
+              Proposals
+            </p>
+          </v-layout>
+        </v-flex>
       </v-layout>
       <v-layout row wrap>
         <a class="dashboard__link">All Open Jobs</a>

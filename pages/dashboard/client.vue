@@ -34,7 +34,6 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex';
 import SetupCard from '../../components/dashboard/SetupCard';
 import OpenJobs from '../../components/dashboard/OpenJobs';
 import JobsInProgress from '../../components/dashboard/JobsInProgress';
@@ -51,36 +50,33 @@ export default {
   data() {
     return {
       translationScope: 'clientDashboard',
-      needSetup: true,
-      openJobsList: null,
-      jobsInProgressList: null,
-      communityArticlesList: null,
-      myFreelancersList: null
+      needSetup: true
     };
   },
-  created() {
-    this.initDashboard();
+  computed: {
+    openJobsList() {
+      return this.$store.state.dashboard.openJobsList;
+    },
+    jobsInProgressList() {
+      return this.$store.state.dashboard.jobsInProgressList;
+    },
+    communityArticlesList() {
+      return this.$store.state.dashboard.communityArticlesList;
+    },
+    myFreelancersList() {
+      return this.$store.state.dashboard.myFreelancersList;
+    }
+  },
+  asyncData({ store }) {
+    store.dispatch('dashboard/fetchOpenJobs');
+    store.dispatch('dashboard/fetchJobsInProgress');
+    store.dispatch('dashboard/fetchCommunityArticles');
+    store.dispatch('dashboard/fetchMyFreelancers');
   },
   methods: {
     closeSetupCard() {
       this.needSetup = false;
-    },
-    async initDashboard() {
-      this.fetchOpenJobs();
-      this.fetchJobsInProgress();
-      this.fetchCommunityArticles();
-      this.fetchMyFreelancers();
-      this.openJobsList = Object.assign({}, this.$store.state.dashboard.openJobsList);
-      this.jobsInProgressList = Object.assign({}, this.$store.state.dashboard.jobsInProgressList);
-      this.communityArticlesList = this.$store.state.dashboard.communityArticlesList;
-      this.myFreelancersList = this.$store.state.dashboard.myFreelancersList;
-    },
-    ...mapActions({
-      fetchOpenJobs: 'dashboard/fetchOpenJobs',
-      fetchJobsInProgress: 'dashboard/fetchJobsInProgress',
-      fetchCommunityArticles: 'dashboard/fetchCommunityArticles',
-      fetchMyFreelancers: 'dashboard/fetchMyFreelancers'
-    })
+    }
   }
 };
 </script>

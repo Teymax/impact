@@ -7,35 +7,31 @@
     </v-card-title>
     <v-card-text>
       <v-layout row wrap>
-        <template
-          v-for="item in myFreelancersList"
-        >
-          <v-flex :key="item.name" xs12>
-            <v-layout row wrap align-center>
-              <v-flex xs>
-                <avatar size="xs" :img="item.img" />
-              </v-flex>
-              <v-flex md8 xs9>
-                <p class="dashboard__freelancer-name mb-0">
-                  {{ item.name }}
-                </p>
-                <p class="dashboard__freelancer-spec mb-0">
-                  {{ item.speciality }} <span class="dashboard__job-proposals">({{ item.hours }})</span>
-                </p>
-              </v-flex>
-              <v-flex xs>
-                <v-btn
-                  flat
-                  round
-                  block
-                  class="text-none azure base homepage__btn white--text ml-0"
-                >
-                  Hire
-                </v-btn>
-              </v-flex>
-            </v-layout>
-          </v-flex>
-        </template>
+        <v-flex v-for="item in myFreelancersList" :key="item.name" xs12>
+          <v-layout row wrap align-center>
+            <v-flex xs>
+              <avatar size="xs" :img="item.img" />
+            </v-flex>
+            <v-flex md8 xs9>
+              <p class="dashboard__freelancer-name mb-0">
+                {{ item.name }}
+              </p>
+              <p class="dashboard__freelancer-spec mb-0">
+                {{ item.speciality }} <span class="dashboard__job-proposals">({{ item.hours }})</span>
+              </p>
+            </v-flex>
+            <v-flex xs>
+              <v-btn
+                flat
+                round
+                block
+                class="text-none azure base homepage__btn white--text ml-0"
+              >
+                Hire
+              </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-flex>
       </v-layout>
       <v-layout row wrap>
         <a class="dashboard__link">Hired Freelancers (15)</a>
@@ -57,7 +53,7 @@ export default {
   props: {
     myFreelancersList: {
       type: Array,
-      default: () => null
+      default: () => []
     }
   }
 };

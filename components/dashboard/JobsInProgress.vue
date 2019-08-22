@@ -24,19 +24,15 @@
       </v-layout>
       <v-divider />
       <v-layout row wrap>
-        <template
-          v-for="item in jobsInProgressList.jobs"
-        >
-          <v-flex :key="item.title" xs12>
-            <v-layout row wrap>
-              <p>
-                <span class="dashboard__job-title">{{ item.title }}</span>
-                <span class="dashboard__job-proposals">{{ item.hours }} hrs ${{ item.price }} </span>
-                by {{ item.author }}
-              </p>
-            </v-layout>
-          </v-flex>
-        </template>
+        <v-flex v-for="item in jobsInProgressList.jobs" :key="item.title" xs12>
+          <v-layout row wrap>
+            <p>
+              <span class="dashboard__job-title">{{ item.title }}</span>
+              <span class="dashboard__job-proposals">{{ item.hours }} hrs ${{ item.price }} </span>
+              by {{ item.author }}
+            </p>
+          </v-layout>
+        </v-flex>
       </v-layout>
       <v-layout row wrap>
         <a class="dashboard__link">All Jobs in Progress</a>

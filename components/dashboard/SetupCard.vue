@@ -36,7 +36,8 @@ export default {
   name: 'SetupCard',
   props: {
     show: {
-      type: Boolean
+      type: Boolean,
+      default: false
     }
   },
   data() {
