@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="dashboard__content">
     <v-layout row wrap>
       <v-flex xs12>
         <h4 class="dashboard__header">
@@ -10,28 +10,22 @@
         <setup-card v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
       </v-flex>
       <v-flex xs12 class="mb-5">
-        <v-layout row align-space-around fill-height>
-          <v-flex xs12 sm6 class="pr-4">
+        <v-layout row wrap align-space-around fill-height>
+          <v-flex xs12 sm6 class="dashboard__left-card">
             <open-jobs :open-jobs-list="openJobsList" />
           </v-flex>
-          <v-flex xs12 sm6 class="pl-4">
+          <v-flex xs12 sm6 class="dashboard__right-card">
             <jobs-in-progress :jobs-in-progress-list="jobsInProgressList" />
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12>
-        <v-layout row>
-          <v-flex xs12 sm6 class="pr-4">
-            <v-card>
-              <v-card-title>
-                <h1 class="dashboard__subheaders primary--text text-no-wrap">
-                  My Freelancers
-                </h1>
-              </v-card-title>
-            </v-card>
+        <v-layout row wrap align-space-around fill-height>
+          <v-flex xs12 sm6 class="dashboard__left-card">
+            <my-freelancers :my-freelancers-list="myFreelancersList" />
           </v-flex>
-          <v-flex xs12 sm6 class="pl-4">
-            <community-articles />
+          <v-flex xs12 sm6 class="dashboard__right-card">
+            <community-articles :community-articles-list="communityArticlesList" />
           </v-flex>
         </v-layout>
       </v-flex>
@@ -44,12 +38,13 @@ import SetupCard from '../../components/dashboard/SetupCard';
 import OpenJobs from '../../components/dashboard/OpenJobs';
 import JobsInProgress from '../../components/dashboard/JobsInProgress';
 import CommunityArticles from '../../components/dashboard/CommunityArticles';
+import MyFreelancers from '../../components/dashboard/MyFreelancers';
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
   name: 'Dashboard',
   components: {
-    SetupCard, OpenJobs, JobsInProgress, CommunityArticles
+    SetupCard, OpenJobs, JobsInProgress, CommunityArticles, MyFreelancers
   },
   mixins: [textTranslations],
   data() {
@@ -96,7 +91,54 @@ export default {
             author: 'Tim Baker'
           }
         ]
-      }
+      },
+      communityArticlesList: [
+        {
+          title: 'Best ways to increase your rating?',
+          comments: 117,
+          new: 2
+        },
+        {
+          title: 'How to get your first client as a new freelanc...',
+          comments: 100,
+          new: 3
+        },
+        {
+          title: 'Best positive impact stories so far?',
+          comments: 98,
+          new: 5
+        },
+        {
+          title: 'I need help with some developement issues.',
+          comments: 95,
+          new: 1
+        },
+        {
+          title: 'Social Impact opportunities for a Writer?',
+          comments: 80,
+          new: 1
+        }
+      ],
+      myFreelancersList: [
+        {
+          name: 'Julie Knowles',
+          speciality: 'Writer / Translator',
+          hours: 15,
+          img: 'https://cdn.vuetifyjs.com/images/lists/4.jpg'
+        },
+        {
+          name: 'Ben Henderson',
+          speciality: 'Full Stack Developer',
+          hours: 12,
+          img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
+        },
+        {
+          name: 'Karen Chen',
+          speciality: 'VR / AR Developer',
+          hours: 12,
+          img: 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
+        }
+      ]
     };
   },
   methods: {

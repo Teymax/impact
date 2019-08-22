@@ -34,7 +34,6 @@
     font-weight: bold;
     font-size: rem(25px);
     line-height: rem(30px);
-    margin-left: rem(16px);
   }
   &__jobs-count {
     font-size: rem(48.83px);
@@ -62,7 +61,6 @@
     font-weight: bold;
     font-size: rem(20px);
     line-height: rem(24px);
-    margin-left: rem(16px);
     color: #0A91FF;
   }
   &__card {
@@ -71,4 +69,71 @@
   &__first-row {
     height: rem(171px) !important;
   }
+  &__article-title {
+    font-size: rem(20px);
+    line-height: rem(24px);
+  }
+  &__freelancer-name {
+    font-weight: bold;
+    font-size: rem(20.25px);
+    line-height: rem(150%);
+    color: #000;
+  }
+  &__freelancer-spec {
+    font-weight: 300;
+    font-size: rem(20px);
+    line-height: rem(150%);
+    color: #000;
+  }
+  &__left-card {
+    padding-right: rem(26px);
+    padding-bottom: 0;
+  }
+  &_right-card {
+    padding-right: rem(26px);
+  }
+  &__content {
+    padding-bottom: rem(96px) !important;
+  }
+}
+
+@media (max-width: $md) {
+.dashboard {
+  &__left-card {
+    padding-right: rem(15px);
+    padding-bottom: 0;
+  }
+  &_right-card {
+    padding-right: rem(15px);
+  }
+  &__subheaders {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(30px);
+  }
+  &__first-row {
+    height: inherit !important;
+  }
+  &__job-title {
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+  }
+  &__job-proposals {
+    margin-left: 0;
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: #FF6A00;
+  }
+}
+}
+
+@media (max-width: $xs) {
+.dashboard {
+  &__left-card {
+    padding-right: 0;
+    padding-bottom: rem(32px);
+  }
+}
 }

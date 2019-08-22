@@ -1,9 +1,9 @@
 <template>
   <v-card class="dashboard__card">
     <v-card-title>
-      <h1 class="dashboard__subheaders primary--text text-no-wrap">
+      <h4 class="dashboard__subheaders primary--text text-no-wrap">
         Open Jobs and Proposals
-      </h1>
+      </h4>
     </v-card-title>
     <v-card-text>
       <v-layout
@@ -40,23 +40,22 @@
       </v-layout>
       <v-divider />
       <v-layout row wrap>
-        <v-list>
-          <v-list-tile
-            v-for="item in openJobsList.jobs"
-            :key="item.title"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title>
+        <template
+          v-for="item in openJobsList.jobs"
+        >
+          <v-flex :key="item.title" xs12>
+            <v-layout row wrap>
+              <p>
                 <span class="dashboard__job-title">{{ item.title }}</span>
                 <span class="dashboard__job-proposals">{{ item.proposals }}</span>
                 <template v-if="item.new > 0">
                   (<span class="dashboard__job-new-proposals">{{ `${item.new} new` }}</span>)
                 </template>
                 Proposals
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
+              </p>
+            </v-layout>
+          </v-flex>
+        </template>
       </v-layout>
       <v-layout row wrap>
         <a class="dashboard__link">All Open Jobs</a>

@@ -1,19 +1,19 @@
 <template>
   <v-card class="dashboard__card">
     <v-card-title>
-      <h1 class="dashboard__subheaders primary--text text-no-wrap">
+      <h4 class="dashboard__subheaders primary--text text-no-wrap">
         Jobs in Progress
-      </h1>
+      </h4>
     </v-card-title>
     <v-card-text>
       <v-layout row wrap justify-center text-xs-center class="dashboard__first-row">
-        <v-flex>
+        <v-flex xs6>
           <p class="dashboard__jobs-count">
             {{ jobsInProgressList.inProgress }}
           </p>
           <p>Jobs in Progress</p>
         </v-flex>
-        <v-flex>
+        <v-flex xs6>
           <v-flex>
             <p class="dashboard__jobs-count">
               {{ jobsInProgressList.currentHours }}
@@ -24,20 +24,19 @@
       </v-layout>
       <v-divider />
       <v-layout row wrap>
-        <v-list>
-          <v-list-tile
-            v-for="item in jobsInProgressList.jobs"
-            :key="item.title"
-          >
-            <v-list-tile-content>
-              <v-list-tile-title>
+        <template
+          v-for="item in jobsInProgressList.jobs"
+        >
+          <v-flex :key="item.title" xs12>
+            <v-layout row wrap>
+              <p>
                 <span class="dashboard__job-title">{{ item.title }}</span>
                 <span class="dashboard__job-proposals">{{ item.hours }} hrs ${{ item.price }} </span>
                 by {{ item.author }}
-              </v-list-tile-title>
-            </v-list-tile-content>
-          </v-list-tile>
-        </v-list>
+              </p>
+            </v-layout>
+          </v-flex>
+        </template>
       </v-layout>
       <v-layout row wrap>
         <a class="dashboard__link">All Jobs in Progress</a>
@@ -57,11 +56,6 @@ export default {
         currentHours: 0,
         jobs: null
       })
-    }
-  },
-  computed: {
-    newProposals() {
-      return 3;
     }
   }
 };
