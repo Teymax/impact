@@ -1,5 +1,5 @@
 <template>
-  <v-card class="dashboard__card">
+  <v-card class="dashboard__card base-card-shadow">
     <v-card-title class="dashboard__card-title">
       <h4 class="dashboard__subheaders primary--text text-no-wrap">
         My Freelancers

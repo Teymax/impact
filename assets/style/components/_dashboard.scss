@@ -88,11 +88,13 @@
     line-height: rem(24px);
     text-align: center;
     padding-left: rem(28px) !important;
+    padding-right: rem(26px);
     color: #0A91FF;
   }
 
   &__card {
     height: 100%;
+    border-radius: rem(10px) !important;
   }
 
   &__first-row {
@@ -117,8 +119,7 @@
   }
 
   &__card-title {
-    padding-top: rem(39px) !important;
-    padding-left: rem(36px) !important;
+    padding: rem(39px) rem(36px) !important;
   }
 
   &__actions-block {
@@ -207,6 +208,9 @@
       padding-left: rem(8px) !important;
       color: #0A91FF;
     }
+    &__card-title {
+      padding: rem(16px) !important;
+    }
   }
 }
 
@@ -232,8 +236,12 @@
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      padding-left: rem(6px) !important;
+      padding-left: rem(4px) !important;
+      padding-right: rem(4px);
       color: #0A91FF;
     }
+  }
+  &__card-title {
+    padding: rem(16px) !important;
   }
 }

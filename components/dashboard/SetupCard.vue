@@ -1,6 +1,6 @@
 <template>
   <v-card>
-    <v-card-text>
+    <v-card-text class="base-card-shadow">
       <v-layout row wrap align-start>
         <v-flex xs11>
           <v-layout row wrap align-center>
