@@ -87,8 +87,6 @@
     font-size: rem(20px);
     line-height: rem(24px);
     text-align: center;
-    padding-left: rem(34px) !important;
-    padding-right: rem(26px);
     color: #0A91FF;
   }
 
@@ -123,8 +121,8 @@
   }
 
   &__actions-block {
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    padding-left: rem(36px) !important;
+    padding-right: rem(36px) !important;
     padding-bottom: rem(60px) !important;
     align-items: flex-start !important;
   }
@@ -153,12 +151,15 @@
     padding-bottom: 0;
   }
 
-  &_right-card {
-    padding-right: rem(26px);
+  &__right-card {
+    padding-left: rem(26px);
   }
 
   &__content {
     padding-bottom: rem(96px) !important;
+  }
+  &__content-row {
+    margin-bottom: rem(32px);
   }
 }
 
@@ -169,8 +170,8 @@
       padding-bottom: 0;
     }
 
-    &_right-card {
-      padding-right: rem(15px);
+    &__right-card {
+      padding-left: rem(15px);
     }
 
     &__subheaders {
@@ -207,12 +208,16 @@
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      padding-left: rem(16px) !important;
-      padding-right: 0;
       color: #0A91FF;
     }
     &__card-title {
       padding: rem(16px) !important;
+    }
+    &__actions-block {
+      padding-left: rem(16px) !important;
+      padding-right: rem(16px) !important;
+      padding-bottom: rem(60px) !important;
+      align-items: flex-start !important;
     }
   }
 }
@@ -223,7 +228,11 @@
       padding-right: 0;
       padding-bottom: rem(32px);
     }
-
+    &__right-card {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: rem(32px);
+    }
     &__card-content {
       padding: rem(16px);
       height: auto !important;
@@ -239,12 +248,16 @@
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      padding-left: rem(4px) !important;
-      padding-right: rem(4px);
       color: #0A91FF;
     }
   }
   &__card-title {
     padding: rem(16px) !important;
+  }
+  &__actions-block {
+    padding-left: rem(16px) !important;
+    padding-right: rem(16px) !important;
+    padding-bottom: rem(60px) !important;
+    align-items: flex-start !important;
   }
 }

@@ -9,7 +9,7 @@
       <v-flex xs12 class="dashboard__setup">
         <setup-card v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
       </v-flex>
-      <v-flex xs12 class="mb-5">
+      <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__left-card">
             <open-jobs :open-jobs-list="openJobsList" />
