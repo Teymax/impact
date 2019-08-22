@@ -26,16 +26,20 @@
       <v-layout row wrap>
         <v-flex v-for="item in jobsInProgressList.jobs" :key="item.title" xs12>
           <v-layout row wrap>
-            <p>
-              <span class="dashboard__job-title">{{ item.title }}</span>
-              <span class="dashboard__job-proposals">{{ item.hours }} hrs ${{ item.price }} </span>
-              by {{ item.author }}
-            </p>
+            <v-flex>
+              <p>
+                <span class="dashboard__job-title">{{ item.title }}</span>
+                <span class="dashboard__job-proposals">{{ item.hours }} hrs ${{ item.price }} </span>
+                by {{ item.author }}
+              </p>
+            </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <a class="dashboard__link">All Jobs in Progress</a>
+        <v-flex>
+          <a class="dashboard__link">All Jobs in Progress</a>
+        </v-flex>
       </v-layout>
     </v-card-text>
   </v-card>

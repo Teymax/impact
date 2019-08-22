@@ -34,9 +34,11 @@
         </v-flex>
       </v-layout>
       <v-layout row wrap>
-        <a class="dashboard__link">Hired Freelancers (15)</a>
-        <v-spacer />
-        <a class="dashboard__link">Find New Freelancers</a>
+        <v-flex>
+          <a class="dashboard__link">Hired Freelancers (15)</a>
+          <v-spacer />
+          <a class="dashboard__link">Find New Freelancers</a>
+        </v-flex>
       </v-layout>
     </v-card-text>
   </v-card>
