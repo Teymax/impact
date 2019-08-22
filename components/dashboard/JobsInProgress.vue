@@ -25,7 +25,7 @@
         </v-flex>
         <v-flex md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="dashboard__jobs-count">
               {{ jobsInProgressList.currentHours }}
             </v-flex>
             <v-flex md12 class="dashboard__job-subheader">

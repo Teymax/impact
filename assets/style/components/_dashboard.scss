@@ -274,5 +274,10 @@
       padding-bottom: rem(20px) !important;
       align-items: flex-start !important;
     }
+    &__jobs-count {
+      font-size: rem(30px);
+      line-height: rem(59px);
+      color: #495057;
+    }
   }
 }
