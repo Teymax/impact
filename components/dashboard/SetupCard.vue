@@ -9,13 +9,13 @@
                 person
               </v-icon>
             </v-flex>
-            <v-flex sm2 md3 lg2>
+            <v-flex sm5 md3 lg2>
               Set-Up in Progress
             </v-flex>
-            <v-flex md3 class="dashboard__progress-container">
+            <v-flex sm4 md3 class="dashboard__progress-container">
               <v-progress-linear v-model="currentProgress" class="dashboard__progress-bar" />
             </v-flex>
-            <v-flex xs12 sm2 md3>
+            <v-flex xs12 sm12 md3 class="text-sm-center">
               <v-btn
                 flat
                 round
