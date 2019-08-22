@@ -87,7 +87,7 @@
     font-size: rem(20px);
     line-height: rem(24px);
     text-align: center;
-    padding-left: rem(28px) !important;
+    padding-left: rem(34px) !important;
     padding-right: rem(26px);
     color: #0A91FF;
   }
@@ -123,6 +123,8 @@
   }
 
   &__actions-block {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     padding-bottom: rem(60px) !important;
     align-items: flex-start !important;
   }
