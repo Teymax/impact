@@ -16,9 +16,7 @@
       </v-layout>
     </v-card-text>
     <v-card-actions>
-      <v-flex>
-        <a class="dashboard__link">See All Articles</a>
-      </v-flex>
+      <a class="dashboard__link">See All Articles</a>
     </v-card-actions>
   </v-card>
 </template>

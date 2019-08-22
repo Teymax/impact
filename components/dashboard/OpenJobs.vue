@@ -53,9 +53,7 @@
       </v-layout>
     </v-card-text>
     <v-card-actions>
-      <v-flex>
-        <a class="dashboard__link">All Open Jobs</a>
-      </v-flex>
+      <a class="dashboard__link">All Open Jobs</a>
     </v-card-actions>
   </v-card>
 </template>

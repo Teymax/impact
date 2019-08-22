@@ -34,9 +34,7 @@
       </v-layout>
     </v-card-text>
     <v-card-actions>
-      <v-flex>
-        <a class="dashboard__link">All Jobs in Progress</a>
-      </v-flex>
+      <a class="dashboard__link">All Jobs in Progress</a>
     </v-card-actions>
   </v-card>
 </template>
