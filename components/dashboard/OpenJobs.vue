@@ -16,7 +16,7 @@
       >
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="dashboard__jobs-count">
               {{ openJobsList.currentJobs }}
             </v-flex>
             <v-flex class="dashboard__job-subheader">
@@ -26,7 +26,7 @@
         </v-flex>
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="dashboard__jobs-count">
               {{ openJobsList.activeProposals }}
             </v-flex>
             <v-flex class="dashboard__job-subheader">
@@ -37,7 +37,7 @@
         </v-flex>
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="dashboard__jobs-count">
               {{ openJobsList.impactsLeft }}
             </v-flex>
             <v-flex class="dashboard__job-subheader">
