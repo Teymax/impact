@@ -3,17 +3,22 @@
     font-size: rem(39.06px);
     font-weight: bold;
   }
+
   &__setup {
     font-size: rem(25px);
     margin-top: rem(48px);
     margin-bottom: rem(72px);
+    font-weight: 300;
+    color: #495057;
   }
+
   &__setup-avatar {
     height: rem(48px);
     width: rem(48px);
     border-radius: 100%;
     background: #FF6A00;
   }
+
   &__progress-container {
     display: flex;
     align-items: center;
@@ -21,29 +26,37 @@
     height: rem(16px);
     margin-right: rem(52px);
   }
+
   &__progress-bar {
     border-radius: rem(10px);
   }
+
   &__continue-btn {
     font-size: rem(20.25px) !important;
   }
+
   &__btn.v-btn {
     font-size: rem(20px);
   }
+
   &__subheaders {
     font-weight: bold;
     font-size: rem(25px);
     line-height: rem(30px);
   }
+
   &__jobs-count {
     font-size: rem(48.83px);
     line-height: rem(59px);
+    color: #495057;
   }
+
   &__job-title {
     font-weight: bold;
     font-size: rem(20px);
     line-height: rem(24px);
   }
+
   &__job-proposals {
     margin-left: rem(24px);
     font-weight: bold;
@@ -51,90 +64,173 @@
     line-height: rem(24px);
     color: #FF6A00;
   }
+
   &__job-new-proposals {
     font-size: rem(16px);
     line-height: rem(24px);
     color: #0A91FF;
-
   }
+
+  &__job-subheader {
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    align-items: center;
+    text-transform: uppercase;
+    color: #495057;
+    margin-bottom: 0;
+  }
+
   &__link {
     font-weight: bold;
     font-size: rem(20px);
     line-height: rem(24px);
-    margin-left: rem(8px) !important;
+    text-align: center;
+    padding-left: rem(28px) !important;
     color: #0A91FF;
   }
+
   &__card {
     height: 100%;
   }
+
   &__first-row {
-    height: rem(171px) !important;
+    height: rem(145px) !important;
   }
+
+  &__second-row {
+    padding-top: rem(44px);
+  }
+
+  &__freelancer-row {
+    padding-bottom: rem(25px);
+  }
+
+  &__articles-row {
+    padding-bottom: rem(15px);
+  }
+
+  &__card-content {
+    padding-left: rem(36px) !important;
+    height: calc(100% - 62px - 92px) !important;
+  }
+
+  &__card-title {
+    padding-top: rem(39px) !important;
+    padding-left: rem(36px) !important;
+  }
+
+  &__actions-block {
+    padding-bottom: rem(60px) !important;
+    align-items: flex-start !important;
+  }
+
   &__article-title {
     font-size: rem(20px);
     line-height: rem(24px);
   }
+
   &__freelancer-name {
     font-weight: bold;
     font-size: rem(20.25px);
     line-height: rem(150%);
     color: #000;
   }
+
   &__freelancer-spec {
     font-weight: 300;
     font-size: rem(20px);
     line-height: rem(150%);
     color: #000;
   }
+
   &__left-card {
     padding-right: rem(26px);
     padding-bottom: 0;
   }
+
   &_right-card {
     padding-right: rem(26px);
   }
+
   &__content {
     padding-bottom: rem(96px) !important;
   }
 }
 
 @media (max-width: $md) {
-.dashboard {
-  &__left-card {
-    padding-right: rem(15px);
-    padding-bottom: 0;
+  .dashboard {
+    &__left-card {
+      padding-right: rem(15px);
+      padding-bottom: 0;
+    }
+
+    &_right-card {
+      padding-right: rem(15px);
+    }
+
+    &__subheaders {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(30px);
+    }
+
+    &__first-row {
+      height: rem(300px) !important;
+    }
+
+    &__job-title {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      align-items: center;
+      color: #495057;
+    }
+
+    &__job-proposals {
+      margin-left: 0;
+      font-weight: bold;
+      font-size: rem(16px);
+      line-height: rem(24px);
+      color: #FF6A00;
+    }
+
+    &__card-content {
+      padding: rem(16px) !important;
+      height: 100% !important;
+    }
+
+    &__card-content {
+      padding-left: rem(36px) !important;
+      height: calc(100% - 85px - 92px) !important;
+    }
   }
-  &_right-card {
-    padding-right: rem(15px);
-  }
-  &__subheaders {
-    font-weight: bold;
-    font-size: rem(20px);
-    line-height: rem(30px);
-  }
-  &__first-row {
-    height: inherit !important;
-  }
-  &__job-title {
-    font-weight: bold;
-    font-size: rem(16px);
-    line-height: rem(24px);
-  }
-  &__job-proposals {
-    margin-left: 0;
-    font-weight: bold;
-    font-size: rem(16px);
-    line-height: rem(24px);
-    color: #FF6A00;
-  }
-}
 }
 
 @media (max-width: $xs) {
-.dashboard {
-  &__left-card {
-    padding-right: 0;
-    padding-bottom: rem(32px);
+  .dashboard {
+    &__left-card {
+      padding-right: 0;
+      padding-bottom: rem(32px);
+    }
+
+    &__card-content {
+      padding: rem(16px);
+      height: auto !important;
+    }
+
+    &__first-row {
+      padding-bottom: rem(26px);
+      height: inherit !important;
+    }
+
+    &__link {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      padding-left: rem(26px) !important;
+      color: #0A91FF;
+    }
   }
-}
 }

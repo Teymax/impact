@@ -1,11 +1,11 @@
 <template>
   <v-card class="dashboard__card">
-    <v-card-title>
+    <v-card-title class="dashboard__card-title">
       <h4 class="dashboard__subheaders primary--text text-no-wrap">
         Open Jobs and Proposals
       </h4>
     </v-card-title>
-    <v-card-text>
+    <v-card-text class="dashboard__card-content">
       <v-layout
         row
         wrap
@@ -18,14 +18,18 @@
           <p class="dashboard__jobs-count">
             {{ openJobsList.currentJobs }}
           </p>
-          <p>Current Jobs</p>
+          <p class="dashboard__job-subheader">
+            Current Jobs
+          </p>
         </v-flex>
         <v-flex>
           <v-flex>
             <p class="dashboard__jobs-count">
               {{ openJobsList.activeProposals }}
             </p>
-            <p>Active Proposals</p>
+            <p class="dashboard__job-subheader">
+              Active Proposals
+            </p>
             <p>(<span class="dashboard__job-new-proposals">{{ newProposals }} new</span>)</p>
           </v-flex>
         </v-flex>
@@ -34,12 +38,14 @@
             <p class="dashboard__jobs-count">
               {{ openJobsList.impactsLeft }}
             </p>
-            <p>Impacts Left</p>
+            <p class="dashboard__job-subheader">
+              Impacts Left
+            </p>
           </v-flex>
         </v-flex>
       </v-layout>
       <v-divider />
-      <v-layout row wrap>
+      <v-layout row wrap class="dashboard__second-row">
         <v-flex v-for="item in openJobsList.jobs" :key="item.title" xs12>
           <p>
             <span class="dashboard__job-title">{{ item.title }}</span>
@@ -52,7 +58,7 @@
         </v-flex>
       </v-layout>
     </v-card-text>
-    <v-card-actions>
+    <v-card-actions class="dashboard__actions-block">
       <a class="dashboard__link">All Open Jobs</a>
     </v-card-actions>
   </v-card>
