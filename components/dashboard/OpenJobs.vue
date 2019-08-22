@@ -15,29 +15,35 @@
         class="dashboard__first-row"
       >
         <v-flex lg4 md6 xs12>
-          <p class="dashboard__jobs-count">
-            {{ openJobsList.currentJobs }}
-          </p>
-          <p class="dashboard__job-subheader">
-            Current Jobs
-          </p>
+          <v-layout row wrap align-center class="text-md-center text-xs-left">
+            <v-flex md12 xs3 class="dashboard__jobs-count">
+              {{ openJobsList.currentJobs }}
+            </v-flex>
+            <v-flex class="dashboard__job-subheader">
+              Current Jobs
+            </v-flex>
+          </v-layout>
         </v-flex>
         <v-flex lg4 md6 xs12>
-          <p class="dashboard__jobs-count">
-            {{ openJobsList.activeProposals }}
-          </p>
-          <p class="dashboard__job-subheader">
-            Active Proposals
-          </p>
-          <p>(<span class="dashboard__job-new-proposals">{{ newProposals }} new</span>)</p>
+          <v-layout row wrap align-center class="text-md-center text-xs-left">
+            <v-flex md12 xs3 class="dashboard__jobs-count">
+              {{ openJobsList.activeProposals }}
+            </v-flex>
+            <v-flex class="dashboard__job-subheader">
+              Active Proposals
+            </v-flex>
+            <v-flex>(<span class="dashboard__job-new-proposals">{{ newProposals }} new</span>)</v-flex>
+          </v-layout>
         </v-flex>
-        <v-flex lg4 md12 xs12>
-          <p class="dashboard__jobs-count">
-            {{ openJobsList.impactsLeft }}
-          </p>
-          <p class="dashboard__job-subheader">
-            Impacts Left
-          </p>
+        <v-flex lg4 md6 xs12>
+          <v-layout row wrap align-center class="text-md-center text-xs-left">
+            <v-flex md12 xs3 class="dashboard__jobs-count">
+              {{ openJobsList.impactsLeft }}
+            </v-flex>
+            <v-flex class="dashboard__job-subheader">
+              Impacts Left
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
       <v-divider />

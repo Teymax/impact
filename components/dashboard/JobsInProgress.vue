@@ -8,28 +8,30 @@
     <v-card-text class="dashboard__card-content">
       <v-layout
         row
-        wra
+        wrap
         justify-center
         text-xs-center
         class="dashboard__first-row"
       >
-        <v-flex xs6>
-          <p class="dashboard__jobs-count">
-            {{ jobsInProgressList.inProgress }}
-          </p>
-          <p class="dashboard__job-subheader">
-            Jobs in Progress
-          </p>
+        <v-flex md6 xs12>
+          <v-layout row wrap align-center class="text-md-center text-xs-left">
+            <v-flex md12 xs3 class="dashboard__jobs-count">
+              {{ jobsInProgressList.inProgress }}
+            </v-flex>
+            <v-flex md12 class="dashboard__job-subheader">
+              Jobs in Progress
+            </v-flex>
+          </v-layout>
         </v-flex>
-        <v-flex xs6>
-          <v-flex>
-            <p class="dashboard__jobs-count">
+        <v-flex md6 xs12>
+          <v-layout row wrap align-center class="text-md-center text-xs-left">
+            <v-flex md12 xs3 class="dashboard__jobs-count">
               {{ jobsInProgressList.currentHours }}
-            </p>
-            <p class="dashboard__job-subheader">
+            </v-flex>
+            <v-flex md12 class="dashboard__job-subheader">
               Hours Logged This Week
-            </p>
-          </v-flex>
+            </v-flex>
+          </v-layout>
         </v-flex>
       </v-layout>
       <v-divider />

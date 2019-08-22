@@ -37,7 +37,7 @@
     <v-card-actions class="dashboard__actions-block">
       <a class="dashboard__link">Hired Freelancers (15)</a>
       <v-spacer />
-      <a class="dashboard__link text-xs-right">
+      <a class="dashboard__link text-sm-right">
         <v-icon>search</v-icon>
         Find New Freelancers</a>
     </v-card-actions>
