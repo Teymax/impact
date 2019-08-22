@@ -4,12 +4,12 @@
       <v-layout row wrap align-start>
         <v-flex xs11>
           <v-layout row wrap align-center>
-            <v-flex xs3 sm2 lg1>
+            <v-flex xs3 sm1 lg1>
               <v-icon class="dashboard__setup-avatar" large dark>
                 person
               </v-icon>
             </v-flex>
-            <v-flex sm5 md3 lg2>
+            <v-flex sm5 md4 lg3>
               Set-Up in Progress
             </v-flex>
             <v-flex sm4 md3 class="dashboard__progress-container">
