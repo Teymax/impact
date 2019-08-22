@@ -34,6 +34,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex';
 import SetupCard from '../../components/dashboard/SetupCard';
 import OpenJobs from '../../components/dashboard/OpenJobs';
 import JobsInProgress from '../../components/dashboard/JobsInProgress';
@@ -51,100 +52,35 @@ export default {
     return {
       translationScope: 'clientDashboard',
       needSetup: true,
-      openJobsList: {
-        currentJobs: 2,
-        activeProposals: 12,
-        impactsLeft: 30,
-        jobs: [
-          {
-            title: 'A job with a sort name',
-            proposals: 5,
-            new: 3
-          },
-          {
-            title: 'Some longer job name, it can be long',
-            proposals: 7,
-            new: 0
-          }
-        ]
-      },
-      jobsInProgressList: {
-        inProgress: 5,
-        currentHours: 17,
-        jobs: [
-          {
-            title: 'A job with a sort name',
-            hours: 8,
-            price: 45,
-            author: 'Roman Brown'
-          },
-          {
-            title: 'Some longer job name, it can be...',
-            hours: 3,
-            price: 50,
-            author: 'Joanna Pierce'
-          },
-          {
-            title: 'Urgent job redesigning marketi...',
-            hours: 10,
-            price: 35,
-            author: 'Tim Baker'
-          }
-        ]
-      },
-      communityArticlesList: [
-        {
-          title: 'Best ways to increase your rating?',
-          comments: 117,
-          new: 2
-        },
-        {
-          title: 'How to get your first client as a new freelanc...',
-          comments: 100,
-          new: 3
-        },
-        {
-          title: 'Best positive impact stories so far?',
-          comments: 98,
-          new: 5
-        },
-        {
-          title: 'I need help with some developement issues.',
-          comments: 95,
-          new: 1
-        },
-        {
-          title: 'Social Impact opportunities for a Writer?',
-          comments: 80,
-          new: 1
-        }
-      ],
-      myFreelancersList: [
-        {
-          name: 'Julie Knowles',
-          speciality: 'Writer / Translator',
-          hours: 15,
-          img: 'https://cdn.vuetifyjs.com/images/lists/4.jpg'
-        },
-        {
-          name: 'Ben Henderson',
-          speciality: 'Full Stack Developer',
-          hours: 12,
-          img: 'https://cdn.vuetifyjs.com/images/lists/1.jpg'
-        },
-        {
-          name: 'Karen Chen',
-          speciality: 'VR / AR Developer',
-          hours: 12,
-          img: 'https://cdn.vuetifyjs.com/images/lists/3.jpg'
-        }
-      ]
+      openJobsList: null,
+      jobsInProgressList: null,
+      communityArticlesList: null,
+      myFreelancersList: null
     };
+  },
+  created() {
+    this.initDashboard();
   },
   methods: {
     closeSetupCard() {
       this.needSetup = false;
-    }
+    },
+    async initDashboard() {
+      this.fetchOpenJobs();
+      this.fetchJobsInProgress();
+      this.fetchCommunityArticles();
+      this.fetchMyFreelancers();
+      this.openJobsList = Object.assign({}, this.$store.state.dashboard.openJobsList);
+      this.jobsInProgressList = Object.assign({}, this.$store.state.dashboard.jobsInProgressList);
+      this.communityArticlesList = this.$store.state.dashboard.communityArticlesList;
+      this.myFreelancersList = this.$store.state.dashboard.myFreelancersList;
+    },
+    ...mapActions({
+      fetchOpenJobs: 'dashboard/fetchOpenJobs',
+      fetchJobsInProgress: 'dashboard/fetchJobsInProgress',
+      fetchCommunityArticles: 'dashboard/fetchCommunityArticles',
+      fetchMyFreelancers: 'dashboard/fetchMyFreelancers'
+    })
   }
 };
 </script>
