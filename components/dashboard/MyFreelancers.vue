@@ -1,11 +1,11 @@
 <template>
-  <v-card class="dashboard__card base-card-shadow">
-    <v-card-title class="dashboard__card-title">
-      <h4 class="dashboard__subheaders primary--text text-no-wrap">
+  <v-card class="base-card-style base-card-shadow">
+    <v-card-title class="base-card-title">
+      <h4 class="base-card-header primary--text text-no-wrap">
         {{ t('myFreelancers.myFreelancersHeader') }}
       </h4>
     </v-card-title>
-    <v-card-text class="dashboard__card-content">
+    <v-card-text class="base-card-content">
       <v-layout row wrap>
         <v-flex v-for="item in myFreelancersList" :key="item.name" xs12 class="dashboard__freelancer-row">
           <v-layout row wrap align-center>
@@ -35,12 +35,12 @@
         </v-flex>
       </v-layout>
     </v-card-text>
-    <v-card-actions class="dashboard__actions-block">
-      <nuxt-link to="#" class="dashboard__link">
+    <v-card-actions class="base-card-action">
+      <nuxt-link to="#" class="base-card-link">
         {{ t('myFreelancers.hiredFreelancers') }} (15)
       </nuxt-link>
       <v-spacer />
-      <nuxt-link to="#" class="dashboard__link text-sm-right">
+      <nuxt-link to="#" class="base-card-link text-sm-right">
         <v-icon>search</v-icon>
         {{ t('myFreelancers.findNewFreelancers') }}
       </nuxt-link>

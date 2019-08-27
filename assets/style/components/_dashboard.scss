@@ -31,22 +31,6 @@
     border-radius: rem(10px);
   }
 
-  &__btn.v-btn {
-    font-size: rem(20px);
-  }
-
-  &__subheaders {
-    font-weight: bold;
-    font-size: rem(25px);
-    line-height: rem(30px);
-  }
-
-  &__jobs-count {
-    font-size: rem(48px);
-    line-height: rem(59px);
-    color: $darkest-grey;
-  }
-
   &__job-title {
     font-weight: bold;
     font-size: rem(20px);
@@ -68,28 +52,6 @@
     color: $azure;
   }
 
-  &__job-subheader {
-    font-weight: bold;
-    font-size: rem(16px);
-    line-height: rem(24px);
-    align-items: center;
-    text-transform: uppercase;
-    color: $darkest-grey;
-    margin-bottom: 0;
-  }
-
-  &__actions-block > &__link {
-    font-weight: bold;
-    font-size: rem(20px);
-    line-height: rem(24px);
-    text-align: center;
-    color: $azure;
-  }
-
-  .v-card > &__card-content > &__jobs-count-row {
-    height: rem(145px);
-  }
-
   &__jobs-list {
     padding-top: rem(44px);
   }
@@ -100,22 +62,6 @@
 
   &__articles-row {
     padding-bottom: rem(15px);
-  }
-
-  .v-card > &__card-content {
-    padding: 0 rem(36px);
-    height: calc(100% - 108px - 92px);
-  }
-
-  .v-card > &__card-title {
-    padding: rem(39px) rem(36px);
-  }
-
-  .v-card > &__actions-block {
-    padding-left: rem(36px);
-    padding-right: rem(36px);
-    padding-bottom: rem(60px);
-    align-items: flex-start;
   }
 
   &__article-title {
@@ -164,16 +110,6 @@
       padding-left: rem(15px);
     }
 
-    &__subheaders {
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(30px);
-    }
-
-    .v-card > &__card-content > &__jobs-count-row {
-      height: rem(300px);
-    }
-
     &__job-title {
       font-weight: bold;
       font-size: rem(20px);
@@ -189,35 +125,6 @@
       line-height: rem(24px);
       color: $warm-orange;
     }
-
-    .v-card > &__card-content {
-      padding: rem(16px);
-      height: calc(100% - 85px - 92px);
-    }
-
-    &__actions-block > &__link {
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(24px);
-      text-align: center;
-      color: $azure;
-    }
-
-    .v-card > &__card-title {
-      padding: rem(16px);
-    }
-
-    .v-card > &__actions-block {
-      padding-left: rem(16px);
-      padding-right: rem(16px);
-      padding-bottom: rem(60px);
-      align-items: flex-start;
-    }
-    &__jobs-count {
-      font-size: rem(40px);
-      line-height: rem(59px);
-      color: $darkest-grey;
-    }
   }
 }
 
@@ -232,41 +139,6 @@
       padding-left: 0;
       padding-right: 0;
       padding-bottom: rem(32px);
-    }
-
-    .v-card > &__card-content {
-      padding: rem(16px);
-      height: auto;
-    }
-
-    .v-card > &__card-content > &__jobs-count-row {
-      padding-bottom: rem(26px);
-      height: inherit;
-    }
-
-    &__actions-block > &__link {
-      margin: 0 auto;
-      padding-bottom: rem(10px);
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(24px);
-      text-align: center;
-      color: $azure;
-    }
-    .v-card > &__card-title {
-      padding: rem(16px);
-    }
-    .v-card > &__actions-block {
-      flex-direction: column;
-      padding-left: rem(16px);
-      padding-right: rem(16px);
-      padding-bottom: rem(20px);
-      align-items: flex-start;
-    }
-    &__jobs-count {
-      font-size: rem(30px);
-      line-height: rem(59px);
-      color: $darkest-grey;
     }
   }
 }
