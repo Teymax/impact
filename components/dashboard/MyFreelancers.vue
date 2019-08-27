@@ -2,7 +2,7 @@
   <v-card class="dashboard__card base-card-shadow">
     <v-card-title class="dashboard__card-title">
       <h4 class="dashboard__subheaders primary--text text-no-wrap">
-        My Freelancers
+        {{ t('myFreelancers.myFreelancersHeader') }}
       </h4>
     </v-card-title>
     <v-card-text class="dashboard__card-content">
@@ -17,7 +17,8 @@
                 {{ item.name }}
               </p>
               <p class="dashboard__freelancer-spec mb-0">
-                {{ item.speciality }} <span class="dashboard__job-proposals">({{ item.hours }} hrs)</span>
+                {{ item.speciality }}
+                <span class="dashboard__job-proposals">({{ item.hours }} {{ t('myFreelancers.hours') }})</span>
               </p>
             </v-flex>
             <v-flex>
@@ -27,7 +28,7 @@
                 block
                 class="text-none azure base homepage__btn white--text ml-0"
               >
-                Hire
+                {{ t('myFreelancers.hire') }}
               </v-btn>
             </v-flex>
           </v-layout>
@@ -35,32 +36,38 @@
       </v-layout>
     </v-card-text>
     <v-card-actions class="dashboard__actions-block">
-      <a class="dashboard__link">Hired Freelancers (15)</a>
+      <nuxt-link to="#" class="dashboard__link">
+        {{ t('myFreelancers.hiredFreelancers') }} (15)
+      </nuxt-link>
       <v-spacer />
-      <a class="dashboard__link text-sm-right">
+      <nuxt-link to="#" class="dashboard__link text-sm-right">
         <v-icon>search</v-icon>
-        Find New Freelancers</a>
+        {{ t('myFreelancers.findNewFreelancers') }}
+      </nuxt-link>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
 import Avatar from '../shared/AvatarComponent';
+import textTranslations from '@/mixins/textTranslations';
 
 export default {
   name: 'MyFreelancers',
   components: {
     Avatar
   },
+  mixins: [textTranslations],
   props: {
     myFreelancersList: {
       type: Array,
       default: () => []
     }
+  },
+  data() {
+    return {
+      translationScope: 'dashboard'
+    };
   }
 };
 </script>
-
-<style scoped>
-
-</style>

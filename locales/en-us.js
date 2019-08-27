@@ -1,3 +1,5 @@
+import dashboard from './dashboard';
+
 export default {
   navigation: {
     forClients: 'For Clients',
@@ -230,5 +232,6 @@ export default {
   uploads: {
     imageUploadSucceed: 'Image has been successful uploaded',
     imageUploadFailed: 'Your image upload has been failed. Please try again.'
-  }
+  },
+  dashboard
 };

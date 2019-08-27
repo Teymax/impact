@@ -10,7 +10,7 @@
               </v-icon>
             </v-flex>
             <v-flex sm5 md4 lg3>
-              Set-Up in Progress
+              {{ t('setupCard.setupInProgress') }}
             </v-flex>
             <v-flex sm4 md3 class="dashboard__progress-container">
               <v-progress-linear v-model="currentProgress" class="dashboard__progress-bar" />
@@ -21,7 +21,7 @@
                 round
                 class="text-none azure base homepage__btn white--text ml-0"
               >
-                Continue Set-Up
+                {{ t('setupCard.setupBtn') }}
               </v-btn>
             </v-flex>
           </v-layout>
@@ -38,8 +38,11 @@
 </template>
 
 <script>
+import textTranslations from '@/mixins/textTranslations';
+
 export default {
   name: 'SetupCard',
+  mixins: [textTranslations],
   props: {
     show: {
       type: Boolean,
@@ -48,6 +51,7 @@ export default {
   },
   data() {
     return {
+      translationScope: 'dashboard',
       currentProgress: 75
     };
   },
@@ -58,7 +62,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-</style>

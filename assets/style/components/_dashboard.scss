@@ -1,6 +1,6 @@
 .dashboard {
   &__header {
-    font-size: rem(39.06px);
+    font-size: rem(39px);
     font-weight: bold;
   }
 
@@ -9,14 +9,14 @@
     margin-top: rem(48px);
     margin-bottom: rem(72px);
     font-weight: 300;
-    color: #495057;
+    color: $darkest-grey;
   }
 
   &__setup-avatar {
     height: rem(48px);
     width: rem(48px);
     border-radius: 100%;
-    background: #FF6A00;
+    background: $warm-orange;
   }
 
   &__progress-container {
@@ -31,10 +31,6 @@
     border-radius: rem(10px);
   }
 
-  &__continue-btn {
-    font-size: rem(20.25px) !important;
-  }
-
   &__btn.v-btn {
     font-size: rem(20px);
   }
@@ -46,16 +42,16 @@
   }
 
   &__jobs-count {
-    font-size: rem(48.83px);
+    font-size: rem(48px);
     line-height: rem(59px);
-    color: #495057;
+    color: $darkest-grey;
   }
 
   &__job-title {
     font-weight: bold;
     font-size: rem(20px);
     line-height: rem(24px);
-    color: #495057;
+    color: $darkest-grey;
   }
 
   &__job-proposals {
@@ -63,13 +59,13 @@
     font-weight: bold;
     font-size: rem(16px);
     line-height: rem(24px);
-    color: #FF6A00;
+    color: $warm-orange;
   }
 
   &__job-new-proposals {
     font-size: rem(16px);
     line-height: rem(24px);
-    color: #0A91FF;
+    color: $azure;
   }
 
   &__job-subheader {
@@ -78,28 +74,23 @@
     line-height: rem(24px);
     align-items: center;
     text-transform: uppercase;
-    color: #495057;
+    color: $darkest-grey;
     margin-bottom: 0;
   }
 
-  &__link {
+  &__actions-block > &__link {
     font-weight: bold;
     font-size: rem(20px);
     line-height: rem(24px);
     text-align: center;
-    color: #0A91FF;
+    color: $azure;
   }
 
-  &__card {
-    height: 100%;
-    border-radius: rem(10px) !important;
+  .v-card > &__card-content > &__jobs-count-row {
+    height: rem(145px);
   }
 
-  &__first-row {
-    height: rem(145px) !important;
-  }
-
-  &__second-row {
+  &__jobs-list {
     padding-top: rem(44px);
   }
 
@@ -111,20 +102,20 @@
     padding-bottom: rem(15px);
   }
 
-  &__card-content {
-    padding: 0 rem(36px) !important;
-    height: calc(100% - 108px - 92px) !important;
+  .v-card > &__card-content {
+    padding: 0 rem(36px);
+    height: calc(100% - 108px - 92px);
   }
 
-  &__card-title {
-    padding: rem(39px) rem(36px) !important;
+  .v-card > &__card-title {
+    padding: rem(39px) rem(36px);
   }
 
-  &__actions-block {
-    padding-left: rem(36px) !important;
-    padding-right: rem(36px) !important;
-    padding-bottom: rem(60px) !important;
-    align-items: flex-start !important;
+  .v-card > &__actions-block {
+    padding-left: rem(36px);
+    padding-right: rem(36px);
+    padding-bottom: rem(60px);
+    align-items: flex-start;
   }
 
   &__article-title {
@@ -134,29 +125,27 @@
 
   &__freelancer-name {
     font-weight: bold;
-    font-size: rem(20.25px);
+    font-size: rem(20px);
     line-height: rem(150%);
-    color: #000;
   }
 
   &__freelancer-spec {
     font-weight: 300;
     font-size: rem(20px);
     line-height: rem(150%);
-    color: #000;
   }
 
-  &__left-card {
+  &__open-jobs-freeelancers {
     padding-right: rem(26px);
     padding-bottom: 0;
   }
 
-  &__right-card {
+  &__jobs-in-progress-articles {
     padding-left: rem(26px);
   }
 
-  &__content {
-    padding-bottom: rem(96px) !important;
+  main > div > &__content {
+    padding-bottom: rem(96px);
   }
 
   &__content-row {
@@ -166,12 +155,12 @@
 
 @media (max-width: $md) {
   .dashboard {
-    &__left-card {
+    &__open-jobs-freeelancers {
       padding-right: rem(15px);
       padding-bottom: 0;
     }
 
-    &__right-card {
+    &__jobs-in-progress-articles {
       padding-left: rem(15px);
     }
 
@@ -181,8 +170,8 @@
       line-height: rem(30px);
     }
 
-    &__first-row {
-      height: rem(300px) !important;
+    .v-card > &__card-content > &__jobs-count-row {
+      height: rem(300px);
     }
 
     &__job-title {
@@ -190,7 +179,7 @@
       font-size: rem(20px);
       line-height: rem(24px);
       align-items: center;
-      color: #495057;
+      color: $darkest-grey;
     }
 
     &__job-proposals {
@@ -198,86 +187,86 @@
       font-weight: bold;
       font-size: rem(16px);
       line-height: rem(24px);
-      color: #FF6A00;
+      color: $warm-orange;
     }
 
-    &__card-content {
-      padding: rem(16px) !important;
-      height: calc(100% - 85px - 92px) !important;
+    .v-card > &__card-content {
+      padding: rem(16px);
+      height: calc(100% - 85px - 92px);
     }
 
-    &__link {
+    &__actions-block > &__link {
       font-weight: bold;
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      color: #0A91FF;
+      color: $azure;
     }
 
-    &__card-title {
-      padding: rem(16px) !important;
+    .v-card > &__card-title {
+      padding: rem(16px);
     }
 
-    &__actions-block {
-      padding-left: rem(16px) !important;
-      padding-right: rem(16px) !important;
-      padding-bottom: rem(60px) !important;
-      align-items: flex-start !important;
+    .v-card > &__actions-block {
+      padding-left: rem(16px);
+      padding-right: rem(16px);
+      padding-bottom: rem(60px);
+      align-items: flex-start;
     }
     &__jobs-count {
       font-size: rem(40px);
       line-height: rem(59px);
-      color: #495057;
+      color: $darkest-grey;
     }
   }
 }
 
 @media (max-width: $xs) {
   .dashboard {
-    &__left-card {
+    &__open-jobs-freeelancers {
       padding-right: 0;
       padding-bottom: rem(32px);
     }
 
-    &__right-card {
+    &__jobs-in-progress-articles {
       padding-left: 0;
       padding-right: 0;
       padding-bottom: rem(32px);
     }
 
-    &__card-content {
+    .v-card > &__card-content {
       padding: rem(16px);
-      height: auto !important;
+      height: auto;
     }
 
-    &__first-row {
+    .v-card > &__card-content > &__jobs-count-row {
       padding-bottom: rem(26px);
-      height: inherit !important;
+      height: inherit;
     }
 
-    &__link {
-      margin: 0 auto !important;
+    &__actions-block > &__link {
+      margin: 0 auto;
       padding-bottom: rem(10px);
       font-weight: bold;
       font-size: rem(20px);
       line-height: rem(24px);
       text-align: center;
-      color: #0A91FF;
+      color: $azure;
     }
-    &__card-title {
-      padding: rem(16px) !important;
+    .v-card > &__card-title {
+      padding: rem(16px);
     }
-    &__actions-block {
-      flex-direction: column !important;
-      padding-left: rem(16px) !important;
-      padding-right: rem(16px) !important;
-      padding-bottom: rem(20px) !important;
-      align-items: flex-start !important;
+    .v-card > &__actions-block {
+      flex-direction: column;
+      padding-left: rem(16px);
+      padding-right: rem(16px);
+      padding-bottom: rem(20px);
+      align-items: flex-start;
     }
     &__jobs-count {
       font-size: rem(30px);
       line-height: rem(59px);
-      color: #495057;
+      color: $darkest-grey;
     }
   }
 }
