@@ -5,9 +5,9 @@
   }
 
   &__setup {
-    font-size: rem(25px);
     margin-top: rem(48px);
     margin-bottom: rem(72px);
+    font-size: rem(25px);
     font-weight: 300;
     color: $darkest-grey;
   }
@@ -20,11 +20,11 @@
   }
 
   &__progress-container {
+    height: rem(16px);
+    width: rem(232px);
+    margin-right: rem(52px);
     display: flex;
     align-items: center;
-    width: rem(232px);
-    height: rem(16px);
-    margin-right: rem(52px);
   }
 
   &__progress-bar {
@@ -69,18 +69,6 @@
     line-height: rem(24px);
   }
 
-  &__freelancer-name {
-    font-weight: bold;
-    font-size: rem(20px);
-    line-height: rem(150%);
-  }
-
-  &__freelancer-spec {
-    font-weight: 300;
-    font-size: rem(20px);
-    line-height: rem(150%);
-  }
-
   &__open-jobs-freeelancers {
     padding-right: rem(26px);
     padding-bottom: 0;
@@ -111,19 +99,11 @@
     }
 
     &__job-title {
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(24px);
       align-items: center;
-      color: $darkest-grey;
     }
 
     &__job-proposals {
       margin-left: 0;
-      font-weight: bold;
-      font-size: rem(16px);
-      line-height: rem(24px);
-      color: $warm-orange;
     }
   }
 }
