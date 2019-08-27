@@ -1,6 +1,8 @@
 .base-card {
-  height: 100%;
-  border-radius: rem(10px) !important;
+  &_default {
+    height: 100%;
+    border-radius: rem(10px) !important;
+  }
 
   &__title {
     padding: rem(39px) rem(36px) !important;
@@ -35,6 +37,13 @@
     padding: 0 rem(36px) !important;
     height: calc(100% - 108px - 92px);
   }
+  &__link, &__link:visited, &__link:active {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    text-align: center;
+    color: $azure;
+  }
 }
 
 .v-card__actions.base-card {
@@ -43,16 +52,6 @@
     padding-right: rem(36px);
     padding-bottom: rem(60px);
     align-items: flex-start;
-  }
-}
-
-.v-card__actions > .base-card {
-  &__link {
-    font-weight: bold;
-    font-size: rem(20px);
-    line-height: rem(24px);
-    text-align: center;
-    color: $azure;
   }
 }
 
@@ -91,6 +90,13 @@
       padding: rem(16px) !important;
       height: calc(100% - 85px - 92px);
     }
+    &__link, &__link:visited, &__link:active {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      color: $azure;
+    }
   }
   .v-card__actions.base-card {
     &__action {
@@ -98,15 +104,6 @@
       padding-right: rem(16px);
       padding-bottom: rem(60px);
       align-items: flex-start;
-    }
-  }
-  .v-card__actions > .base-card {
-    &__link {
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(24px);
-      text-align: center;
-      color: $azure;
     }
   }
 }
@@ -141,6 +138,15 @@
       padding: rem(16px) !important;
       height: auto;
     }
+    &__link, &__link:visited, &__link:active {
+      margin: 0 auto;
+      padding-bottom: rem(10px);
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      color: $azure;
+    }
   }
 
   .v-card__actions.base-card {
@@ -150,17 +156,6 @@
       padding-right: rem(16px);
       padding-bottom: rem(20px);
       align-items: flex-start;
-    }
-  }
-  .v-card__actions > .base-card {
-    &__link {
-      margin: 0 auto;
-      padding-bottom: rem(10px);
-      font-weight: bold;
-      font-size: rem(20px);
-      line-height: rem(24px);
-      text-align: center;
-      color: $azure;
     }
   }
 }
