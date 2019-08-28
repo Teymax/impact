@@ -41,7 +41,7 @@
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
-  name: 'SetupCard',
+  name: 'DashboardSetupCard',
   mixins: [textTranslations],
   props: {
     show: {

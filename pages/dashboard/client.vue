@@ -7,25 +7,25 @@
         </h4>
       </v-flex>
       <v-flex xs12 class="dashboard__setup">
-        <setup-card v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
+        <dashboard-setup-card v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
       </v-flex>
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <open-jobs :open-jobs-list="openJobsList" />
+            <dashboard-open-jobs :open-jobs-list="openJobsList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <jobs-in-progress :jobs-in-progress-list="jobsInProgressList" />
+            <dashboard-jobs-in-progress :jobs-in-progress-list="jobsInProgressList" />
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <my-freelancers :my-freelancers-list="myFreelancersList" />
+            <dashboard-my-freelancers :my-freelancers-list="myFreelancersList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <community-articles :community-articles-list="communityArticlesList" />
+            <dashboard-community-articles :community-articles-list="communityArticlesList" />
           </v-flex>
         </v-layout>
       </v-flex>
@@ -35,17 +35,17 @@
 
 <script>
 import { mapState } from 'vuex';
-import SetupCard from '@/components/dashboard/SetupCard';
-import OpenJobs from '@/components/dashboard/OpenJobs';
-import JobsInProgress from '@/components/dashboard/JobsInProgress';
-import CommunityArticles from '@/components/dashboard/CommunityArticles';
-import MyFreelancers from '@/components/dashboard/MyFreelancers';
+import DashboardSetupCard from '@/components/dashboard/DashboardSetupCard';
+import DashboardOpenJobs from '@/components/dashboard/DashboardOpenJobs';
+import DashboardJobsInProgress from '@/components/dashboard/DashboardJobsInProgress';
+import DashboardCommunityArticles from '@/components/dashboard/DashboardCommunityArticles';
+import DashboardMyFreelancers from '@/components/dashboard/DashboardMyFreelancers';
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
   name: 'Dashboard',
   components: {
-    SetupCard, OpenJobs, JobsInProgress, CommunityArticles, MyFreelancers
+    DashboardSetupCard, DashboardOpenJobs, DashboardJobsInProgress, DashboardCommunityArticles, DashboardMyFreelancers
   },
   mixins: [textTranslations],
   data() {

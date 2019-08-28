@@ -30,7 +30,7 @@ import Avatar from '../shared/AvatarComponent';
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
-  name: 'FreelancerCard',
+  name: 'DashboardFreelancerCard',
   components: {
     Avatar
   },

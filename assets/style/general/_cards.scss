@@ -1,11 +1,11 @@
 .base-card {
-  &_default {
+  &_default.v-sheet {
+    border-radius: rem(10px);
     height: 100%;
-    border-radius: rem(10px) !important;
   }
 
-  &__title {
-    padding: rem(39px) rem(36px) !important;
+  &__title.v-card__title {
+    padding: rem(39px) rem(36px);
   }
 
   &__header {
@@ -33,8 +33,8 @@
     color: $darkest-grey;
     margin-bottom: 0;
   }
-  &__content {
-    padding: 0 rem(36px) !important;
+  &__content.v-card__text {
+    padding: 0 rem(36px);
     height: calc(100% - 108px - 92px);
   }
   &__link, &__link:visited, &__link:active {
@@ -83,13 +83,15 @@
       height: rem(300px);
     }
 
-    &__title {
-      padding: rem(16px) !important;
+    &__title.v-card__title {
+      padding: rem(16px);
     }
-    &__content {
-      padding: rem(16px) !important;
+
+    &__content.v-card__text {
+      padding: rem(16px);
       height: calc(100% - 85px - 92px);
     }
+
     &__link, &__link:visited, &__link:active {
       font-weight: bold;
       font-size: rem(20px);
@@ -131,13 +133,6 @@
       height: inherit;
     }
 
-    &__title {
-      padding: rem(16px) !important;
-    }
-    &__content {
-      padding: rem(16px) !important;
-      height: auto;
-    }
     &__link, &__link:visited, &__link:active {
       margin: 0 auto;
       padding-bottom: rem(10px);
