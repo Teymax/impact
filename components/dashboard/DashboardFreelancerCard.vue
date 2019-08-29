@@ -9,7 +9,9 @@
       </p>
       <p class="freelancers__freelancer-spec mb-0">
         {{ item.speciality }}
-        <span class="freelancers__hours">({{ item.hours }} {{ t('myFreelancers.hours') }})</span>
+        <span class="freelancers__hours dashboard__job-proposals">
+          ({{ item.hours }} {{ t('myFreelancers.hours') }})
+        </span>
       </p>
     </v-flex>
     <v-flex>
