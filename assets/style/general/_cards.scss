@@ -1,4 +1,10 @@
 .base-card {
+  width: 100%;
+  height: 100%;
+  padding: rem(40px);
+  box-shadow: $main-shadow;
+  border-radius: rem(10px);
+
   &_default.v-sheet {
     border-radius: rem(10px);
     height: 100%;
