@@ -7,25 +7,25 @@
         </h4>
       </v-flex>
       <v-flex xs12 class="dashboard__setup">
-        <dashboard-setup-card v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
+        <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard" />
       </v-flex>
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <dashboard-open-jobs :open-jobs-list="openJobsList" />
+            <DashboardOpenJobs :open-jobs-list="openJobsList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <dashboard-jobs-in-progress :jobs-in-progress-list="jobsInProgressList" />
+            <DashboardJobsInProgress :jobs-in-progress-list="jobsInProgressList" />
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <dashboard-my-freelancers :my-freelancers-list="myFreelancersList" />
+            <DashboardMyFreelancers :my-freelancers-list="myFreelancersList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <dashboard-community-articles :community-articles-list="communityArticlesList" />
+            <DashboardCommunityArticles :community-articles-list="communityArticlesList" />
           </v-flex>
         </v-layout>
       </v-flex>
