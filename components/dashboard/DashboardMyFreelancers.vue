@@ -8,7 +8,7 @@
     <v-card-text class="base-card__content">
       <v-layout row wrap>
         <v-flex v-for="item in myFreelancersList" :key="item.name" xs12 class="dashboard__freelancer-row">
-          <dashboard-freelancer-card :item="item" />
+          <DashboardFreelancerCard :item="item" />
         </v-flex>
       </v-layout>
     </v-card-text>
