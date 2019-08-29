@@ -138,7 +138,10 @@
       padding-bottom: rem(26px);
       height: inherit;
     }
-
+    &__content.v-card__text {
+      padding: rem(16px) !important;
+      height: auto;
+    }
     &__link, &__link:visited, &__link:active {
       margin: 0 auto;
       padding-bottom: rem(10px);
