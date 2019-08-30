@@ -4,6 +4,14 @@
     font-weight: bold;
   }
 
+  &__close {
+    &_positioned {
+      position: absolute;
+      top: 15px;
+      right: 13px;
+    }
+  }
+
   &__setup {
     margin-top: rem(48px);
     margin-bottom: rem(72px);
@@ -89,6 +97,14 @@
 
 @media (max-width: $md) {
   .dashboard {
+    //&__container {
+    //  align-items: center;
+    //}
+
+    &__icon {
+      display: none;
+    }
+
     &__open-jobs-freeelancers {
       padding-right: rem(15px);
       padding-bottom: 0;
@@ -105,6 +121,10 @@
     &__job-proposals {
       margin-left: 0;
     }
+  }
+
+  .homepage__btn {
+    margin-top: rem(15px)
   }
 }
 

@@ -8,20 +8,19 @@
       </v-flex>
       <v-flex xs12 class="dashboard__setup">
         <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard">
-          <template v-slot:client="{ clientScope }">
-            <v-layout row wrap align-center>
-              <v-flex xs3 sm1 lg1>
-                <v-icon class="dashboard__setup-avatar" large dark>
-                  person
-                </v-icon>
+          <template v-slot:freelancer="{ freelancerScope }">
+            <v-layout class="py-3" row wrap align-center justify-center>
+              <v-layout class="dashboard__icon" md1 flex justify-end>
+                <v-img
+                  :src="require(`@/assets/images/icons/star.svg`)"
+                  contain
+                  :max-width="26"
+                />
+              </v-layout>
+              <v-flex sm12 md7 justify-center class="text-xs-center px-4">
+                {{ t('freelancerDashboard.setupCard.cardMessage') }}
               </v-flex>
-              <v-flex sm5 md4 lg3>
-                {{ t('setupCard.setupInProgress') }}
-              </v-flex>
-              <v-flex sm4 md3 class="dashboard__progress-container">
-                <v-progress-linear v-model="clientScope.currentProgress" class="dashboard__progress-bar" />
-              </v-flex>
-              <v-flex xs12 sm12 md3 class="text-sm-center">
+              <v-flex xs12 sm12 md3 class="text-sm-center homepage-btn-container">
                 <v-btn
                   flat
                   round
