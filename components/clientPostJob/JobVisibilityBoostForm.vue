@@ -1,35 +1,59 @@
 <template>
-  <v-layout wrap align-center>
-    <v-flex xs10>
-      <p> {{ t('visibilityBoost') }}</p>
-      <v-checkbox
-        id="visibiityBoost"
-        v-model="boosted"
-        v-validate="'required'"
-        :error-messages="errors.collect(t('visibilityBoostDescription'))"
-        :data-vv-name="t('visibilityBoostDescription')"
-        on-icon="check_box"
-        off-icon="check_box_outline_blank"
-        :label="t('visibilityBoostDescription')"
-      />
-    </v-flex>
-    <v-flex xs10 mt-4 mb-2>
-      <v-btn
-        block
-        @click="nextStep"
+  <v-flex
+    xs12
+    sm10
+  >
+    <v-layout
+      class="step__container"
+    >
+      <v-flex
+        xs12
+        sm10
+        md9
       >
-        {{ t('continue') }}
-      </v-btn>
-    </v-flex>
-    <v-flex xs10 mt-4 mb-2>
-      <v-btn
-        block
-        @click="previousStep"
-      >
-        {{ t('back') }}
-      </v-btn>
-    </v-flex>
-  </v-layout>
+        <v-layout wrap>
+          <v-flex xs12 class="text-xs-left">
+            <p class="font-weight-bold">
+              {{ t('visibilityBoost') }}
+            </p>
+          </v-flex>
+          <v-flex>
+            <div class="step__boost-container">
+              <v-checkbox
+                id="visibiityBoost"
+                v-model="boosted"
+                :label="t('visibilityBoostDescription')"
+              />
+            </div>
+          </v-flex>
+          <v-flex xs12>
+            <v-divider class="step__divider" />
+          </v-flex>
+          <v-flex xs12>
+            <v-layout justify-center>
+              <v-btn
+                class="base text-none azure azure--text"
+                flat
+                outline
+                round
+                @click="previousStep"
+              >
+                {{ t('back') }}
+              </v-btn>
+              <v-btn
+                class="base text-none azure white--text"
+                flat
+                round
+                @click="nextStep"
+              >
+                {{ t('continue') }}
+              </v-btn>
+            </v-layout>
+          </v-flex>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-flex>
 </template>
 
 <script>

@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     getItemName(item) {
-      return item.portfolioTitle ? item.portfolioTitle : item;
+      return item.title ? item.title : item;
     }
   }
 };

@@ -1,66 +1,101 @@
 <template>
   <v-form>
-    <v-layout wrap align-center>
-      <v-flex xs10>
-        <v-select
-          v-model="form.requirements.freelancerLevel"
-          v-validate="'required'"
-          :items="freelancerLevels"
-          :label="t('freelancerLevels')"
-          :error-messages="errors.collect(t('freelancerLevels'))"
-          :data-vv-name="t('freelancerLevels')"
-          return-object
-        />
+    <v-layout column>
+      <v-flex>
+        <label
+          class="base-input-label"
+        >
+          <span>{{ t('freelancerLevels') }}</span>
+          <v-select
+            v-model="form.requirements.freelancerLevel"
+            v-validate="'required'"
+            :items="freelancerLevels"
+            :error-messages="errors.collect(t('freelancerLevels'))"
+            :data-vv-name="t('freelancerLevels')"
+            return-object
+            solo
+            class="base-input mt-2"
+            append-icon="keyboard_arrow_down"
+          />
+        </label>
       </v-flex>
       <v-flex xs10>
-        <v-select
-          v-model="approximateLength"
-          v-validate="'required'"
-          :items="timePeriods"
-          :label="t('approximateLength')"
-          :error-messages="errors.collect(t('approximateLength'))"
-          :data-vv-name="t('approximateLength')"
-          return-object
-        />
+        <label
+          class="base-input-label"
+        >
+          <span>{{ t('approximateLength') }}</span>
+          <v-select
+            v-model="approximateLength"
+            v-validate="'required'"
+            :items="timePeriods"
+            :error-messages="errors.collect(t('approximateLength'))"
+            :data-vv-name="t('approximateLength')"
+            return-object
+            solo
+            class="base-input mt-2"
+            append-icon="keyboard_arrow_down"
+          />
+        </label>
       </v-flex>
-      <v-flex xs10>
+
+      <v-divider
+        class="step__divider"
+      />
+
+      <v-flex>
+        <p
+          class="base-input-label ma-0"
+        >
+          {{ t('jobVisibility') }}
+        </p>
         <v-radio-group
           v-model="form.visibility"
-          v-validate="'required'"
-          :label="t('jobVisibility')"
-          :error-messages="errors.collect(t('jobVisibility'))"
-          :data-vv-name="t('jobVisibility')"
           row
+          class="base primary--text"
         >
-          <v-radio
-            off-icon="radio_button_unchecked"
-            on-icon="radio_button_checked"
-            :label="t('visible')"
-            :value="true"
-          />
-          <v-radio
-            off-icon="radio_button_unchecked"
-            on-icon="radio_button_checked"
-            :label="t('hidden')"
-            :value="false"
-          />
+          <v-layout justify-space-between>
+            <v-radio
+              off-icon="radio_button_unchecked"
+              on-icon="radio_button_checked"
+              :label="t('visible')"
+              :value="true"
+              color="primary"
+            />
+            <v-radio
+              off-icon="radio_button_unchecked"
+              on-icon="radio_button_checked"
+              :label="t('hidden')"
+              :value="false"
+              color="primary"
+            />
+          </v-layout>
         </v-radio-group>
       </v-flex>
+
+      <v-divider
+        class="step__divider"
+      />
+
       <v-flex xs10 mt-4 mb-2>
-        <v-btn
-          block
-          @click="saveData('next')"
-        >
-          {{ t('continue') }}
-        </v-btn>
-      </v-flex>
-      <v-flex xs10 mt-4 mb-2>
-        <v-btn
-          block
-          @click="saveData('previous')"
-        >
-          {{ t('back') }}
-        </v-btn>
+        <v-layout>
+          <v-btn
+            outline
+            round
+            flat
+            class="azure--text ml-0 mr-4 text-none base"
+            @click="saveData('previous')"
+          >
+            {{ t('back') }}
+          </v-btn>
+          <v-btn
+            round
+            flat
+            class="azure white--text px-5 text-none base"
+            @click="saveData('next')"
+          >
+            {{ t('continue') }}
+          </v-btn>
+        </v-layout>
       </v-flex>
     </v-layout>
   </v-form>

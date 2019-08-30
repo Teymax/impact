@@ -1,31 +1,61 @@
 <template>
-  <v-layout row fluid justify-center>
-    <v-flex xs10>
-      <v-radio-group
-        v-model="jobType"
-        :label="t('jobType')"
-        row
+  <v-flex xs12 sm10>
+    <v-layout
+      row
+      justify-center
+      class="step__container"
+    >
+      <v-flex
+        xs12
+        sm10
+        md9
+        lg7
+        class="text-xs-left"
       >
-        <v-radio
-          off-icon="radio_button_unchecked"
-          on-icon="radio_button_checked"
-          :label="t('fixedBudget')"
-          value="fixed_budget"
+        <p
+          class="base-input-label"
+        >
+          {{ t('jobType') }}
+        </p>
+        <v-radio-group
+          v-model="jobType"
+          row
+          class="base"
+          color="primary"
+        >
+          <v-layout justify-space-between>
+            <v-radio
+              off-icon="radio_button_unchecked"
+              on-icon="radio_button_checked"
+              :label="`${t('perHour')} ${t('recommended')}`"
+              value="per_hour"
+              color="primary"
+            />
+            <v-radio
+              off-icon="radio_button_unchecked"
+              on-icon="radio_button_checked"
+              :label="t('fixedPrice')"
+              value="fixed_budget"
+              color="primary"
+            />
+          </v-layout>
+        </v-radio-group>
+
+        <v-divider
+          class="step__divider"
         />
-        <v-radio
-          off-icon="radio_button_unchecked"
-          on-icon="radio_button_checked"
-          :label="t('perHour')"
-          value="per_hour"
-        />
-      </v-radio-group>
-      <component
-        :is="choosenJobTypeForm"
-        :key="choosenJobTypeForm"
-        @saveData="saveData"
-      />
-    </v-flex>
-  </v-layout>
+        <v-fade-transition
+          mode="out-in"
+        >
+          <component
+            :is="choosenJobTypeForm"
+            :key="choosenJobTypeForm"
+            @saveData="saveData"
+          />
+        </v-fade-transition>
+      </v-flex>
+    </v-layout>
+  </v-flex>
 </template>
 
 <script>

@@ -1,42 +1,51 @@
 <template>
-  <v-layout row fluid justify-center>
-    <v-flex xs9>
-      <v-card
-        class="mb-5"
-        height="auto"
-      >
-        <v-layout row justify-center py-5>
-          <v-flex xs8>
-            <v-layout wrap>
-              <v-flex xs12 mt-2>
-                <v-layout wrap align-center>
-                  <v-btn-toggle
-                    v-model="choosenJobForm"
-                    mandatory
-                  >
-                    <v-btn
-                      v-for="btn in jobFormToggler"
-                      :key="btn.id"
-                      :value="btn.value"
-                      block
-                      class="px-4"
-                    >
-                      {{ t(btn.name) }}
-                    </v-btn>
-                  </v-btn-toggle>
-                  <component
-                    :is="choosenJobForm"
-                    :key="choosenJobForm"
-                    @save-data="updateJob"
-                  />
-                </v-layout>
-              </v-flex>
-            </v-layout>
-          </v-flex>
+  <v-flex
+    xs12
+    sm11
+    md8
+  >
+    <v-layout
+      wrap
+      class="step__container"
+    >
+      <v-flex xs12 sm10 md9>
+        <v-layout>
+          <v-btn
+            v-for="btn in jobFormToggler"
+            :key="btn.id"
+            block
+            flat
+            large
+            class="px-4 text-none base toggle"
+            :class="{
+              'active': choosenJobForm === btn.value,
+            }"
+            @click="choosenJobForm = btn.value"
+          >
+            {{ t(btn.name) }}
+          </v-btn>
         </v-layout>
-      </v-card>
-    </v-flex>
-  </v-layout>
+      </v-flex>
+
+      <v-flex xs12>
+        <v-layout
+          justify-center
+          wrap
+          mt-4
+        >
+          <v-fade-transition
+            mode="out-in"
+          >
+            <component
+              :is="choosenJobForm"
+              :key="choosenJobForm"
+              @save-data="updateJob"
+            />
+          </v-fade-transition>
+        </v-layout>
+      </v-flex>
+    </v-layout>
+  </v-flex>
 </template>
 
 <script>

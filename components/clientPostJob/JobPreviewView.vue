@@ -1,215 +1,198 @@
 <template>
-  <v-layout ow fluid justify-center>
-    <v-flex xs9>
-      <h5 class="headline font-weight-thin mb-5 text-xs-center">
-        {{ t('jobPreviewTitle') }}
-      </h5>
-      <v-card
-        class="mb-5"
-        height="auto"
-      >
-        <v-card-title class="subheading grey lighten-3" height="50">
-          <span class="mr-3">
-            {{ 'Unicorn Organization - For-Profit, Animals' }}</span>
-          <span class="mr-3">
-            <v-icon class="primary--text">
-              location_on
-            </v-icon>
-            {{ 'France' }}
-          </span>
-          <span class="mr-3">
-            <v-icon class="primary--text">
-              star_border
-            </v-icon>
-            {{ '80%' /* TODO: need fetch client with currentClientId to get real attributes */ }}
-          </span>
-        </v-card-title>
-        <v-card-text>
-          <v-layout align-center>
-            <v-fade-transition mode="out-in">
-              <v-text-field
-                v-if="editingTitle"
-                v-model="form.title"
-                v-validate="'required'"
-                :label="t('jobTitle')"
-                :error-messages="errors.collect(t('jobTitle'))"
-                :data-vv-name="t('jobTitle')"
-                required
-                autofocus
-                @blur="editingTitle = false"
-              />
-              <p v-else class="headline font-weight-bold ma-0 mr-3">
-                {{ form.title }}
-              </p>
-            </v-fade-transition>
-            <v-btn
-              class="mr-3 mt-3 ml-0"
-              icon
-              @click="editingTitle= !editingTitle"
-            >
-              <v-img
-                :src="require(`@/assets/images/icons/edit.svg`)"
-              />
-            </v-btn>
-          </v-layout>
-          <v-layout>
-            <v-btn
-              v-for="btn in jobInfoButtons"
-              :key="btn.id"
-              class="mr-3 mt-3 ml-0"
-              round
-            >
-              {{ btn.description }}
-            </v-btn>
-          </v-layout>
-          <v-layout align-center>
-            <v-fade-transition mode="out-in">
-              <v-text-field
-                v-if="editingDescription"
-                v-model="form.description"
-                v-validate="'required'"
-                :label="t('jobDescription')"
-                :error-messages="errors.collect(t('jobDescription'))"
-                :data-vv-name="t('jobDescription')"
-                required
-                autofocus
-                @blur="editingDescription = false"
-              />
-              <p
-                v-else
-                class="font-weight-light subheading ma-0 mr-3"
-              >
-                {{ form.description }}
-              </p>
-            </v-fade-transition>
-            <v-btn
-              class="mr-3 mt-3 ml-0"
-              icon
-              @click="editingDescription= !editingDescription"
-            >
-              <v-img
-                :src="require(`@/assets/images/icons/edit.svg`)"
-              />
-            </v-btn>
-          </v-layout>
-        </v-card-text>
-      </v-card>
+  <v-flex
+    xs12
+    sm11
+    md10
+    lg9
+    class="job-post__summary-container"
+  >
+    <v-layout
+      wrap
+      class="base-card overflow-hidden job-post__summary-content"
+    >
       <v-flex
-        xs10
-        sm12
-        align-self-center
-        text-xs-center
-        text-lg-center
+        class="toolbar-highlight job-post__toolbar"
       >
-        <v-btn
-          flat
-          round
-          outline
-          class="text-none base azure homepage__btn azure--text ml-0 mr-5"
-          @click="goToPreviousStep()"
+        <v-layout
+          align-center
+          justify-space-between
         >
-          {{ t('back') }}
-        </v-btn>
-        <v-btn
-          flat
-          round
-          class="text-none azure base homepage__btn white--text ml-0"
-          @click="createJob()"
-        >
-          {{ t('postAJob') }}
-        </v-btn>
+          <v-flex shrink>
+            <v-layout
+              align-center
+              justify-start
+              wrap
+            >
+              <Avatar
+                name="W A"
+                size="xxs"
+              />
+              <v-flex shrink>
+                <h4 class="d-inline">
+                  WWF Company -
+                </h4>
+                <p class="ma-0 d-inline">
+                  non-profit,
+                </p>
+                <p class="ma-0 d-inline">
+                  animals
+                </p>
+              </v-flex>
+              <v-flex shrink class="ml-3">
+                <v-flex class="align-center d-inline">
+                  <v-icon size="20" color="aqua">
+                    location_on
+                  </v-icon>
+                  <p class="ma-0 ml-1 d-inline">
+                    France
+                  </p>
+                </v-flex>
+                <v-flex class="align-center d-inline ml-1">
+                  <v-icon size="20" color="aqua">
+                    star_border
+                  </v-icon>
+                  <p class="ma-0 ml-1 d-inline">
+                    80%
+                  </p>
+                </v-flex>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+          <v-flex shrink>
+            <v-btn
+              icon
+              small
+              class="mx-1"
+            >
+              <v-icon size="20">
+                favorite_border
+              </v-icon>
+            </v-btn>
+            <v-btn
+              icon
+              small
+              class="mx-1"
+            >
+              <v-icon size="20">
+                more_vert
+              </v-icon>
+            </v-btn>
+          </v-flex>
+        </v-layout>
       </v-flex>
-    </v-flex>
-  </v-layout>
+      <v-flex
+        xs12
+      >
+        <v-layout
+          align-center
+          class="job-post__edit-box"
+        >
+          <h2
+            v-if="!isTitleEdited"
+            class="job-post__header job-post__header--final"
+          >
+            {{ title }}
+          </h2>
+          <v-flex
+            v-if="isTitleEdited"
+          >
+            <v-text-field
+              v-model="title"
+              class="base-input mt-3"
+              solo
+              flat
+            />
+          </v-flex>
+          <ButtonEdit
+            :is-edited="isTitleEdited"
+            @click.native="isTitleEdited = !isTitleEdited"
+          />
+        </v-layout>
+      </v-flex>
+      <v-flex xs12 text-xs-left>
+        <v-chip class="base">
+          budget
+        </v-chip>
+        <v-chip class="base">
+          Price
+        </v-chip>
+      </v-flex>
+      <v-flex
+        xs12
+        class="mt-3"
+      >
+        <v-layout>
+          <v-flex
+            v-if="!isDescriptionEdited"
+            class="job-post__summary-description"
+          >
+            <p class="ma-0 text-xs-left">
+              {{ description }}
+            </p>
+          </v-flex>
+          <v-flex
+            v-else
+          >
+            <v-textarea
+              v-model="description"
+              v-validate="'required'"
+              :error-messages="errors.collect(t('jobDescription'))"
+              :data-vv-name="t('jobDescription')"
+              class="base-input"
+              solo
+              required
+            />
+          </v-flex>
+          <ButtonEdit
+            :is-edited="isDescriptionEdited"
+            @click.native="isDescriptionEdited = !isDescriptionEdited"
+          />
+        </v-layout>
+      </v-flex>
+    </v-layout>
+    <v-layout
+      justify-center
+      class="mt-3"
+    >
+      <v-btn
+        round
+        flat
+        outline
+        class="base text-none azure azure--text"
+        @click="goToPreviousStep"
+      >
+        {{ t('back') }}
+      </v-btn>
+      <v-btn
+        round
+        flat
+        class="base text-none azure white--text"
+        @click="goToNextStep"
+      >
+        {{ t('continue') }}
+      </v-btn>
+    </v-layout>
+  </v-flex>
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex';
-import uuid from 'uuid/v4';
-import dayjs from 'dayjs';
+import nextStepBtn from '@/components/setupMixins/nextStepBtn';
 import previousStepBtn from '@/components/setupMixins/previousStepBtn';
 import textTranslations from '@/mixins/textTranslations';
-import serializeData from '@/mixins/serializeData';
+import Avatar from '@/components/shared/AvatarComponent';
+import ButtonEdit from '@/components/shared/ButtonEdit';
 
 export default {
-  mixins: [textTranslations, previousStepBtn, serializeData],
+  components: { Avatar, ButtonEdit },
+  mixins: [textTranslations, nextStepBtn, previousStepBtn],
   data() {
     return {
       translationScope: 'postJob',
-      form: {
-        title: '',
-        description: ''
-      },
-      editingTitle: false,
-      editingDescription: false
+      isTitleEdited: false,
+      isDescriptionEdited: false,
+      title: 'UX designer at WWF (worldwildlife.org)',
+      description: 'UX Designers at worldwildlife.org are responsible for creating meaningful and relevant experiences for our end users, meeting and minimizing the amount of difficult they have in interacting with our product and brand.'
     };
-  },
-  computed: {
-    ...mapState({
-      clientId: state => state.auth.user.clients[0].id, // TODO: fetch currentClientId
-      newJob: state => state.clientPostJob.newJob,
-      customQuestions: state => state.clientPostJob.customQuestions
-    }),
-    jobInfoButtons() {
-      return this.newJob.jobType === 'fixed_budget' ? this.fixedJobTypeInfoButtons : this.perHourJobTypeInfoButtons;
-    },
-    fixedJobTypeInfoButtons() {
-      return [
-        {
-          id: 0,
-          description: this.t('fixedPriceBudgetButton', { budget: this.newJob.budget })
-        },
-        {
-          id: 1,
-          description: this.t('deadlineButton', { date: dayjs(this.newJob.deadlineAt).format('MMM D') })
-        }
-      ];
-    },
-    perHourJobTypeInfoButtons() {
-      return [
-        {
-          id: 0,
-          description: this.t('freelancerLevelButton', { level: this.newJob.freelancerLevel })
-        },
-        {
-          id: 1,
-          description: this.newJob.approximateLength
-        }
-      ];
-    }
-  },
-  mounted() {
-    this.form.title = this.newJob.title || '';
-    this.form.description = this.newJob.description || '';
-  },
-  methods: {
-    ...mapActions({
-      createJobOffer: 'clientPostJob/createJobOffer'
-    }),
-    customQuestionsData() {
-      return this.customQuestions.map(questionContent => ({
-        id: uuid(),
-        type: 'customQuestion',
-        content: questionContent
-      }));
-    },
-    async createJob() {
-      const data = {
-        id: await uuid(),
-        type: 'job_offer',
-        ...this.newJob,
-        client: {
-          id: this.clientId,
-          type: 'client'
-        },
-        relationshipNames: ['client']
-      };
-      if (this.customQuestions.length) {
-        data.relationshipNames.push('customQuestions');
-        Object.assign(data, { customQuestions: this.customQuestionsData() });
-      }
-      this.createJobOffer(this.serializeData(data));
-    }
   }
 };
 </script>
