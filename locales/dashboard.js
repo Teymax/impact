@@ -31,22 +31,5 @@ export default {
   communityArticles: {
     communityArticlesHeader: 'Community Articles',
     seeAllArticles: 'See All Articles'
-  },
-  freelancerDashboard: {
-    setupCard: {
-      cardMessage: 'Set-Up your Profile Today and Get +10 Impacts',
-      setupBtn: 'Start Set-Up'
-    },
-    jobsImpactsCard: {
-      jobs: 'New Jobs',
-      jobsDescription: 'Are Waiting for You',
-      impacts: 'Impacts',
-      impactsDescription: 'Left for Your Proposals'
-    },
-    ratingCard: {
-      rating: 'Your rating',
-      ratingDescription: '(<span class="blue"> increase)',
-      proposalRate: 'Accepted Proposal Rate'
-    }
   }
 };
