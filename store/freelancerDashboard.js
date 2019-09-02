@@ -46,6 +46,16 @@ export const actions = {
       ]
     };
     commit('FETCH_MY_JOBS_AND_PROPOSALS', myJobsAndProposals);
+  },
+  fetchFinances({ commit }) {
+    const freelancerFinances = {
+      value1: '$100',
+      value2: '$500',
+      profit: '+$25',
+      point1: '$345',
+      interval1: 'May 15 - May 21'
+    };
+    commit('FETCH_FINANCES', freelancerFinances);
   }
 };
 export const mutations = {
@@ -57,9 +67,14 @@ export const mutations = {
   },
   FETCH_MY_JOBS_AND_PROPOSALS(state, myJobsAndProposals) {
     state.myJobsAndProposals = myJobsAndProposals;
+  },
+  FETCH_FINANCES(state, freelancerFinances) {
+    state.freelancerFinances = freelancerFinances;
   }
 };
 export const state = () => ({
   jobImpacts: null,
-  freelancerRating: null
+  freelancerRating: null,
+  myJobsAndProposals: null,
+  freelancerFinances: null
 });

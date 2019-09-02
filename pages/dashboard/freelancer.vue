@@ -62,9 +62,9 @@
             />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <FreelancerJobAndProposals
-              :localization="t('myJobsAndProposals')"
-              :my-jobs-and-proposals="myJobsAndProposals"
+            <FreelancerFinancesCard
+              :freelancer-finances="freelancerFinances"
+              :localization="t('financesCard')"
             />
           </v-flex>
         </v-layout>
@@ -97,13 +97,18 @@ import DashboardSetupCard from '@/components/dashboard/DashboardSetupCard';
 import FreelancerBaseCard from '@/components/dashboard/freelancer/FreelancerBaseCard';
 import DashboardCommunityArticles from '@/components/dashboard/DashboardCommunityArticles';
 import FreelancerJobAndProposals from '@/components/dashboard/freelancer/FreelancerJobAndProposals';
+import FreelancerFinancesCard from '@/components/dashboard/freelancer/FreelancerFinancesCard';
 import textTranslations from '@/mixins/textTranslations';
 
 
 export default {
   name: 'Dashboard',
   components: {
-    DashboardSetupCard, FreelancerBaseCard, DashboardCommunityArticles, FreelancerJobAndProposals
+    DashboardSetupCard,
+    FreelancerBaseCard,
+    DashboardCommunityArticles,
+    FreelancerJobAndProposals,
+    FreelancerFinancesCard
   },
   mixins: [textTranslations],
   data() {
@@ -117,13 +122,15 @@ export default {
       jobImpacts: state => state.freelancerDashboard.jobImpacts,
       freelancerRating: state => state.freelancerDashboard.freelancerRating,
       communityArticlesList: state => state.dashboard.communityArticlesList,
-      myJobsAndProposals: state => state.freelancerDashboard.myJobsAndProposals
+      myJobsAndProposals: state => state.freelancerDashboard.myJobsAndProposals,
+      freelancerFinances: state => state.freelancerDashboard.freelancerFinances
     })
   },
   asyncData({ store }) {
     store.dispatch('freelancerDashboard/fetchJobImpacts');
     store.dispatch('freelancerDashboard/fetchFreelancerRating');
     store.dispatch('freelancerDashboard/fetchMyJobsAndProposals');
+    store.dispatch('freelancerDashboard/fetchFinances');
     store.dispatch('dashboard/fetchCommunityArticles');
   },
   methods: {

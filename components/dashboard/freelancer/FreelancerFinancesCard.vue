@@ -16,7 +16,7 @@
       <v-flex md6 xs12>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
           <v-flex md12 xs3 class="freelancer-card__number-primary">
-            {{ myJobsAndProposals.value1 }}
+            {{ freelancerFinances.value1 }}
           </v-flex>
           <v-flex class="base-card__subheader">
             {{ localization.description1 }}
@@ -25,40 +25,43 @@
       </v-flex>
       <v-flex md6 xs12>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
-          <v-flex md12 xs3 class="freelancer-card__number-primary">
-            {{ myJobsAndProposals.value2 }}
-          </v-flex>
+          <div md12 xs3 class="freelancer-card__number-primary freelancer-card__finances-number_fixed-height">
+            {{ freelancerFinances.value2 }}
+            <span class="font-weight-regular subheading">
+              (<span class="azure--text font-weight-regular subheading">{{ freelancerFinances.profit }}</span>)
+            </span>
+          </div>
           <v-flex md12 class="base-card__subheader">
             {{ localization.description2 }}
           </v-flex>
         </v-layout>
       </v-flex>
     </v-layout>
-    <v-divider />
-    <v-layout column wrap class="dashboard__jobs-list">
-      <v-layout
-        v-for="(item, index) in myJobsAndProposals.items"
-        :key="index"
-        mb-4
-        row
-        justify-start
-      >
-        <v-flex
-          mr-4
-          xs2
-          class="freelancer-card__affair-type"
-          :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"
-        >
-          {{ item.type }}
-        </v-flex>
-        <v-flex class="d-inline-block">
-          <span class="d-inline-block mr-3">
-            {{ item.title }}
-          </span>
-          <span>{{ item.status }}</span>
-        </v-flex>
-      </v-layout>
-    </v-layout>
+
+<!--    <v-layout column wrap class="dashboard__jobs-list">-->
+<!--      <v-layout-->
+<!--        v-for="(item, index) in freelancerFinances.items"-->
+<!--        :key="index"-->
+<!--        mb-4-->
+<!--        row-->
+<!--        justify-start-->
+<!--      >-->
+<!--        <v-flex-->
+<!--          mr-4-->
+<!--          xs2-->
+<!--          class="freelancer-card__affair-type"-->
+<!--          :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"-->
+<!--        >-->
+<!--          {{ item.type }}-->
+<!--        </v-flex>-->
+<!--        <v-flex class="d-inline-block">-->
+<!--          <span class="d-inline-block mr-3">-->
+<!--            {{ item.title }}-->
+<!--          </span>-->
+<!--          <span>{{ item.status }}</span>-->
+<!--        </v-flex>-->
+<!--      </v-layout>-->
+<!--    </v-layout>-->
   </v-layout>
 </template>
 
@@ -66,19 +69,21 @@
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
-  name: 'FreelancerJobAndProposals',
+  name: 'FreelancerFinancesCard',
   mixins: [textTranslations],
   props: {
-    myJobsAndProposals: {
+    freelancerFinances: {
       type: Object,
       default: () => ({
         value1: 0,
         value2: 0,
         items: [
           {
-            type: 'Job',
-            title: 'Some proposal name',
-            status: '1 day left'
+            value1: '$0',
+            value2: '$0',
+            profit: '',
+            point1: '',
+            interval1: ''
           }
         ]
       })
@@ -86,9 +91,12 @@ export default {
     localization: {
       type: Object,
       default: () => ({
-        header: 'My Jobs and Proposals',
+        header: 'Finances',
         description1: '',
-        description2: ''
+        description2: '',
+        button1: '',
+        button2: '',
+        button3: ''
       })
     }
   },

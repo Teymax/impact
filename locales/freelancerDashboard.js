@@ -26,5 +26,13 @@ export default {
     header: 'My Jobs and Proposals',
     description1: 'Current Jobs',
     description2: 'Active Proposals'
+  },
+  financesCard: {
+    header: 'Finances',
+    description1: 'Balance',
+    description2: 'Earned Last Week',
+    button1: 'Withdraw',
+    button2: 'Statistics',
+    button3: 'Profits'
   }
 };
