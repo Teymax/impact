@@ -60,9 +60,6 @@
   }
 }
 
-.freelancer-card {
-}
-
 .v-card__actions.base-card {
   &__action {
     padding-left: rem(36px);
@@ -125,6 +122,16 @@
       align-items: flex-start;
     }
   }
+
+  .freelancer-card {
+    &__left-side {
+      display: none;
+    }
+
+    &__percentage.home-info__percentage {
+      font-size: rem(45px)
+    }
+  }
 }
 
 @media (max-width: $xs) {
@@ -176,5 +183,11 @@
 
   .homepage-btn-container {
     padding: rem(20px) rem(30px) 0 rem(30px)
+  }
+
+  .freelancer-card {
+    &__percentage.home-info__percentage {
+      font-size: rem(39px)
+    }
   }
 }

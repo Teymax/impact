@@ -36,22 +36,38 @@
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <FreelancerBaseCard :freelancerData="jobImpacts" :localization="t('jobsImpactsCard')"
-                                :img="require('@/assets/images/dashboard/freelancer/freelancer-jobs.svg')"/>
+            <FreelancerBaseCard
+              target-component="freelancerCardLeftSide"
+              :freelancer-data="jobImpacts"
+              :localization="t('jobsImpactsCard')"
+              :img="require('@/assets/images/dashboard/freelancer/freelancer-jobs.svg')"
+            />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <FreelancerBaseCard :freelancerData="freelancerRating" :localization="t('ratingCard')"
-                                :img="require('@/assets/images/dashboard/freelancer/freelancer-photo.png')"/>
+            <FreelancerBaseCard
+              target-component="freelancerCardRightSide"
+              :freelancer-data="freelancerRating"
+              :localization="t('ratingCard')"
+              :img="require('@/assets/images/dashboard/freelancer/freelancer-photo.png')"
+            />
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <DashboardMyFreelancers :my-freelancers-list="myFreelancersList" />
+            <DashboardCommunityArticles
+              :localization="t('communityArticles')"
+              :show-freelancers-photo="true"
+              :community-articles-list="communityArticlesList"
+            />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <DashboardCommunityArticles :community-articles-list="communityArticlesList" />
+            <DashboardCommunityArticles
+              :localization="t('communityDiscussions')"
+              :show-freelancers-photo="true"
+              :community-articles-list="communityArticlesList"
+            />
           </v-flex>
         </v-layout>
       </v-flex>
@@ -64,19 +80,18 @@ import { mapState } from 'vuex';
 import DashboardSetupCard from '@/components/dashboard/DashboardSetupCard';
 import FreelancerBaseCard from '@/components/dashboard/freelancer/FreelancerBaseCard';
 import DashboardCommunityArticles from '@/components/dashboard/DashboardCommunityArticles';
-import DashboardMyFreelancers from '@/components/dashboard/DashboardMyFreelancers';
 import textTranslations from '@/mixins/textTranslations';
 
 
 export default {
   name: 'Dashboard',
   components: {
-    DashboardSetupCard, FreelancerBaseCard, DashboardCommunityArticles, DashboardMyFreelancers
+    DashboardSetupCard, FreelancerBaseCard, DashboardCommunityArticles
   },
   mixins: [textTranslations],
   data() {
     return {
-      translationScope: 'freelancerDashboard',
+      translationScope: ['freelancerDashboard'],
       needSetup: true
     };
   },
@@ -93,6 +108,7 @@ export default {
   asyncData({ store }) {
     store.dispatch('freelancerDashboard/fetchJobImpacts');
     store.dispatch('freelancerDashboard/fetchFreelancerRating');
+    store.dispatch('dashboard/fetchCommunityArticles');
   },
   methods: {
     closeSetupCard() {

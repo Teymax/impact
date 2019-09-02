@@ -1,4 +1,5 @@
 export default {
+  dashboardHeader: 'My Dashboard',
   setupCard: {
     cardMessage: 'Set-Up your Profile Today and Get +10 Impacts',
     setupBtn: 'Start Set-Up'
@@ -11,7 +12,14 @@ export default {
   },
   ratingCard: {
     headline1: 'Your rating',
-    description1: '(<span class="azure--text">+2%</span> increase)',
+    description1: 'increase',
+    percentage: '+2%',
     headline2: 'Accepted Proposal Rate'
+  },
+  communityArticles: {
+    sectionHeader: 'Community Articles'
+  },
+  communityDiscussions: {
+    sectionHeader: 'Community Discussions'
   }
 };

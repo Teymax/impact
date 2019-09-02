@@ -29,7 +29,7 @@ export default {
     findNewFreelancers: 'Find New Freelancers'
   },
   communityArticles: {
-    communityArticlesHeader: 'Community Articles',
-    seeAllArticles: 'See All Articles'
+    sectionHeader: 'Community Articles',
+    seeAll: 'See All Articles'
   }
 };

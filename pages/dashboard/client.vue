@@ -50,7 +50,10 @@
             <DashboardMyFreelancers :my-freelancers-list="myFreelancersList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <DashboardCommunityArticles :community-articles-list="communityArticlesList" />
+            <DashboardCommunityArticles
+              :localization="t('communityArticles')"
+              :community-articles-list="communityArticlesList"
+            />
           </v-flex>
         </v-layout>
       </v-flex>
