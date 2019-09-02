@@ -60,6 +60,28 @@
   }
 }
 
+.freelancer-card {
+  &__number-primary {
+    font-size: rem(61px);
+    line-height: rem(73px);
+    color: $darkest-grey;
+  }
+
+  &__affair-type {
+    height: 100%;
+    color: #fff;
+    text-align: center;
+
+    &_job {
+      background-color: $warm-orange;
+    }
+
+    &_proposal {
+      background-color: $azure-tint;
+    }
+  }
+}
+
 .v-card__actions.base-card {
   &__action {
     padding-left: rem(36px);
@@ -128,6 +150,10 @@
       display: none;
     }
 
+    &__number-primary {
+      font-size: rem(45px)
+    }
+
     &__percentage.home-info__percentage {
       font-size: rem(45px)
     }
@@ -188,6 +214,10 @@
   .freelancer-card {
     &__percentage.home-info__percentage {
       font-size: rem(39px)
+    }
+
+    &__number-primary {
+      font-size: rem(30px)
     }
   }
 }

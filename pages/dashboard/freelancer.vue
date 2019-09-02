@@ -35,7 +35,7 @@
       </v-flex>
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
-          <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
+          <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerBaseCard
               target-component="freelancerCardLeftSide"
               :freelancer-data="jobImpacts"
@@ -53,9 +53,25 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex xs12>
+      <v-flex class="dashboard__content-row" xs12>
         <v-layout row wrap align-space-around fill-height>
-          <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
+          <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
+            <FreelancerJobAndProposals
+              :localization="t('myJobsAndProposals')"
+              :my-jobs-and-proposals="myJobsAndProposals"
+            />
+          </v-flex>
+          <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
+            <FreelancerJobAndProposals
+              :localization="t('myJobsAndProposals')"
+              :my-jobs-and-proposals="myJobsAndProposals"
+            />
+          </v-flex>
+        </v-layout>
+      </v-flex>
+      <v-flex class="dashboard__content-row" xs12>
+        <v-layout row wrap align-space-around fill-height>
+          <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardCommunityArticles
               :localization="t('communityArticles')"
               :show-freelancers-photo="true"
@@ -80,13 +96,14 @@ import { mapState } from 'vuex';
 import DashboardSetupCard from '@/components/dashboard/DashboardSetupCard';
 import FreelancerBaseCard from '@/components/dashboard/freelancer/FreelancerBaseCard';
 import DashboardCommunityArticles from '@/components/dashboard/DashboardCommunityArticles';
+import FreelancerJobAndProposals from '@/components/dashboard/freelancer/FreelancerJobAndProposals';
 import textTranslations from '@/mixins/textTranslations';
 
 
 export default {
   name: 'Dashboard',
   components: {
-    DashboardSetupCard, FreelancerBaseCard, DashboardCommunityArticles
+    DashboardSetupCard, FreelancerBaseCard, DashboardCommunityArticles, FreelancerJobAndProposals
   },
   mixins: [textTranslations],
   data() {
@@ -99,15 +116,14 @@ export default {
     ...mapState({
       jobImpacts: state => state.freelancerDashboard.jobImpacts,
       freelancerRating: state => state.freelancerDashboard.freelancerRating,
-      openJobsList: state => state.dashboard.openJobsList,
-      jobsInProgressList: state => state.dashboard.jobsInProgressList,
       communityArticlesList: state => state.dashboard.communityArticlesList,
-      myFreelancersList: state => state.dashboard.myFreelancersList
+      myJobsAndProposals: state => state.freelancerDashboard.myJobsAndProposals
     })
   },
   asyncData({ store }) {
     store.dispatch('freelancerDashboard/fetchJobImpacts');
     store.dispatch('freelancerDashboard/fetchFreelancerRating');
+    store.dispatch('freelancerDashboard/fetchMyJobsAndProposals');
     store.dispatch('dashboard/fetchCommunityArticles');
   },
   methods: {

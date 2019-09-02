@@ -36,7 +36,7 @@
       </v-flex>
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
-          <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
+          <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardOpenJobs :open-jobs-list="openJobsList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
@@ -46,7 +46,7 @@
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap align-space-around fill-height>
-          <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
+          <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardMyFreelancers :my-freelancers-list="myFreelancersList" />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">

@@ -15,7 +15,7 @@
               :max-width="42"
             />
           </v-flex>
-          <v-flex :class="showFreelancersPhoto ? 'xs12' : 'xs10'">
+          <v-flex :class="showFreelancersPhoto ? 'xs10' : 'xs12'">
             <p>
               <span class="dashboard__article-title">{{ item.title }}</span>
               <span class="dashboard__job-new-proposals">{{ item.comments }} + {{ item.new }} </span>

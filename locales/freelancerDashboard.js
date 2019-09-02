@@ -21,5 +21,10 @@ export default {
   },
   communityDiscussions: {
     sectionHeader: 'Community Discussions'
+  },
+  myJobsAndProposals: {
+    header: 'My Jobs and Proposals',
+    description1: 'Current Jobs',
+    description2: 'Active Proposals'
   }
 };

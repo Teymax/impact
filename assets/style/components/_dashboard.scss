@@ -77,7 +77,7 @@
     line-height: rem(24px);
   }
 
-  &__open-jobs-freeelancers {
+  &__open-jobs-freelancers {
     padding-right: rem(26px);
     padding-bottom: 0;
   }
@@ -97,15 +97,11 @@
 
 @media (max-width: $md) {
   .dashboard {
-    //&__container {
-    //  align-items: center;
-    //}
-
     &__icon {
       display: none;
     }
 
-    &__open-jobs-freeelancers {
+    &__open-jobs-freelancers {
       padding-right: rem(15px);
       padding-bottom: 0;
     }
@@ -130,7 +126,7 @@
 
 @media (max-width: $xs) {
   .dashboard {
-    &__open-jobs-freeelancers {
+    &__open-jobs-freelancers {
       padding-right: 0;
       padding-bottom: rem(32px);
     }
