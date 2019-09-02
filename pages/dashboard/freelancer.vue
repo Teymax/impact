@@ -36,12 +36,18 @@
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freeelancers">
-            <FreelancerBaseCard :freelancerData="jobImpacts" :localization="t('jobsImpactsCard')"
-                                :img="require('@/assets/images/dashboard/freelancer/freelancer-jobs.svg')"/>
+            <FreelancerBaseCard
+              :freelancer-data="jobImpacts"
+              :localization="t('jobsImpactsCard')"
+              :img="require('@/assets/images/dashboard/freelancer/freelancer-jobs.svg')"
+            />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
-            <FreelancerBaseCard :freelancerData="freelancerRating" :localization="t('ratingCard')"
-                                :img="require('@/assets/images/dashboard/freelancer/freelancer-photo.png')"/>
+            <FreelancerBaseCard
+              :freelancer-data="freelancerRating"
+              :localization="t('ratingCard')"
+              :img="require('@/assets/images/dashboard/freelancer/freelancer-photo.png')"
+            />
           </v-flex>
         </v-layout>
       </v-flex>

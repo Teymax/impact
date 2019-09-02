@@ -11,7 +11,7 @@ export default {
   },
   ratingCard: {
     headline1: 'Your rating',
-    description1: '(<span class="azure--text">+2%</span> increase)',
+    description1: 'increase',
     headline2: 'Accepted Proposal Rate'
   }
 };

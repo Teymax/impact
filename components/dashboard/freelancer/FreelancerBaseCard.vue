@@ -18,7 +18,8 @@
           <p class="freelancers__freelancer-name base-card__subheader">
             {{ localization.headline1 }}
           </p>
-          <p class="base-card__regular-text" v-html="localization.description1">
+          <p class="base-card__regular-text">
+            (<span class="azure--text">+2%</span> {{ localization.description1 }})
           </p>
         </v-layout>
       </v-layout>
