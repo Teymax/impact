@@ -1,7 +1,7 @@
 <template>
   <v-card class="base-card-shadow base-card-style">
     <v-card-text>
-      <v-layout class="dashboard__container" row wrap align-center px-5>
+      <v-layout class="dashboard__container" row wrap align-center>
         <v-flex xs12>
           <slot name="client" :clientScope="clientScope" />
           <slot name="freelancer" :freelancerScope="freelancerScope" />

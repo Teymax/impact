@@ -6,7 +6,7 @@
       </h4>
     </v-flex>
     <v-layout
-      class="base-card__content base-card__info-row"
+      class="base-card__content pt-4 pb-5"
       row
       wrap
       justify-center
@@ -39,24 +39,22 @@
       <v-layout
         v-for="(item, index) in myJobsAndProposals.items"
         :key="index"
-        mb-4
+        mb-3
         row
+        wrap
         justify-start
+        align-center
       >
-        <v-flex
-          mr-4
-          xs2
-          class="freelancer-card__affair-type"
+        <div
+          class="freelancer-card__affair-type mr-3"
           :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"
         >
           {{ item.type }}
-        </v-flex>
-        <v-flex class="d-inline-block">
-          <span class="d-inline-block mr-3">
-            {{ item.title }}
-          </span>
-          <span>{{ item.status }}</span>
-        </v-flex>
+        </div>
+        <span class="d-inline-block mr-3 freelancer-card__subtitle">
+          {{ item.title }}
+        </span>
+        <span class="d-inline-block freelancer-card__secondary-text">{{ item.status }}</span>
       </v-layout>
     </v-layout>
   </v-layout>

@@ -6,7 +6,7 @@
       </h4>
     </v-flex>
     <v-layout
-      class="base-card__content base-card__info-row"
+      class="base-card__content"
       row
       wrap
       justify-center
@@ -80,13 +80,21 @@
         </v-layout>
       </v-flex>
       <v-flex>
-        <v-sparkline
-          :labels="labels"
-          :value="value"
-          color="#0a91ff"
-          line-width="2"
-          padding="16"
-        />
+        <v-sheet
+          class="v-sheet--offset mx-auto"
+          color="#fff"
+          max-width="100%"
+        >
+          <v-sparkline
+            padding="20"
+            class="sparkline"
+            fill
+            :value="value"
+            :line-width="2"
+            :show-labels="false"
+            :color="'#0a91ff'"
+          />
+        </v-sheet>
       </v-flex>
     </v-layout>
   </v-layout>
@@ -141,14 +149,13 @@ export default {
         '9pm'
       ],
       value: [
-        200,
-        675,
-        410,
-        390,
-        310,
-        460,
-        250,
-        240
+        335,
+        328,
+        345,
+        329,
+        331,
+        326,
+        348
       ]
     };
   },

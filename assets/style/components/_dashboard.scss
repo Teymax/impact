@@ -95,6 +95,16 @@
   }
 }
 
+.sparkline {
+  svg {
+    height: 100%;
+  }
+  path {
+    stroke: $azure;
+    fill: #f6f6f6;
+  }
+}
+
 @media (max-width: $md) {
   .dashboard {
     &__icon {
