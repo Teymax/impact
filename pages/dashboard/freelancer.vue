@@ -101,8 +101,8 @@ export default {
           description: ''
         }
       ],
-      discussionTitle: 'Communities Discussion',
-      articlesTitle: 'Communities Articles',
+      discussionTitle: 'Community Discussion',
+      articlesTitle: 'Community Articles',
       discussionsItems: [
         {
           avatar,
