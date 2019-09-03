@@ -18,7 +18,7 @@
           <v-flex md12 xs3 class="freelancer-card__number-primary">
             {{ myJobsAndProposals.value1 }}
           </v-flex>
-          <v-flex class="freelancers__freelancer-name base-card__subheader">
+          <v-flex class="freelancer-card__title">
             {{ localization.description1 }}
           </v-flex>
         </v-layout>
@@ -28,7 +28,7 @@
           <v-flex md12 xs3 class="freelancer-card__number-primary">
             {{ myJobsAndProposals.value2 }}
           </v-flex>
-          <v-flex md12 class="freelancers__freelancer-name base-card__subheader">
+          <v-flex md12 class="freelancer-card__title">
             {{ localization.description2 }}
           </v-flex>
         </v-layout>
@@ -51,10 +51,10 @@
         >
           {{ item.type }}
         </div>
-        <span class="d-inline-block mr-3 freelancer-card__subtitle">
+        <p class="d-inline-block mr-3 freelancer-card__subtitle mb-0">
           {{ item.title }}
-        </span>
-        <span class="d-inline-block freelancer-card__secondary-text">{{ item.status }}</span>
+          <span class="d-inline-block freelancer-card__secondary-text">{{ item.status }}</span>
+        </p>
       </v-layout>
     </v-layout>
   </v-layout>

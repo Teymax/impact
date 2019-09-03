@@ -8,19 +8,19 @@
     <v-card-text class="base-card__content">
       <v-layout row wrap>
         <v-layout v-for="item in communityArticlesList" :key="item.title" xs12 class="dashboard__articles-row">
-          <v-flex v-if="showFreelancersPhoto" xs2 pr-2>
+          <v-layout v-if="showFreelancersPhoto" xs3 pr-3 flex align-center>
             <v-img
               :src="require('@/assets/images/dashboard/freelancer/' + item.photo)"
               contain
-              :max-width="42"
+              :max-width="40"
             />
-          </v-flex>
-          <v-flex :class="showFreelancersPhoto ? 'xs10' : 'xs12'">
-            <p>
+          </v-layout>
+          <v-layout :class="showFreelancersPhoto ? 'xs9' : 'xs12'" flex align-center>
+            <p class="mb-0">
               <span class="dashboard__article-title">{{ item.title }}</span>
               <span class="dashboard__job-new-proposals">{{ item.comments }} + {{ item.new }} </span>
             </p>
-          </v-flex>
+          </v-layout>
         </v-layout>
       </v-layout>
     </v-card-text>

@@ -4,12 +4,10 @@
     font-weight: bold;
   }
 
-  &__close {
-    &_positioned {
-      position: absolute;
-      top: 0px;
-      right: 13px;
-    }
+  &_close-positioned {
+    position: absolute;
+    top: 0px;
+    right: 13px;
   }
 
   &__setup {
@@ -96,6 +94,9 @@
 }
 
 .sparkline {
+  margin-top: rem(30px);
+  height: 130px;
+
   svg {
     height: 100%;
   }
@@ -145,6 +146,10 @@
       padding-left: 0;
       padding-right: 0;
       padding-bottom: rem(32px);
+    }
+
+    &__article-title {
+      font-size: rem(14px);
     }
   }
 }

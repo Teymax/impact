@@ -7,7 +7,7 @@
           <slot name="freelancer" :freelancerScope="freelancerScope" />
         </v-flex>
         <v-spacer />
-        <v-flex xs1 class="dashboard__close dashboard__close_positioned text-xs-right">
+        <v-flex xs1 class="dashboard_close-positioned text-xs-right">
           <v-icon @click="closeCard">
             close
           </v-icon>

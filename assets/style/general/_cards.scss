@@ -59,12 +59,16 @@
   }
 }
 
-.finances-graph {
-
-}
-
 .freelancer-card {
-  padding: rem(40px);
+  padding: rem(39px) rem(36px);
+
+  &__title {
+    font-size: rem(20px);
+    line-height: rem(24px);
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $darkest-grey;
+  }
 
   &__subtitle {
     font-size: rem(16px);
@@ -77,10 +81,11 @@
     font-size: rem(14px);
     line-height: rem(24px);
     color: $darkest-grey;
+    font-weight: normal;
   }
 
   &__base {
-    padding: rem(50px) rem(30px) rem(50px) rem(30px)
+    padding: rem(50px) rem(30px);
   }
 
   &__number-primary {
@@ -178,11 +183,7 @@
   }
 
   .freelancer-card {
-    &__base {
-      //padding: rem(40px)
-    }
-
-    &__left-side {
+    &__first-section {
       display: none;
     }
 
@@ -252,6 +253,10 @@
 
     &__base {
       padding: rem(25px);
+    }
+
+    &__title {
+      font-size: rem(16px);
     }
 
     &__percentage.home-info__percentage {

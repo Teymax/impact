@@ -1,6 +1,6 @@
 <template>
   <v-layout class="base-card freelancer-card freelancer-card__base">
-    <v-flex xl6 md5 class="freelancer-card__left-side">
+    <v-flex xl6 md5 class="freelancer-card__first-section">
       <v-img
         :src="img"
         contain

@@ -6,7 +6,7 @@
           {{ t('dashboardHeader') }}
         </h4>
       </v-flex>
-      <v-flex xs12 class="dashboard__setup">
+      <v-flex xs12 order-xs1 class="dashboard__setup">
         <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard">
           <template v-slot:freelancer="{ freelancerScope }">
             <v-layout class="py-3" row wrap align-center justify-center>
@@ -33,7 +33,7 @@
           </template>
         </DashboardSetupCard>
       </v-flex>
-      <v-flex xs12 class="dashboard__content-row">
+      <v-flex xs12 order-xs3 order-sm2 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerBaseCard
@@ -53,7 +53,7 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex class="dashboard__content-row" xs12>
+      <v-flex class="dashboard__content-row" xs12 order-xs2 order-sm3>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerJobAndProposals
@@ -69,7 +69,7 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex class="dashboard__content-row" xs12>
+      <v-flex class="dashboard__content-row" xs12 order-xs4>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardCommunityArticles
