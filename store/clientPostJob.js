@@ -15,6 +15,10 @@ export const mutations = {
     state.customQuestions = data;
   },
 
+  UPDATE_ATTACHMENTS(state, data) {
+    state.attachments.push(data);
+  },
+
   CLEAR_NEW_JOB_TERMS_DATA(state, jobType) {
     if (jobType === 'fixed_budget') {
       delete state.newJob.freelancersLevel;
@@ -54,5 +58,6 @@ export const state = () => ({
   newJob: {
     requirements: {}
   },
-  customQuestions: []
+  customQuestions: [],
+  attachments: []
 });

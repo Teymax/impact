@@ -52,13 +52,15 @@ export default {
     this.uppy.use(AwsS3, {
       companionUrl: isDevelopment ? 'http://localhost:3001' : '/'
     });
-    this.uppy.on('upload-success', (file, response) => {
+    this.uppy.on('upload-success', file => {
       const imageData = {
-        file: file.meta.key.match(/^uploads\/(.+)/)[1],
-        filename: file.name,
-        mimeType: file.type,
-        size: file.size,
-        url: response.uploadURL
+        id: file.meta.key.match(/^cache\/(.+)/)[1],
+        storage: 'cache',
+        metadata: {
+          size: file.size,
+          filename: file.name,
+          mime_type: file.type
+        }
       };
       this.$emit('upload-succeed', imageData);
       this.message = this.t('imageUploadSucceed');

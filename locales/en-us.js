@@ -1,3 +1,7 @@
+import postJob from './modules/postJob';
+import dashboard from './dashboard';
+import freelancerDashboard from './freelancerDashboard';
+
 export default {
   navigation: {
     forClients: 'For Clients',
@@ -186,49 +190,11 @@ export default {
     companyType: 'Company Type',
     suggestedActions: 'Suggested Actions'
   },
-  postJob: {
-    detailsStep: 'Job Details',
-    termsStep: 'Job Terms',
-    requirementsStep: 'Requirements',
-    visibilityBoostStep: 'Boost Visibility',
-    previewStep: 'Preview',
-    continue: 'Continue',
-    back: 'Back',
-    useNewJob: 'Create a New Job',
-    usePreviousJob: 'Use a Previous Job',
-    jobCategory: 'Job Category',
-    jobTitle: 'Job Title',
-    jobDescription: 'Job Description',
-    selectPreviousJob: 'Select one of your previous job posts to be used as a template',
-    fixedBudget: 'Fixed Budget',
-    perHour: 'Per Hour',
-    projectdeadlineAt: 'Project Deadline',
-    jobVisibility: 'Job Visibility',
-    visible: 'Visible',
-    hidden: 'Hidden',
-    freelancerLevels: 'Freelancers level',
-    approximateLength: 'Aproximate project length',
-    freelancerRequirements: 'Freelancer Requirements',
-    ratingRequirement: 'Rating more than...',
-    allowedCountries: 'Must be located in...',
-    prohibitedCountries: 'Cannot be located in...',
-    englishProficiency: 'English proficiency is...',
-    skillsRequired: 'Skills Required',
-    visibilityBoost: 'Boost Job Posting Visibiity',
-    visibilityBoostDescription: 'tag and a place at top of a job list 25 impacts',
-    cancel: 'Cancel',
-    jobPreviewTitle: 'Your job posting will look like this:',
-    fixedPriceBudgetButton: 'Fixed Price - $ {budget}',
-    deadlineButton: '{date} Deadline',
-    freelancerLevelButton: '{level} Level',
-    postAJob: 'Post a Job',
-    attachFiles: 'Attach files',
-    chooseCountries: 'Choose Countries',
-    addCustomQuestion: 'Add Custom Question',
-    question: 'Question {number}'
-  },
+  postJob,
   uploads: {
     imageUploadSucceed: 'Image has been successful uploaded',
     imageUploadFailed: 'Your image upload has been failed. Please try again.'
-  }
+  },
+  dashboard,
+  freelancerDashboard
 };

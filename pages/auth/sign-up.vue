@@ -81,7 +81,6 @@
                   solo
                   required
                   color="azure"
-                  data-vv-validate-on="blur"
                 />
               </v-form>
             </v-fade-transition>

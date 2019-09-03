@@ -16,8 +16,7 @@ export const actions = {
     return (status >= 200 && status < 211);
   },
   async createPortfolio(context, payload) {
-    const { freelancerId, ...data } = payload;
-    const { status } = await this.$axios.post('/portfolios', data);
+    const { status } = await this.$axios.post('/portfolios', payload);
 
     return (status >= 200 && status < 211);
   }

@@ -20,6 +20,10 @@
   font-weight: bold;
   color: $darkest-grey;
 
+  &--full-width {
+    width: 100%;
+  }
+
   & .base-input.v-input:not(.v-input--is-disabled) input,
   & .v-select.theme--light .v-select__selections {
     color: $darkest-grey;
@@ -28,4 +32,9 @@
 
 .base-input.error--text ~ .base-input-label {
   color: $red;
+}
+
+.base.v-input.v-input--selection-controls.v-input--radio-group.v-input--radio-group--row
+  > .v-input__control {
+  width: 100%;
 }

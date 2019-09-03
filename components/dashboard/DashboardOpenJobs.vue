@@ -1,53 +1,53 @@
 <template>
-  <v-card class="dashboard__card base-card-shadow">
-    <v-card-title class="dashboard__card-title">
-      <h4 class="dashboard__subheaders primary--text text-no-wrap">
-        Open Jobs and Proposals
+  <v-card class="base-card base-card_default base-card-shadow">
+    <v-card-title class="base-card__title">
+      <h4 class="base-card__header primary--text text-no-wrap">
+        {{ t('openJobs.openJobsHeader') }}
       </h4>
     </v-card-title>
-    <v-card-text class="dashboard__card-content">
+    <v-card-text class="base-card__content">
       <v-layout
         row
         wrap
         justify-center
         align-space-between
         text-xs-center
-        class="dashboard__first-row"
+        class="base-card__info-row"
       >
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="base-card__numbers-count">
               {{ openJobsList.currentJobs }}
             </v-flex>
-            <v-flex class="dashboard__job-subheader">
-              Current Jobs
+            <v-flex class="base-card__subheader">
+              {{ t('openJobs.currentJobs') }}
             </v-flex>
           </v-layout>
         </v-flex>
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="base-card__numbers-count">
               {{ openJobsList.activeProposals }}
             </v-flex>
-            <v-flex class="dashboard__job-subheader">
-              Active Proposals
+            <v-flex md12 class="base-card__subheader">
+              {{ t('openJobs.activeProposals') }}
             </v-flex>
             <v-flex>(<span class="dashboard__job-new-proposals">{{ newProposals }} new</span>)</v-flex>
           </v-layout>
         </v-flex>
         <v-flex lg4 md6 xs12>
           <v-layout row wrap align-center class="text-md-center text-xs-left">
-            <v-flex md12 xs3 class="dashboard__jobs-count">
+            <v-flex md12 sm3 xs2 class="base-card__numbers-count">
               {{ openJobsList.impactsLeft }}
             </v-flex>
-            <v-flex class="dashboard__job-subheader">
-              Impacts Left
+            <v-flex class="base-card__subheader">
+              {{ t('openJobs.impactsLeft') }}
             </v-flex>
           </v-layout>
         </v-flex>
       </v-layout>
       <v-divider />
-      <v-layout row wrap class="dashboard__second-row">
+      <v-layout row wrap class="dashboard__jobs-list">
         <v-flex v-for="item in openJobsList.jobs" :key="item.title" xs12>
           <p>
             <span class="dashboard__job-title">{{ item.title }}</span>
@@ -55,20 +55,25 @@
             <template v-if="item.new > 0">
               (<span class="dashboard__job-new-proposals">{{ `${item.new} new` }}</span>)
             </template>
-            Proposals
+            {{ t('openJobs.proposals') }}
           </p>
         </v-flex>
       </v-layout>
     </v-card-text>
-    <v-card-actions class="dashboard__actions-block">
-      <a class="dashboard__link">All Open Jobs</a>
+    <v-card-actions class="base-card__action">
+      <nuxt-link to="#" class="base-card__link">
+        {{ t('openJobs.allOpenJobs') }}
+      </nuxt-link>
     </v-card-actions>
   </v-card>
 </template>
 
 <script>
+import textTranslations from '@/mixins/textTranslations';
+
 export default {
-  name: 'OpenJobs',
+  name: 'DashboardOpenJobs',
+  mixins: [textTranslations],
   props: {
     openJobsList: {
       type: Object,
@@ -80,6 +85,11 @@ export default {
       })
     }
   },
+  data() {
+    return {
+      translationScope: 'dashboard'
+    };
+  },
   computed: {
     newProposals() {
       return 3;
@@ -87,7 +97,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-</style>

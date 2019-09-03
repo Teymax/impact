@@ -105,6 +105,7 @@ export default {
       return this.portfolioItems.map(item => ({
         id: uuid(),
         type: 'portfolioItem',
+        relationshipNames: ['image'],
         ...item
       }));
     },
@@ -113,10 +114,13 @@ export default {
         id: await uuid(),
         type: 'portfolio',
         portfolioItems: this.portfolioItemsData(),
-        relationshipNames: ['portfolioItems']
+        owner: {
+          id: this.freelancerId,
+          type: 'freelancer'
+        },
+        relationshipNames: ['portfolioItems', 'owner', 'portfolioItems.image']
       };
-      const payload = Object.assign(data, { freelancerId: this.freelancerId });
-      this.createPortfolio(this.serializeData(payload));
+      this.createPortfolio(this.serializeData(data));
     }
   }
 };

@@ -49,26 +49,31 @@ export const actions = {
   fetchCommunityArticles({ commit }) {
     const communityArticlesList = [
       {
+        photo: 'freelancer-photo.png',
         title: 'Best ways to increase your rating?',
         comments: 117,
         new: 2
       },
       {
+        photo: 'freelancer-photo-2.png',
         title: 'How to get your first client as a new freelanc...',
         comments: 100,
         new: 3
       },
       {
+        photo: 'freelancer-photo-3.png',
         title: 'Best positive impact stories so far?',
         comments: 98,
         new: 5
       },
       {
+        photo: 'freelancer-photo-4.png',
         title: 'I need help with some developement issues.',
         comments: 95,
         new: 1
       },
       {
+        photo: 'freelancer-photo-5.png',
         title: 'Social Impact opportunities for a Writer?',
         comments: 80,
         new: 1

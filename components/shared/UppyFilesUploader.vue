@@ -40,20 +40,21 @@ export default {
       inline: true,
       replaceTargetContent: true,
       showProgressDetails: true,
-      width: 400
+      width: '100%',
+      height: 200
     });
     uppy.use(AwsS3, {
       companionUrl: isDevelopment ? 'http://localhost:3001' : '/'
     });
-    uppy.on('upload-success', (file, response) => {
+    uppy.on('upload-success', file => {
       const filesData = {
-        file: file.meta.key.match(/^uploads\/(.+)/)[1],
+        id: file.meta.key.match(/^cache\/(.+)/)[1],
+        storage: 'cache',
         metadata: {
           size: file.size,
           filename: file.name,
           mime_type: file.type
-        },
-        url: response.uploadURL
+        }
       };
       this.$emit('upload-success', filesData);
     });

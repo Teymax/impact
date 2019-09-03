@@ -49,6 +49,8 @@ export default {
     },
     imageSize() {
       switch (this.size) {
+        case 'xxs':
+          return 28;
         case 'xs':
           return 40;
         case 'sm':

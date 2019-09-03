@@ -72,14 +72,13 @@
                       </label>
                       <v-layout row align-baseline>
                         <v-text-field
-                          v-model="form.profilTitle"
+                          v-model="form.title"
                           v-validate="'required|min:2'"
                           :error-messages="errors.collect(t('profileTitle'))"
                           :data-vv-name="t('profileTitle')"
                           class="base-input mt-2"
                           solo
                           required
-                          data-vv-validate-on="blur"
                         />
                         <v-flex shrink>
                           <v-btn depressed fab class="xsmall step__btn-box">
@@ -108,10 +107,11 @@
                         :items="item.content"
                         :error-messages="errors.collect(item.label)"
                         :data-vv-name="item.label"
+                        item-text="name"
+                        item-value="value"
                         class="base-input mt-2"
                         required
                         solo
-                        return-object
                         append-icon="keyboard_arrow_down"
                       />
                     </v-flex>
@@ -216,7 +216,7 @@ export default {
       translationScope: 'setupAccount',
       form: {
         specialization: null,
-        profilTitle: '',
+        title: '',
         location: '',
         englishProficiency: ''
       }
@@ -232,7 +232,7 @@ export default {
         {
           id: 0,
           label: this.t('locationTimezone'),
-          content: ['Kiev, Ukraine(+3 UTC)', 'Wroclaw, Poland(+1 UTC)'],
+          content: [{ name: 'Ukraine', value: 'UA' }, { name: 'Poland', value: 'PL' }],
           model: 'location'
         },
         {
