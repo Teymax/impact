@@ -9,7 +9,7 @@
     </v-flex>
     <v-layout xl6 column md7 xs12 class="freelancer-card__right-side">
       <v-layout class="freelancer-card__row mb-2">
-        <v-flex class="mr-4" xs4>
+        <v-flex class="mr-5 freelancer-card_flex-basis_auto" xs4>
           <p class="home-info__percentage freelancer-card__percentage">
             {{ freelancerData.value1 }}
           </p>
@@ -30,7 +30,7 @@
         </v-layout>
       </v-layout>
       <v-layout class="freelancer-card__row">
-        <v-flex class="mr-4" xs4>
+        <v-flex class="mr-5 freelancer-card_flex-basis_auto" xs4>
           <p class="home-info__percentage freelancer-card__percentage">
             {{ freelancerData.value2 }}
           </p>
