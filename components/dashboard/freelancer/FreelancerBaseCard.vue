@@ -7,43 +7,47 @@
         :max-width="112"
       />
     </v-flex>
-    <v-layout xl6 column md7 xs12 class="freelancer-card__right-side">
-      <v-layout class="freelancer-card__row mb-2">
-        <v-flex class="mr-5 freelancer-card_flex-basis_auto" xs4>
-          <p class="home-info__percentage freelancer-card__percentage">
-            {{ freelancerData.value1 }}
-          </p>
-        </v-flex>
-        <v-layout xs8 column justify-between>
-          <p class="freelancers__freelancer-name base-card__subheader">
-            {{ localization.headline1 }}
-          </p>
-          <p class="base-card__regular-text">
-            <template v-if="targetComponent === 'freelancerCardRightSide'">
-              (<span class="azure--text">{{ localization.percentage }}</span>
-              {{ localization.description1 }})
-            </template>
-            <template v-else>
-              {{ localization.description1 }}
-            </template>
-          </p>
+    <v-layout row wrap xl6 md7 xs12>
+      <v-flex xs12 class="freelancer-card__row mb-2">
+        <v-layout row wrap align-center justify-space-between>
+          <v-flex class="freelancer-card_flex-basis_auto" xs4>
+            <p class="home-info__percentage freelancer-card__percentage my-0">
+              {{ freelancerData.value1 }}
+            </p>
+          </v-flex>
+          <v-flex xs7>
+            <p class="freelancers__freelancer-name base-card__subheader">
+              {{ localization.headline1 }}
+            </p>
+            <p class="base-card__regular-text">
+              <template v-if="targetComponent === 'freelancerCardRightSide'">
+                (<span class="azure--text">{{ localization.percentage }}</span>
+                {{ localization.description1 }})
+              </template>
+              <template v-else>
+                {{ localization.description1 }}
+              </template>
+            </p>
+          </v-flex>
         </v-layout>
-      </v-layout>
-      <v-layout class="freelancer-card__row">
-        <v-flex class="mr-5 freelancer-card_flex-basis_auto" xs4>
-          <p class="home-info__percentage freelancer-card__percentage">
-            {{ freelancerData.value2 }}
-          </p>
-        </v-flex>
-        <v-layout xs8 column justify-between>
-          <p class="freelancers__freelancer-name base-card__subheader">
-            {{ localization.headline2 }}
-          </p>
-          <p class="base-card__regular-text">
-            {{ localization.description2 }}
-          </p>
+      </v-flex>
+      <v-flex xs12>
+        <v-layout row wrap align-center justify-space-between>
+          <v-flex class="freelancer-card_flex-basis_auto" xs4>
+            <p class="home-info__percentage freelancer-card__percentage my-0">
+              {{ freelancerData.value2 }}
+            </p>
+          </v-flex>
+          <v-flex xs7>
+            <p class="freelancers__freelancer-name base-card__subheader">
+              {{ localization.headline2 }}
+            </p>
+            <p class="base-card__regular-text">
+              {{ localization.description2 }}
+            </p>
+          </v-flex>
         </v-layout>
-      </v-layout>
+      </v-flex>
     </v-layout>
   </v-layout>
 </template>

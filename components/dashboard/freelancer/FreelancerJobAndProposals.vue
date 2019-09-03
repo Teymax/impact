@@ -45,16 +45,19 @@
         justify-start
         align-center
       >
-        <div
-          class="freelancer-card__affair-type mr-3"
-          :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"
-        >
-          {{ item.type }}
-        </div>
-        <p class="d-inline-block mr-3 freelancer-card__subtitle mb-0">
+        <v-flex sm3 xs12>
+          <v-flex
+            xs8
+            class="freelancer-card__affair-type mr-3"
+            :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"
+          >
+            {{ item.type }}
+          </v-flex>
+        </v-flex>
+        <v-flex xs12 sm8 class="mr-3 freelancer-card__subtitle mb-0">
           {{ item.title }}
-          <span class="d-inline-block freelancer-card__secondary-text">{{ item.status }}</span>
-        </p>
+          <span class="freelancer-card__secondary-text">{{ item.status }}</span>
+        </v-flex>
       </v-layout>
     </v-layout>
   </v-layout>
