@@ -13,55 +13,82 @@
       align-space-between
       text-xs-center
     >
-      <v-flex md6 xs12>
-        <v-layout row wrap align-center class="text-md-center text-xs-left">
-          <v-flex md12 xs3 class="freelancer-card__number-primary">
+      <v-flex lg6 xs12>
+        <v-layout row wrap align-center justify-center class="text-xs-left text-sm-center">
+          <v-flex sm12 xs5 class="freelancer-card__number-primary">
             {{ freelancerFinances.value1 }}
           </v-flex>
-          <v-flex class="base-card__subheader">
+          <v-flex sm12 xs7 class="freelancers__freelancer-name base-card__subheader">
             {{ localization.description1 }}
+          </v-flex>
+          <v-flex mt-3>
+            <v-btn
+              flat
+              round
+              class="text-none azure base homepage__btn white--text ml-0 hidden-xs-only"
+            >
+              {{ localization.button1 }}
+            </v-btn>
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex md6 xs12>
-        <v-layout row wrap align-center class="text-md-center text-xs-left">
-          <div md12 xs3 class="freelancer-card__number-primary freelancer-card__finances-number_fixed-height">
-            {{ freelancerFinances.value2 }}
+      <v-flex lg6 xs12>
+        <v-layout row wrap align-center justify-center class="text-xs-left text-sm-center">
+          <v-flex
+            class="flex wrap md12 xs5 freelancer-card__number-primary freelancer-card__finances-number_fixed-height
+              freelancer-card_line-height-fix-xs freelancer-card_padding-top-xs_1"
+          >
+            <span>
+              {{ freelancerFinances.value2 }}
+            </span>
             <span class="font-weight-regular subheading">
               (<span class="azure--text font-weight-regular subheading">{{ freelancerFinances.profit }}</span>)
             </span>
-          </div>
-          <v-flex md12 class="base-card__subheader">
+          </v-flex>
+          <v-flex sm12 xs7 class="freelancers__freelancer-name base-card__subheader freelancer-card_line-height-fix-xs">
             {{ localization.description2 }}
           </v-flex>
+          <v-layout
+            flex
+            xs12
+            mt-4
+            pt-2
+            row
+            justify-between
+            class="hidden-xs-only"
+          >
+            <v-flex>
+              <nuxt-link to="#" class="base-card__link d-inline-block">
+                {{ localization.button2 }}
+              </nuxt-link>
+            </v-flex>
+            <v-flex justify-between>
+              <nuxt-link to="#" class="base-card__link d-inline-block">
+                {{ localization.button3 }}
+              </nuxt-link>
+            </v-flex>
+          </v-layout>
+          <v-layout justify-center>
+            <v-btn
+              flat
+              round
+              class="text-none azure base homepage__btn white--text mt-4 hidden-sm-and-up"
+            >
+              {{ localization.button1 }}
+            </v-btn>
+          </v-layout>
         </v-layout>
       </v-flex>
+      <v-flex>
+        <v-sparkline
+          :labels="labels"
+          :value="value"
+          color="#0a91ff"
+          line-width="2"
+          padding="16"
+        />
+      </v-flex>
     </v-layout>
-
-<!--    <v-layout column wrap class="dashboard__jobs-list">-->
-<!--      <v-layout-->
-<!--        v-for="(item, index) in freelancerFinances.items"-->
-<!--        :key="index"-->
-<!--        mb-4-->
-<!--        row-->
-<!--        justify-start-->
-<!--      >-->
-<!--        <v-flex-->
-<!--          mr-4-->
-<!--          xs2-->
-<!--          class="freelancer-card__affair-type"-->
-<!--          :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"-->
-<!--        >-->
-<!--          {{ item.type }}-->
-<!--        </v-flex>-->
-<!--        <v-flex class="d-inline-block">-->
-<!--          <span class="d-inline-block mr-3">-->
-<!--            {{ item.title }}-->
-<!--          </span>-->
-<!--          <span>{{ item.status }}</span>-->
-<!--        </v-flex>-->
-<!--      </v-layout>-->
-<!--    </v-layout>-->
   </v-layout>
 </template>
 
@@ -102,7 +129,27 @@ export default {
   },
   data() {
     return {
-      translationScope: 'freelancerDashboard'
+      translationScope: 'freelancerDashboard',
+      labels: [
+        '12am',
+        '3am',
+        '6am',
+        '9am',
+        '12pm',
+        '3pm',
+        '6pm',
+        '9pm'
+      ],
+      value: [
+        200,
+        675,
+        410,
+        390,
+        310,
+        460,
+        250,
+        240
+      ]
     };
   },
   computed: {

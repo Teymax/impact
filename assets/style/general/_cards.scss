@@ -223,5 +223,13 @@
     &__number-primary {
       font-size: rem(30px)
     }
+
+    &_line-height-fix-xs {
+      line-height: 1;
+    }
+
+    &_padding-top-xs_1 {
+      padding-top: rem(16px)
+    }
   }
 }
