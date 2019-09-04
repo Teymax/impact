@@ -1,0 +1,47 @@
+.jobs-proposal{
+  &--orange-txt{
+    color: $warm-orange;
+  }
+  &--darkest-grey-txt{
+    color: $darkest-grey;
+  }
+  &--azure-txt{
+    color: $azure;
+  }
+  &__count{
+    text-align: center;
+  }
+  &__number{
+    font-size: 61px;
+  }
+  &__number-description{
+    font-size: 20px;
+  }
+  &__block-type{
+    text-align: center;
+    width: 75px;
+    height: 16px;
+    font-size: 11px;
+    color: $white;
+    margin-right: 17px;
+  }
+  &__type-content{
+    color: $darkest-grey;
+    font-size: 16px;
+    font-weight: bold;
+  &--comment{
+    font-size: 14px;
+    font-weight: normal;
+    white-space: nowrap;
+  }
+  }
+  &__list{
+    padding-top: 27px;
+  }
+  &--orange-block{
+    background-color: $warm-orange;
+  }
+  &--azure-tint-block{
+    background-color: $azure-tint;
+  }
+}

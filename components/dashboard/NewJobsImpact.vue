@@ -4,8 +4,8 @@
       <v-img
         :class="{'avatar': isAvatar}"
         :src="img"
-        :height="imgH"
-        :width="imgW"
+        :height="imgHeight"
+        :width="imgWidth"
       ></v-img>
     </v-flex>
     <v-flex xs8>
@@ -41,11 +41,11 @@ export default {
       type: String,
       default: ''
     },
-    imgH: {
+    imgHeight: {
       type: [String, Number],
       default: 0
     },
-    imgW: {
+    imgWidth: {
       type: [String, Number],
       default: 0
     },

@@ -1,5 +1,5 @@
 <template>
-  <v-layout class="dashboard__card base-card-shadow" row wrap align-center justify-center>
+  <v-layout class="dashboard__card base-card-shadow setup-profile" row wrap align-center justify-center>
     <v-flex xs12 sm12 md1 lg1 text-sm-center>
       <v-img
         :src="starImg"

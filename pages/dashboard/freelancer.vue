@@ -11,28 +11,34 @@
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap justify-space-between align-content-space-between>
-          <v-flex xs12 sm12 md5 lg5>
+          <v-flex xs12 sm12 md6 lg6 grow pa-3>
             <new-jobs-impact
               :img="searchJobImg"
-              :img-h="153"
-              :img-w="123"
+              :img-height="153"
+              :img-width="123"
               :info="newJobsInfo"
               :is-avatar="false"
             />
           </v-flex>
-          <v-flex xs12 sm12 md5 lg5>
+          <v-flex xs12 sm12 md6 lg6 grow pa-3>
             <new-jobs-impact
               :img="avatar"
-              :img-h="140"
-              :img-w="140"
+              :img-height="140"
+              :img-width="140"
               :info="rateInfo"
               :is-avatar="true"
             />
           </v-flex>
-          <v-flex xs12 sm12 md5 lg5>
-            dsdsdsdsdsdsdsd
+          <v-flex xs12 sm12 md6 lg6 grow pa-3>
+            <jobs-proposals
+              :jobs-number="0"
+              :proposals-number="0"
+              :jobs-description="'ddddd'"
+              :proposals-description="'ddddddsdsds'"
+              :items="jobsProposalsItems"
+            />
           </v-flex>
-          <v-flex xs12 sm12 md5 lg5>
+          <v-flex xs12 sm12 md6 lg6 grow pa-3>
             dsdsdsdsdsdsdsd
           </v-flex>
         </v-layout>
@@ -62,13 +68,14 @@ import SetupProfile from '@/components/dashboard/SetupProfile';
 import NewJobsImpact from '@/components/dashboard/NewJobsImpact';
 import CommunityDiscussionsArticles from '@/components/dashboard/CommunityDiscussionsArticles';
 import textTranslations from '@/mixins/textTranslations';
+import JobsProposals from '@/components/dashboard/JobsProposals';
 import searchJobImg from '@/assets/images/dashboard/searchJobImg.png';
 import avatar from '@/assets/images/dashboard/avatar.png';
 
 export default {
   name: 'Dashboard',
   components: {
-    SetupProfile, NewJobsImpact, CommunityDiscussionsArticles
+    SetupProfile, NewJobsImpact, CommunityDiscussionsArticles, JobsProposals
   },
   mixins: [textTranslations],
   data: () => (
@@ -137,6 +144,33 @@ export default {
         {
           avatar,
           content: 'LOREEEEEEEEM'
+        }
+      ],
+      jobsProposalsItems: [
+        {
+          type: 'job',
+          content: 'contentsdcnksdcn kjdjcks sdkjk  kjsnckjsnckjscjdsk',
+          lastSeen: '1'
+        },
+        {
+          type: 'proposal',
+          content: 'contentybucbsd dcsdj dscjh sdjcsdj ddd',
+          messagesNum: '1'
+        },
+        {
+          type: 'job',
+          content: 'contentsdcnksdcn kjdjcks sdkjk  kjsnckjsnckjscjdsk',
+          lastSeen: '3'
+        },
+        {
+          type: 'job',
+          content: 'contentsdcnksdcn kjdjcks sdkjk  kjsnckjsnckjscjdsk',
+          lastSeen: '3'
+        },
+        {
+          type: 'proposal',
+          content: 'contentybucbsd dcsdj dscjh sdjcsdj ddd',
+          messagesNum: '12'
         }
       ]
     }
