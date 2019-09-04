@@ -8,6 +8,9 @@
   &--azure-txt{
     color: $azure;
   }
+  &--cart-header{
+    font-size: 25px;
+  }
   &__count{
     text-align: center;
   }
@@ -43,5 +46,9 @@
   }
   &--azure-tint-block{
     background-color: $azure-tint;
+  }
+  &--links{
+    height: 100%;
+    text-align: center;
   }
 }

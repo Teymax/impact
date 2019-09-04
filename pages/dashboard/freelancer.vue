@@ -30,16 +30,22 @@
             />
           </v-flex>
           <v-flex xs12 sm12 md6 lg6 grow pa-3>
-            <jobs-proposals
+            <jobs-proposals-finances
               :jobs-number="0"
               :proposals-number="0"
               :jobs-description="'ddddd'"
               :proposals-description="'ddddddsdsds'"
               :items="jobsProposalsItems"
-            />
+              :title="jobsProposalsTitle"></jobs-proposals-finances>
           </v-flex>
           <v-flex xs12 sm12 md6 lg6 grow pa-3>
-            dsdsdsdsdsdsdsd
+            <jobs-proposals-finances
+              :balance="10"
+              :earned="20"
+              :graph="graph"
+              :jobs-description="'ddddd'"
+              :proposals-description="'ddddddsdsds'"
+              :title="financesTitle"></jobs-proposals-finances>
           </v-flex>
         </v-layout>
       </v-flex>
@@ -68,14 +74,14 @@ import SetupProfile from '@/components/dashboard/SetupProfile';
 import NewJobsImpact from '@/components/dashboard/NewJobsImpact';
 import CommunityDiscussionsArticles from '@/components/dashboard/CommunityDiscussionsArticles';
 import textTranslations from '@/mixins/textTranslations';
-import JobsProposals from '@/components/dashboard/JobsProposals';
+import JobsProposalsFinances from '@/components/dashboard/JobsProposalsFinances';
 import searchJobImg from '@/assets/images/dashboard/searchJobImg.png';
 import avatar from '@/assets/images/dashboard/avatar.png';
 
 export default {
   name: 'Dashboard',
   components: {
-    SetupProfile, NewJobsImpact, CommunityDiscussionsArticles, JobsProposals
+    SetupProfile, NewJobsImpact, CommunityDiscussionsArticles, JobsProposalsFinances
   },
   mixins: [textTranslations],
   data: () => (
@@ -146,6 +152,15 @@ export default {
           content: 'LOREEEEEEEEM'
         }
       ],
+      graph: {
+        fill: true,
+        gradient: ['#F6F6F6'],
+        padding: 8,
+        radius: 0,
+        value: [3, 2, 4, 2, 2.3, 1.5, 4],
+        width: 4
+      },
+      jobsProposalsTitle: 'My Jobs and Proposals',
       jobsProposalsItems: [
         {
           type: 'job',
@@ -172,7 +187,8 @@ export default {
           content: 'contentybucbsd dcsdj dscjh sdjcsdj ddd',
           messagesNum: '12'
         }
-      ]
+      ],
+      financesTitle: 'Finances'
     }
   ),
   methods: {
