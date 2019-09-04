@@ -5,7 +5,7 @@
         <setup-profile @closeSetup="closeSetupCard" />
       </v-flex>
       <v-flex xs12>
-        <h4 class="dashboard__header freelancer__header">
+        <h4 class="dashboard__header freelancer__header text-xs-center text-sm-left">
           My Dashboard
         </h4>
       </v-flex>

@@ -13,8 +13,17 @@
   }
   &__title{
     font-size: 20px;
+    font-weight: bold;
   }
   &__content{
     font-size: 16px;
   }
 }
+@media (max-width: $md) {
+  .new-job-impact {
+    &--num{
+      font-size: 40px;
+    }
+  }
+}
+

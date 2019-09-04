@@ -1,9 +1,20 @@
 .setup-profile{
   position: relative;
-  height: 120px;
+  min-height: 120px;
   &__close-btn{
     position: absolute;
     top: 1%;
     right: 1%;
+  }
+}
+@media (max-width: $xs) {
+  .setup-profile {
+    &--title{
+      font-size: 16px;
+      padding: 20px;
+    }
+    &--btn-txt{
+      font-size: 16px;
+    }
   }
 }
