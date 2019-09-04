@@ -10,7 +10,7 @@
         <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard">
           <template v-slot:freelancer="{ freelancerScope }">
             <v-layout class="py-3" row wrap align-center justify-center>
-              <v-layout class="dashboard__icon" md1 flex justify-end>
+              <v-layout class="hidden-sm-and-below " md1 flex justify-end>
                 <v-img
                   :src="require(`@/assets/images/icons/star.svg`)"
                   contain
@@ -39,7 +39,7 @@
             <FreelancerBaseCard
               target-component="freelancerCardLeftSide"
               :freelancer-data="jobImpacts"
-              :localization="t('jobsImpactsCard')"
+              :localization="jobsImpactsCard"
               :img="require('@/assets/images/dashboard/freelancer/freelancer-jobs.svg')"
             />
           </v-flex>
@@ -47,7 +47,7 @@
             <FreelancerBaseCard
               target-component="freelancerCardRightSide"
               :freelancer-data="freelancerRating"
-              :localization="t('ratingCard')"
+              :localization="ratingCard"
               :img="require('@/assets/images/dashboard/freelancer/freelancer-photo.png')"
             />
           </v-flex>
@@ -57,14 +57,14 @@
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerJobAndProposals
-              :localization="t('myJobsAndProposals')"
+              :localization="myJobsAndProposalsCard"
               :my-jobs-and-proposals="myJobsAndProposals"
             />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
             <FreelancerFinancesCard
               :freelancer-finances="freelancerFinances"
-              :localization="t('financesCard')"
+              :localization="financesCard"
             />
           </v-flex>
         </v-layout>
@@ -73,14 +73,14 @@
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardCommunityArticles
-              :localization="t('communityArticles')"
+              :localization="communityArticles"
               :show-freelancers-photo="true"
               :community-articles-list="communityArticlesList"
             />
           </v-flex>
           <v-flex xs12 sm6 class="dashboard__jobs-in-progress-articles">
             <DashboardCommunityArticles
-              :localization="t('communityDiscussions')"
+              :localization="communityDiscussions"
               :show-freelancers-photo="true"
               :community-articles-list="communityArticlesList"
             />
@@ -124,7 +124,68 @@ export default {
       communityArticlesList: state => state.dashboard.communityArticlesList,
       myJobsAndProposals: state => state.freelancerDashboard.myJobsAndProposals,
       freelancerFinances: state => state.freelancerDashboard.freelancerFinances
-    })
+    }),
+    jobsImpactsCard: {
+      get() {
+        const localization = this.t('jobsImpactsCard');
+        return {
+          headline1: localization.newJobs,
+          description1: localization.jobsWaiting,
+          headline2: localization.impacts,
+          description2: localization.leftForProposals
+        };
+      }
+    },
+    ratingCard: {
+      get() {
+        const localization = this.t('ratingCard');
+        return {
+          headline1: localization.yourRating,
+          description1: localization.increase,
+          percentage: localization.percentage,
+          headline2: localization.acceptedProposalRate
+        };
+      }
+    },
+    communityArticles: {
+      get() {
+        const localization = this.t('communityArticles');
+        return {
+          sectionHeader: localization.communityArticles
+        };
+      }
+    },
+    communityDiscussions: {
+      get() {
+        const localization = this.t('communityDiscussions');
+        return {
+          sectionHeader: localization.communityDiscussions
+        };
+      }
+    },
+    myJobsAndProposalsCard: {
+      get() {
+        const localization = this.t('myJobsAndProposalsCard');
+        return {
+          header: localization.myJobsAndProposals,
+          description1: localization.currentJobs,
+          description2: localization.activeProposals
+        };
+      }
+    },
+    financesCard: {
+      get() {
+        const localization = this.t('financesCard');
+        return {
+          header: localization.myJobsAndProposals,
+          description1: localization.balance,
+          description2: localization.earnedLastWeek,
+          button1: localization.withdraw,
+          button2: localization.statistics,
+          button3: localization.profits
+        };
+      }
+    }
   },
   asyncData({ store }) {
     store.dispatch('freelancerDashboard/fetchJobImpacts');

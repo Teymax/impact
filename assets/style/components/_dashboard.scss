@@ -4,10 +4,10 @@
     font-weight: bold;
   }
 
-  &_close-positioned {
+  &--close-positioned {
     position: absolute;
-    top: 0px;
-    right: 13px;
+    top: 0;
+    right: rem(calc(1% + 15px));
   }
 
   &__setup {
@@ -93,13 +93,14 @@
   }
 }
 
-.sparkline {
+.v-sheet {
   margin-top: rem(30px);
   height: 130px;
 
   svg {
     height: 100%;
   }
+
   path {
     stroke: $azure;
     fill: #f6f6f6;

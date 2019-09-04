@@ -1,5 +1,5 @@
 <template>
-  <v-card class="base-card base-card_default base-card-shadow">
+  <v-card class="base-card base-card--default base-card-shadow">
     <v-card-title class="base-card__title">
       <h4 class="base-card__header primary--text text-no-wrap">
         {{ localization.sectionHeader }}
@@ -10,12 +10,12 @@
         <v-layout v-for="item in communityArticlesList" :key="item.title" xs12 class="dashboard__articles-row">
           <v-layout v-if="showFreelancersPhoto" xs3 pr-3 flex align-center>
             <v-img
-              :src="require('@/assets/images/dashboard/freelancer/' + item.photo)"
+              :src="require(`@/assets/images/dashboard/freelancer/${item.photo}`)"
               contain
               :max-width="40"
             />
           </v-layout>
-          <v-layout :class="showFreelancersPhoto ? 'xs9' : 'xs12'" flex align-center>
+          <v-layout flex align-center :class="showFreelancersPhoto ? 'xs9' : 'xs12'">
             <p class="mb-0">
               <span class="dashboard__article-title">{{ item.title }}</span>
               <span class="dashboard__job-new-proposals">{{ item.comments }} + {{ item.new }} </span>

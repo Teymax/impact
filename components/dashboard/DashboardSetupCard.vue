@@ -1,16 +1,18 @@
 <template>
   <v-card class="base-card-shadow base-card-style">
     <v-card-text>
-      <v-layout class="dashboard__container" row wrap align-center>
+      <v-layout row wrap align-center class="dashboard__container">
         <v-flex xs12>
           <slot name="client" :clientScope="clientScope" />
           <slot name="freelancer" :freelancerScope="freelancerScope" />
         </v-flex>
         <v-spacer />
-        <v-flex xs1 class="dashboard_close-positioned text-xs-right">
-          <v-icon @click="closeCard">
-            close
-          </v-icon>
+        <v-flex xs1 class="dashboard--close-positioned text-xs-right">
+          <v-btn flat small fab>
+            <v-icon @click="closeCard">
+              close
+            </v-icon>
+          </v-btn>
         </v-flex>
       </v-layout>
     </v-card-text>

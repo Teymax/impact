@@ -3,7 +3,7 @@
     <v-flex>
       <avatar size="xs" :img="item.img" />
     </v-flex>
-    <v-flex md8 xs9>
+    <v-flex xs9 md8>
       <p class="freelancers__freelancer-name mb-0">
         {{ item.name }}
       </p>

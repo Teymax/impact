@@ -1,21 +1,23 @@
 <template>
-  <v-layout column class="base-card base-card_default base-card-shadow freelancer-card">
-    <v-flex class="base-card__title" mb-4>
+  <v-layout column class="base-card base-card--default base-card-shadow freelancer-card">
+    <v-flex mb-4 class="base-card__title">
       <h4 class="base-card__header primary--text text-no-wrap">
         {{ localization.header }}
       </h4>
     </v-flex>
     <v-layout
-      class="base-card__content pt-4 pb-5"
       row
       wrap
       justify-center
       align-space-between
       text-xs-center
+      pt-4
+      pb-5
+      class="base-card__content"
     >
-      <v-flex md6 xs12>
+      <v-flex xs12 md6>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
-          <v-flex md12 xs3 class="freelancer-card__number-primary">
+          <v-flex xs3 md12 class="freelancer-card__number-primary">
             {{ myJobsAndProposals.value1 }}
           </v-flex>
           <v-flex class="freelancer-card__title">
@@ -23,9 +25,9 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex md6 xs12>
+      <v-flex xs12 md6>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
-          <v-flex md12 xs3 class="freelancer-card__number-primary">
+          <v-flex xs3 md12 class="freelancer-card__number-primary">
             {{ myJobsAndProposals.value2 }}
           </v-flex>
           <v-flex md12 class="freelancer-card__title">
@@ -37,24 +39,24 @@
     <v-divider />
     <v-layout column wrap class="dashboard__jobs-list">
       <v-layout
-        v-for="(item, index) in myJobsAndProposals.items"
-        :key="index"
+        v-for="item in myJobsAndProposals.items"
+        :key="item.id"
         mb-3
         row
         wrap
         justify-start
         align-center
       >
-        <v-flex sm3 xs12>
+        <v-flex xs12 sm3>
           <v-flex
             xs8
             class="freelancer-card__affair-type mr-3"
-            :class="'freelancer-card__affair-type_' + item.type.toLowerCase()"
+            :class="`freelancer-card__affair-type--${item.type.toLowerCase()}`"
           >
             {{ item.type }}
           </v-flex>
         </v-flex>
-        <v-flex xs12 sm8 class="mr-3 freelancer-card__subtitle mb-0">
+        <v-flex xs12 sm8 mr-3 mb-0 class="freelancer-card__subtitle">
           {{ item.title }}
           <span class="freelancer-card__secondary-text">{{ item.status }}</span>
         </v-flex>
@@ -79,7 +81,8 @@ export default {
           {
             type: 'Job',
             title: 'Some proposal name',
-            status: '1 day left'
+            status: '1 day left',
+            id: 1
           }
         ]
       })

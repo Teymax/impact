@@ -5,16 +5,16 @@ export default {
     setupBtn: 'Start Set-Up'
   },
   jobsImpactsCard: {
-    headline1: 'New Jobs',
-    description1: 'Are Waiting for You',
-    headline2: 'Impacts',
-    description2: 'Left for Your Proposals'
+    newJobs: 'New Jobs',
+    jobsWaiting: 'Are Waiting for You',
+    impacts: 'Impacts',
+    leftForProposals: 'Left for Your Proposals'
   },
   ratingCard: {
-    headline1: 'Your rating',
-    description1: 'increase',
+    yourRating: 'Your rating',
+    increase: 'increase',
     percentage: '+2%',
-    headline2: 'Accepted Proposal Rate'
+    acceptedProposalRate: 'Accepted Proposal Rate'
   },
   communityArticles: {
     sectionHeader: 'Community Articles'
@@ -22,17 +22,17 @@ export default {
   communityDiscussions: {
     sectionHeader: 'Community Discussions'
   },
-  myJobsAndProposals: {
-    header: 'My Jobs and Proposals',
-    description1: 'Current Jobs',
-    description2: 'Active Proposals'
+  myJobsAndProposalsCard: {
+    myJobsAndProposals: 'My Jobs and Proposals',
+    currentJobs: 'Current Jobs',
+    activeProposals: 'Active Proposals'
   },
   financesCard: {
-    header: 'Finances',
-    description1: 'Balance',
-    description2: 'Earned Last Week',
-    button1: 'Withdraw',
-    button2: 'Statistics',
-    button3: 'Profits'
+    finances: 'Finances',
+    balance: 'Balance',
+    earnedLastWeek: 'Earned Last Week',
+    withdraw: 'Withdraw',
+    statistics: 'Statistics',
+    profits: 'Profits'
   }
 };

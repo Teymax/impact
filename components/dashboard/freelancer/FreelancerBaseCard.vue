@@ -1,16 +1,16 @@
 <template>
   <v-layout class="base-card freelancer-card freelancer-card__base">
-    <v-flex xl6 md5 class="freelancer-card__first-section">
+    <v-flex md5 xl6 class="freelancer-card__first-section">
       <v-img
         :src="img"
         contain
         :max-width="112"
       />
     </v-flex>
-    <v-layout row wrap xl6 md7 xs12>
+    <v-layout row wrap xs12 md7 xl6>
       <v-flex xs12 class="freelancer-card__row mb-2">
         <v-layout row wrap align-center justify-space-between>
-          <v-flex class="freelancer-card_flex-basis_auto" xs4>
+          <v-flex xs4 class="freelancer-card--flex-basis_auto">
             <p class="home-info__percentage freelancer-card__percentage my-0">
               {{ freelancerData.value1 }}
             </p>
@@ -33,7 +33,7 @@
       </v-flex>
       <v-flex xs12>
         <v-layout row wrap align-center justify-space-between>
-          <v-flex class="freelancer-card_flex-basis_auto" xs4>
+          <v-flex xs4 class="freelancer-card--flex-basis_auto">
             <p class="home-info__percentage freelancer-card__percentage my-0">
               {{ freelancerData.value2 }}
             </p>

@@ -1,6 +1,6 @@
 <template>
-  <v-layout column class="base-card base-card_default base-card-shadow freelancer-card">
-    <v-flex class="base-card__title" mb-4>
+  <v-layout column class="base-card base-card--default base-card-shadow freelancer-card">
+    <v-flex mb-4 class="base-card__title">
       <h4 class="base-card__header primary--text text-no-wrap">
         {{ localization.header }}
       </h4>
@@ -13,12 +13,12 @@
       align-space-between
       text-xs-center
     >
-      <v-flex lg6 xs12>
+      <v-flex xs12 lg6>
         <v-layout row wrap align-center justify-center class="text-xs-left text-sm-center">
-          <v-flex sm12 xs5 class="freelancer-card__number-primary">
+          <v-flex xs5 sm12 class="freelancer-card__number-primary">
             {{ freelancerFinances.value1 }}
           </v-flex>
-          <v-flex sm12 xs7 class="freelancers__freelancer-name base-card__subheader">
+          <v-flex xs7 sm12 class="freelancers__freelancer-name base-card__subheader">
             {{ localization.description1 }}
           </v-flex>
           <v-flex mt-3>
@@ -32,11 +32,14 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex lg6 xs12>
+      <v-flex xs12 lg6>
         <v-layout row wrap align-center justify-center class="text-xs-left text-sm-center">
           <v-flex
-            class="flex wrap md12 xs5 freelancer-card__number-primary freelancer-card__finances-number_fixed-height
-              freelancer-card_line-height-fix-xs freelancer-card_padding-top-xs_1"
+            wrap
+            xs5
+            md12
+            class="freelancer-card__number-primary freelancer-card__finances-number--fixed-height
+              freelancer-card--line-height-fix-xs freelancer-card--padding-top-xs--1"
           >
             <span>
               {{ freelancerFinances.value2 }}
@@ -45,7 +48,11 @@
               (<span class="azure--text font-weight-regular subheading">{{ freelancerFinances.profit }}</span>)
             </span>
           </v-flex>
-          <v-flex sm12 xs7 class="freelancers__freelancer-name base-card__subheader freelancer-card_line-height-fix-xs">
+          <v-flex
+            xs7
+            sm12
+            class="freelancers__freelancer-name base-card__subheader freelancer-card--line-height-fix-xs"
+          >
             {{ localization.description2 }}
           </v-flex>
           <v-layout
@@ -58,12 +65,12 @@
             class="hidden-xs-only"
           >
             <v-flex>
-              <nuxt-link to="#" class="base-card__link d-inline-block">
+              <nuxt-link to="#" class="base-card__link">
                 {{ localization.button2 }}
               </nuxt-link>
             </v-flex>
             <v-flex justify-between>
-              <nuxt-link to="#" class="base-card__link d-inline-block">
+              <nuxt-link to="#" class="base-card__link">
                 {{ localization.button3 }}
               </nuxt-link>
             </v-flex>
@@ -72,7 +79,8 @@
             <v-btn
               flat
               round
-              class="text-none azure base homepage__btn white--text mt-4 hidden-sm-and-up"
+              mt-4
+              class="text-none azure base homepage__btn white--text hidden-sm-and-up"
             >
               {{ localization.button1 }}
             </v-btn>
@@ -87,12 +95,10 @@
         >
           <v-sparkline
             padding="20"
-            class="sparkline"
-            fill
             :value="value"
             :line-width="2"
             :show-labels="false"
-            :color="'#0a91ff'"
+            color="#0a91ff"
           />
         </v-sheet>
       </v-flex>

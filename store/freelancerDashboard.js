@@ -21,27 +21,32 @@ export const actions = {
         {
           type: 'Job',
           title: 'Some proposal name',
-          status: '1 day left'
+          status: '1 day left',
+          id: 1
         },
         {
           type: 'Proposal',
           title: 'Some proposal name, it can be long',
-          status: '2 new messages'
+          status: '2 new messages',
+          id: 2
         },
         {
           type: 'Proposal',
           title: 'Some proposal name',
-          status: ''
+          status: '',
+          id: 3
         },
         {
           type: 'Job',
           title: 'Some proposal name',
-          status: '1 day left'
+          status: '1 day left',
+          id: 4
         },
         {
           type: 'Proposal',
           title: 'Some proposal name, it can be long',
-          status: '2 new messages'
+          status: '2 new messages',
+          id: 5
         }
       ]
     };
