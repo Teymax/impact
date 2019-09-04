@@ -14,7 +14,9 @@
           </v-list-tile-avatar>
 
           <v-list-tile-content>
-            <v-list-tile-title v-html="item.content" />
+            <v-list-tile-title>
+              {{ item.content }}
+            </v-list-tile-title>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -37,7 +39,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-</style>

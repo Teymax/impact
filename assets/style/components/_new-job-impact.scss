@@ -1,11 +1,14 @@
 .new-job-impact{
   min-height: 250px;
-  &__num{
+  &--num{
     color: $warm-orange;
     font-weight: bold;
     font-size: 61px;
   }
-  &__title, &__content{
+  &--txt-azure{
+    color: $azure;
+  }
+  &--txt-darkest-grey{
     color: $darkest-grey;
   }
   &__title{
@@ -13,11 +16,5 @@
   }
   &__content{
     font-size: 16px;
-  }
-  &__avatar{
-    border-radius: 50%;
-  }
-  &__txt-azure{
-    color: $azure;
   }
 }

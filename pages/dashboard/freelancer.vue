@@ -58,12 +58,12 @@
 </template>
 
 <script>
-import SetupProfile from '../../components/dashboard/SetupProfile';
-import NewJobsImpact from '../../components/dashboard/NewJobsImpact';
-import CommunityDiscussionsArticles from '../../components/dashboard/CommunityDiscussionsArticles';
+import SetupProfile from '@/components/dashboard/SetupProfile';
+import NewJobsImpact from '@/components/dashboard/NewJobsImpact';
+import CommunityDiscussionsArticles from '@/components/dashboard/CommunityDiscussionsArticles';
 import textTranslations from '@/mixins/textTranslations';
-import searchJobImg from '../../assets/images/dashboard/searchJobImg.png';
-import avatar from '../../assets/images/dashboard/avatar.png';
+import searchJobImg from '@/assets/images/dashboard/searchJobImg.png';
+import avatar from '@/assets/images/dashboard/avatar.png';
 
 export default {
   name: 'Dashboard',
@@ -71,8 +71,8 @@ export default {
     SetupProfile, NewJobsImpact, CommunityDiscussionsArticles
   },
   mixins: [textTranslations],
-  data() {
-    return {
+  data: () => (
+    {
       needSetup: true,
       searchJobImg,
       avatar,
@@ -93,7 +93,7 @@ export default {
         {
           number: '93%',
           title: 'YOUR RATING',
-          description: '(<span class="new-job-impact__txt-azure">+2%</span> increase)'
+          description: '(<span class="new-job-impact--txt-azure">+2%</span> increase)'
         },
         {
           number: '56%',
@@ -139,8 +139,8 @@ export default {
           content: 'LOREEEEEEEEM'
         }
       ]
-    };
-  },
+    }
+  ),
   methods: {
     closeSetupCard() {
       this.needSetup = false;
@@ -148,7 +148,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-</style>
