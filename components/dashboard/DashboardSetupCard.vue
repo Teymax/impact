@@ -1,5 +1,5 @@
 <template>
-  <v-card class="base-card-shadow base-card-style">
+  <v-card class="base-card-shadow">
     <v-card-text>
       <v-layout row wrap align-center class="dashboard__container">
         <v-flex xs12>
