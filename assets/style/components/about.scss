@@ -1,0 +1,19 @@
+.about{
+  padding-top: rem(56px);
+  &__header {
+    padding: rem(30px 0 30px);
+    font-size: rem(39px);
+    font-weight: bold;
+    text-align: center;
+  }
+  &__title{
+
+  }
+  &__content{
+    padding: rem(30px);
+    font-size: rem(25px);
+    &--txt:not(:last-child){
+      margin-bottom: rem(60px);
+    }
+  }
+}
