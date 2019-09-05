@@ -1,15 +1,14 @@
 <template>
-  <div class="base-card base-card_default base-card-shadow">
-    <v-layout justify-center align-center>
-      <v-flex xs10>
-        <h2 v-if="header" class="about__header">
+  <div class="about-card base-card base-card_default base-card-shadow">
+    <v-layout row wrap justify-center align-center>
+      <v-flex v-if="header" xs10>
+        <h2 class="about-card__header">
           {{ header }}
         </h2>
-        <h3 v-if="title">
-          {{ title }}
-        </h3>
-        <div v-if="content" class="about__content">
-          <p v-for="contentTxt in content" :key="contentTxt.id" class="about__content--txt">
+      </v-flex>
+      <v-flex xs12>
+        <div v-if="content" class="about-card__content">
+          <p v-for="contentTxt in content" :key="contentTxt.id" class="about-card__content--txt">
             {{ contentTxt }}
           </p>
         </div>
@@ -26,10 +25,6 @@ export default {
       type: String,
       default: ''
     },
-    title: {
-      type: String,
-      default: ''
-    },
     content: {
       type: Array,
       default: () => []
@@ -37,7 +32,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-
-</style>

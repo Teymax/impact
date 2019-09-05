@@ -1,19 +1,40 @@
 .about{
-  padding-top: rem(56px);
-  &__header {
-    padding: rem(30px 0 30px);
-    font-size: rem(39px);
-    font-weight: bold;
-    text-align: center;
-  }
-  &__title{
-
-  }
-  &__content{
-    padding: rem(30px);
-    font-size: rem(25px);
-    &--txt:not(:last-child){
-      margin-bottom: rem(60px);
-    }
-  }
+  padding-top: rem(8px);
+ &-card{
+   padding: rem(64px 60px 64px 60px);
+   &__header {
+     padding: rem(20px 0 40px);
+     font-size: rem(49px);
+     font-weight: bold;
+     text-align: center;
+   }
+   &__title{
+     font-size: rem(39px);
+   }
+   &__content{
+     padding: rem(10px 140px 0px  140px);
+     font-size: rem(25px);
+     line-height: rem(48px);
+     &--txt:not(:last-child){
+       margin-bottom: rem(49px);
+     }
+   }
+ }
+ &-image-card{
+   padding: rem(64px 60px 64px 60px);
+   &__title{
+     padding-bottom: rem(63px);
+     font-size: rem(39px);
+     line-height: rem(47px);
+     color: $black;
+   }
+   &__content{
+     padding: rem(33px 18px 0px  19px);
+     font-size: rem(20px);
+     line-height: rem(40px);
+     &--txt:not(:last-child){
+       margin-bottom: rem(49px);
+     }
+   }
+ }
 }
