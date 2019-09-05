@@ -157,8 +157,8 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex';
-import uuid from 'uuid/v4';
 import textTranslations from '@/mixins/textTranslations';
+import uuid from 'uuid/v4';
 import UppyImageUploader from '@/components/shared/UppyImageUploader';
 
 export default {
