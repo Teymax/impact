@@ -9,13 +9,13 @@
     </div>
     <v-layout row wrap justify-center align-center>
       <v-flex xs11 grow pa-4>
-        <about-card
+        <AboutCard
           :header="aboutWorkImpact.header"
           :content="aboutWorkImpact.content"
         />
       </v-flex>
       <v-flex xs11 grow pa-4>
-        <about-image-card
+        <AboutImageCard
           :title="evolvingWorkforce.title"
           :content="evolvingWorkforce.content"
           :img="evolvingWorkforce.img"
@@ -24,7 +24,7 @@
         />
       </v-flex>
       <v-flex xs11 grow pa-4>
-        <about-image-card
+        <AboutImageCard
           :title="socialEnvironmental.title"
           :content="socialEnvironmental.content"
           :img="socialEnvironmental.img"
@@ -34,7 +34,7 @@
         />
       </v-flex>
       <v-flex xs11 grow pa-4>
-        <about-image-card
+        <AboutImageCard
           :title="bringingTogether.title"
           :content="bringingTogether.content"
           :img="bringingTogether.img"
@@ -70,7 +70,9 @@ import AboutSignUp from '@/components/about/AboutSignUp';
 export default {
   name: 'About',
   components: {
-    AboutCard, AboutImageCard, AboutSignUp
+    AboutCard,
+    AboutImageCard,
+    AboutSignUp
   },
   data() {
     return {

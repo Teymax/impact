@@ -26,8 +26,11 @@
    }
    &__content{
      padding: rem(10px 125px 0px);
-     font-size: rem(25px);
-     line-height: rem(48px);
+     &--txt{
+       font-weight: 300;
+       font-size: rem(25px);
+       line-height: rem(48px);
+     }
      &--txt:not(:last-child){
        margin-bottom: rem(49px);
      }
@@ -51,8 +54,11 @@
    }
    &__content{
      padding: rem(0 17px);
-     font-size: rem(20px);
-     line-height: rem(40px);
+     &--txt{
+       font-weight: 300;
+       font-size: rem(20px);
+       line-height: rem(40px);
+     }
      &--txt:not(:last-child){
        margin-bottom: rem(35px);
      }
@@ -79,21 +85,29 @@
 }
 @media (max-width: $xs) {
   .about {
-    padding-top: rem(8px);
+    padding-top: 0;
+    &__oranle-ellipse{
+      top: rem(370px);
+    }
     &-card {
       margin: 0;
       padding: 0;
       &__header {
         margin: 0;
-        padding: rem(36px 0 0);
+        padding: rem(36px 15px 47px);
         font-size: rem(25px);
       }
       &__content {
-        padding: 0;
-        font-size: rem(16px);
-        line-height: rem(32px);
-
+        padding: rem(0 30px);
+        &--txt{
+          font-size: rem(16px);
+          line-height: rem(32px);
+        }
       }
+    }
+    &-image-card{
+      margin: 0;
+      padding: rem(0 30px);
     }
   }
 }
