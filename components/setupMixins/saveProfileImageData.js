@@ -9,15 +9,16 @@ export default {
     async saveProfileImageData(imageData, ownerId, ownerType) {
       const payload = {
         id: await uuid(),
-        type: 'profile_image',
-        imageData: JSON.stringify(imageData),
+        type: 'image',
+        file: JSON.stringify(imageData),
         owner: {
           id: ownerId,
           type: ownerType
         },
         relationshipNames: ['owner']
       };
-      this.updateProfileImage(this.serializeData(payload));
+      const imageType = { type: 'Avatar' };
+      this.updateProfileImage(this.serializeDataWithCustomAttribute(payload, imageType));
     }
   }
 };

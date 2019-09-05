@@ -92,6 +92,7 @@
         >
           <v-btn
             round
+            flat
             class="azure white--text px-5 text-none base"
             @click="saveData"
           >

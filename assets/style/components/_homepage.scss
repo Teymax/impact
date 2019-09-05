@@ -51,9 +51,10 @@
     }
   }
 
-  // &__btn.theme--light.v-btn:first-of-type {
-  //   margin-right: rem(24px);
-  // }
+  &__category-box {
+    justify-content: space-around;
+    margin-top: rem(36px);
+  }
 
   &__opinion-box {
     position: relative;
@@ -133,6 +134,12 @@
 
 .offer-card {
   border-radius: rem(10px);
+
+  &__avatar-box {
+    justify-content: center;
+    align-items: center;
+    margin-right: rem(32px);
+  }
 
   &__header {
     font-size: rem(21px);
@@ -345,6 +352,12 @@
   }
 
   .offer-card {
+    &__avatar-box {
+      justify-content: start;
+      align-items: center;
+      margin-right: 0;
+    }
+
     &__icon-box {
       margin: rem(0 0 12px 12px);
     }

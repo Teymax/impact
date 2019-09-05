@@ -1,30 +1,39 @@
 <template>
   <v-flex
-    v-resize="onResize"
     xs10
     sm12
     md10
     lg8
-    mt-5
   >
     <v-layout
-      v-if="filteredCategories.length"
+      v-if="categories"
       wrap
-      :justify-space-between="breakpoint.lgAndUp"
-      :justify-center="breakpoint.mdAndDown"
+      class="homepage__category-box"
     >
       <v-btn
-        v-for="category in filteredCategories"
-        :key="category"
         small
         flat
         class="baseGrey--text homepage__category-btn"
         :class="{
-          'active': activeCategory === category
+          'active': !activeCategory
         }"
-        @click="activeCategory = category"
+        @click="fetchPerCategory(null)"
       >
-        {{ category }}
+        {{ t('allCategory') }}
+      </v-btn>
+      <v-btn
+        v-for="category in categories"
+        :key="category.id"
+        small
+        flat
+        round
+        class="baseGrey--text homepage__category-btn"
+        :class="{
+          'active': activeCategory === category.name
+        }"
+        @click="fetchPerCategory(category.name)"
+      >
+        {{ category.name }}
       </v-btn>
       <v-btn
         small
@@ -39,6 +48,7 @@
 </template>
 
 <script>
+import { mapMutations, mapActions } from 'vuex';
 import textTranslations from '@/mixins/textTranslations';
 import watchBreakPoints from '@/mixins/watchBreakPoints';
 
@@ -51,28 +61,28 @@ export default {
       required: true
     },
     categories: {
-      type: Array,
+      type: Object,
       required: true
     }
   },
   data() {
     return {
       translationScope: 'homepage',
-      activeCategory: 'all categories',
+      activeCategory: null,
       categoriesLength: null
     };
   },
-  computed: {
-    filteredCategories() {
-      if (!this.categoriesLength && this.categoriesLength !== 0) return this.categories;
-      return this.categories.slice(0, this.categoriesLength);
-    }
-  },
   methods: {
-    onResize() {
-      if (window.outerWidth > 960) this.categoriesLength = this.categories.length;
-      if (window.outerWidth < 960 && window.outerWidth > 600) this.categoriesLength = 4;
-      if (window.outerWidth < 600) this.categoriesLength = 0;
+    ...mapActions('homepage', ['fetchJobsPerCategory', 'fetchFreelancerPerCategory']),
+    ...mapMutations('homepage', ['TOGGLE_CATEGORY']),
+    fetchPerCategory(category) {
+      this.activeCategory = category;
+      this.TOGGLE_CATEGORY(category);
+      if (this.scope === 'jobs') {
+        this.fetchJobsPerCategory(category);
+      } else {
+        this.fetchFreelancerPerCategory(category);
+      }
     }
   }
 };

@@ -74,6 +74,10 @@
 
   &__divider {
     margin: rem(28px 0 48px 0);
+
+    &--large {
+      margin: rem(48px 0);
+    }
   }
 
   &__input-box {
@@ -142,6 +146,38 @@
     margin-top: rem(8px);
     padding-bottom: rem(8px);
     border-bottom: 1px solid $light-grey;
+  }
+
+  &__combo-input {
+    height: rem(80px);
+
+    &--checkbox {
+      width: rem(196px);
+      margin-right: rem(16px);
+    }
+
+    &__rating {
+      width: rem(120px);
+    }
+  }
+
+  &__custom-question {
+    width: 100%;
+    padding: rem(12px);
+    margin: rem(10px 0);
+    border-radius: rem(8px);
+    border: 1px solid $input-border;
+    color: $darkest-grey;
+  }
+
+  &__boost-container {
+    display: flex;
+    align-items: center;
+    height: rem(100px);
+    padding: rem(36px);
+    margin: rem(24px 0);
+    border-radius: rem(10px);
+    background-color: $lightest-grey;
   }
 }
 
@@ -231,6 +267,11 @@
     &__final-card__icon.v-icon {
       max-width: rem(24px);
       font-size: rem(24px);
+    }
+
+    &__stepper--step.v-stepper__step {
+      margin: 0;
+      padding: rem(16px);
     }
   }
 }

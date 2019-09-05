@@ -50,7 +50,7 @@
                     >
                       {{ t('portfolioTitle') }}
                       <v-text-field
-                        v-model="form.portfolioTitle"
+                        v-model="form.title"
                         v-validate="'required|min:2'"
                         :error-messages="errors.collect(t('portfolioTitle'))"
                         :data-vv-name="t('portfolioTitle')"
@@ -156,8 +156,9 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex';
+import { mapMutations, mapState } from 'vuex';
 import textTranslations from '@/mixins/textTranslations';
+import uuid from 'uuid/v4';
 import UppyImageUploader from '@/components/shared/UppyImageUploader';
 
 export default {
@@ -168,14 +169,15 @@ export default {
       translationScope: 'setupAccount',
       form: {
         speclialization: '',
-        portfolioTitle: '',
+        title: '',
         url: '',
         description: '',
-        imageData: ''
+        image: null
       }
     };
   },
   computed: {
+    ...mapState({ freelancerId: state => state.auth.user.freelancer.id }),
     specializationItems() {
       return ['Design | UX/UI design', 'Developer | front-end', 'Developer | back-end'];
     }
@@ -196,7 +198,12 @@ export default {
       this.$emit('switch-component', 'PortfolioList');
     },
     setImageData(data) {
-      this.form.imageData = data;
+      const imageData = {
+        id: uuid(),
+        type: 'image',
+        file: JSON.stringify(data)
+      };
+      this.form.image = imageData;
     }
   }
 };

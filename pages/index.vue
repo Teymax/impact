@@ -27,12 +27,13 @@ export default {
       translationScope: 'homepage'
     };
   },
-  asyncData({ store }) {
-    store.dispatch('homepage/fetchTestimonials');
-    store.dispatch('homepage/fetchCategories');
-    store.dispatch('homepage/fetchFreelancersCategories');
-    store.dispatch('homepage/fetchJobsPerCategory', 'all');
-    store.dispatch('homepage/fetchFreelancerPerCategory', 'all');
+  async asyncData({ store }) {
+    await store.dispatch('homepage/fetchCategories', { length: 6 });
+    await store.dispatch('homepage/fetchJobsPerCategory');
+    await store.dispatch('homepage/fetchFreelancerPerCategory');
+  },
+  mounted() {
+    this.$store.dispatch('homepage/fetchJobsPerCategory');
   }
 };
 </script>

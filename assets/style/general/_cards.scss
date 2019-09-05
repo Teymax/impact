@@ -1,0 +1,165 @@
+.base-card {
+  width: 100%;
+  height: 100%;
+  padding: rem(40px);
+  box-shadow: $main-shadow;
+  border-radius: rem(10px);
+
+  &_default.v-sheet {
+    border-radius: rem(10px);
+    height: 100%;
+  }
+
+  &__title.v-card__title {
+    padding: rem(39px) rem(36px);
+  }
+
+  &__header {
+    font-weight: bold;
+    font-size: rem(25px);
+    line-height: rem(30px);
+  }
+
+  &__info-row {
+    height: rem(145px);
+  }
+
+  &__numbers-count {
+    font-size: rem(48px);
+    line-height: rem(59px);
+    color: $darkest-grey;
+  }
+
+  &__subheader {
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    align-items: center;
+    text-transform: uppercase;
+    color: $darkest-grey;
+    margin-bottom: 0;
+  }
+  &__content.v-card__text {
+    padding: 0 rem(36px);
+    height: calc(100% - 108px - 92px);
+  }
+  &__link, &__link:visited, &__link:active {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    text-align: center;
+    color: $azure;
+  }
+}
+
+.v-card__actions.base-card {
+  &__action {
+    padding-left: rem(36px);
+    padding-right: rem(36px);
+    padding-bottom: rem(60px);
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: $md) {
+  .base-card {
+    &__header {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(30px);
+    }
+
+    &__subheader {
+      font-weight: bold;
+      font-size: rem(16px);
+      line-height: rem(24px);
+      align-items: center;
+      text-transform: uppercase;
+      color: $darkest-grey;
+      margin-bottom: 0;
+    }
+
+    &__numbers-count {
+      font-size: rem(40px);
+      line-height: rem(59px);
+      color: $darkest-grey;
+    }
+
+    &__info-row {
+      height: rem(300px);
+    }
+
+    &__title.v-card__title {
+      padding: rem(16px);
+    }
+
+    &__content.v-card__text {
+      padding: rem(16px);
+      height: calc(100% - 85px - 92px);
+    }
+
+    &__link, &__link:visited, &__link:active {
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      color: $azure;
+    }
+  }
+  .v-card__actions.base-card {
+    &__action {
+      padding-left: rem(16px);
+      padding-right: rem(16px);
+      padding-bottom: rem(60px);
+      align-items: flex-start;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .base-card {
+    &__subheader {
+      font-weight: bold;
+      font-size: rem(16px);
+      line-height: rem(24px);
+      align-items: center;
+      text-transform: uppercase;
+      color: $darkest-grey;
+      margin-bottom: 0;
+    }
+
+    &__numbers-count {
+      font-size: rem(30px);
+      line-height: rem(59px);
+      color: $darkest-grey;
+    }
+
+    &__info-row {
+      padding-bottom: rem(26px);
+      height: inherit;
+    }
+    &__content.v-card__text {
+      padding: rem(16px) !important;
+      height: auto;
+    }
+    &__link, &__link:visited, &__link:active {
+      margin: 0 auto;
+      padding-bottom: rem(10px);
+      font-weight: bold;
+      font-size: rem(20px);
+      line-height: rem(24px);
+      text-align: center;
+      color: $azure;
+    }
+  }
+
+  .v-card__actions.base-card {
+    &__action {
+      flex-direction: column;
+      padding-left: rem(16px);
+      padding-right: rem(16px);
+      padding-bottom: rem(20px);
+      align-items: flex-start;
+    }
+  }
+}

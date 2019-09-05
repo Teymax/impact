@@ -45,6 +45,10 @@
   border-radius: rem(8px);
 }
 
+.v-btn.v-btn--small.theme--light.xxs {
+  @include SQUARE_SIZE(28px);
+}
+
 // disable hover when no-bg-hover class is added
 .no-bg-hover.v-btn--active:before,
 .no-bg-hover.v-btn:hover:before,

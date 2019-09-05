@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="lightestGrey home-offer__container">
-    <v-layout wrap justify-center class="transparent">
+    <v-layout wrap justify-center>
       <v-flex xs12 text-xs-center>
         <h2 class="home-offer__header">
           {{ t('offerHeader') }}

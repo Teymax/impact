@@ -3,14 +3,14 @@
     <v-layout justify-center wrap>
       <Categories
         scope="freelancers"
-        :categories="allFreelancersCategories"
+        :categories="categories"
       />
       <v-flex xs12 mt-5>
         <v-container fluid>
           <v-layout justify-center wrap>
             <FreelancerOfferComponent
               v-for="offer in freelancersOffers"
-              :key="offer.fullName"
+              :key="offer.id"
               :offer="offer"
             />
           </v-layout>
@@ -40,7 +40,7 @@ export default {
   },
   computed: {
     ...mapState({
-      allFreelancersCategories: state => state.homepage.allFreelancersCategories,
+      categories: state => state.homepage.categories,
       freelancersOffers: state => state.homepage.freelancersOffers
     })
   }

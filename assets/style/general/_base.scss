@@ -27,3 +27,15 @@ a:active {
 .visibility--hidden {
   visibility: hidden;
 }
+
+.uppy-DashboardAddFiles-info {
+  display: none;
+}
+
+.uppy-u-reset.uppy-Dashboard-browse {
+  border-bottom: 2px solid transparent;
+
+  &:hover {
+    border-color: $warm-orange;
+  }
+}
