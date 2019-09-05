@@ -1,12 +1,12 @@
 <template>
-  <div class="about-image-card base-card_default base-card-shadow">
-    <v-layout row wrap justify-center align-center>
+  <div class="about-image-card base-card base-card-shadow">
+    <v-layout :reverse="isReverse" row wrap justify-center align-center>
       <v-flex v-if="img" xs6>
         <v-img
           :src="img"
           :height="imgHeight"
           :width="imgWidth"
-          class=""></v-img>
+          class="about-image-card__img"></v-img>
       </v-flex>
       <v-flex xs6>
         <div v-if="content" class="about-image-card__content">
@@ -17,6 +17,11 @@
             {{ contentTxt }}
           </p>
         </div>
+      </v-flex>
+      <v-flex xs12>
+        <p v-if="description" class="about-image-card__description">
+          {{ description }}
+        </p>
       </v-flex>
     </v-layout>
   </div>
@@ -42,9 +47,17 @@ export default {
       type: [String, Number],
       default: 0
     },
+    isReverse: {
+      type: Boolean,
+      default: false
+    },
     content: {
       type: Array,
       default: () => []
+    },
+    description: {
+      type: String,
+      default: ''
     }
   }
 };

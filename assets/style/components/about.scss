@@ -8,11 +8,8 @@
      font-weight: bold;
      text-align: center;
    }
-   &__title{
-     font-size: rem(39px);
-   }
    &__content{
-     padding: rem(10px 140px 0px  140px);
+     padding: rem(10px 125px 0px);
      font-size: rem(25px);
      line-height: rem(48px);
      &--txt:not(:last-child){
@@ -22,19 +19,29 @@
  }
  &-image-card{
    padding: rem(64px 60px 64px 60px);
+   &__img{
+     margin: auto;
+     top: rem(50px);
+   }
    &__title{
-     padding-bottom: rem(63px);
+     padding: rem(64px 0);
      font-size: rem(39px);
      line-height: rem(47px);
      color: $black;
    }
    &__content{
-     padding: rem(33px 18px 0px  19px);
+     padding: rem(0 17px);
      font-size: rem(20px);
      line-height: rem(40px);
      &--txt:not(:last-child){
-       margin-bottom: rem(49px);
+       margin-bottom: rem(35px);
      }
+   }
+   &__description{
+     margin-top: rem(78px);
+     text-align: center;
+     color: $warm-orange;
+     font-size: rem(31px);
    }
  }
 }
