@@ -1,16 +1,17 @@
 <template>
   <div class="about-image-card base-card base-card-shadow">
     <v-layout :reverse="isReverse" row wrap justify-center align-center>
-      <v-flex v-if="img" xs6>
+      <v-flex v-if="img" xs12 sm12 md6 lg6>
         <v-img
           :src="img"
           :height="imgHeight"
           :width="imgWidth"
-          class="about-image-card__img"></v-img>
+          class="about-image-card__img"
+        />
       </v-flex>
-      <v-flex xs6>
+      <v-flex xs12 sm12 md6 lg6>
         <div v-if="content" class="about-image-card__content">
-          <h3 v-if="title" class="about-image-card__title">
+          <h3 v-if="title" class="about-image-card__title text-xs-center text-md-left">
             {{ title }}
           </h3>
           <p v-for="contentTxt in content" :key="contentTxt.id" class="about-image-card__content--txt">

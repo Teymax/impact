@@ -1,19 +1,22 @@
 <template>
   <div class="about-sign-up">
-    <v-layout>
+    <v-layout column wrap justify-center align-center>
       <v-flex xs12>
-        <h2>{{ title }}</h2>
+        <h2 class="about-sign-up__title text-xs-center">
+          {{ title }}
+        </h2>
       </v-flex>
       <v-flex xs12>
-        <v-btn
-          v-for="btn in switchBtns"
-          :key="btn.id"
-          flat
-          :outline="btn.value !== activeTab"
-          class="mx-0 base toggle mt-5 homepage__btn homepage__toggle-btn text-capitalize azure--text"
-        >
-          Sign Up
-        </v-btn>
+        <div class="about-sign-up__btn">
+          <v-btn
+            class="azure base white--text mt-4 font-weight-bold text-capitalize"
+            round
+          >
+            <span class="about-sign-up__btn-txt">
+              Sign Up
+            </span>
+          </v-btn>
+        </div>
       </v-flex>
     </v-layout>
   </div>

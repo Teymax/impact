@@ -1,5 +1,12 @@
 <template>
   <div class="about">
+    <div class="about__oranle-ellipse">
+      <v-img
+        :src="require('@/assets/images/about/orangeEllipse.png')"
+        :height="494"
+        :width="403"
+      />
+    </div>
     <v-layout row wrap justify-center align-center>
       <v-flex xs11 grow pa-4>
         <about-card
@@ -13,7 +20,8 @@
           :content="evolvingWorkforce.content"
           :img="evolvingWorkforce.img"
           :img-height="342"
-          :img-width="440"></about-image-card>
+          :img-width="440"
+        />
       </v-flex>
       <v-flex xs11 grow pa-4>
         <about-image-card
@@ -22,7 +30,8 @@
           :img="socialEnvironmental.img"
           :img-height="363"
           :img-width="479"
-          :is-reverse="true"></about-image-card>
+          :is-reverse="true"
+        />
       </v-flex>
       <v-flex xs11 grow pa-4>
         <about-image-card
@@ -31,12 +40,22 @@
           :img="bringingTogether.img"
           :img-height="415"
           :img-width="415"
-          :description="bringingTogether.description"></about-image-card>
+          :description="bringingTogether.description"
+        />
       </v-flex>
       <v-flex xs11 grow pa-4>
-        <about-sign-up></about-sign-up>
+        <about-sign-up
+          :title="signUpTitle"
+        />
       </v-flex>
     </v-layout>
+    <div class="about__blue-ellipse hidden-sm-and-down">
+      <v-img
+        :src="require('@/assets/images/about/blueEllipse.png')"
+        :height="292"
+        :width="233"
+      />
+    </div>
   </div>
 </template>
 
@@ -87,7 +106,8 @@ export default {
           'The Work for Impact platform is designed to connect this workforce with impactful organizations. We believe that by pairing the right people with the right project, we can start fostering positive change throughout the world.'
         ],
         description: 'Remember, when we all work together anything is possible.'
-      }
+      },
+      signUpTitle: 'Sign up as a client or freelancer today'
     };
   }
 };
