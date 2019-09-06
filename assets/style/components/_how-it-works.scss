@@ -3,21 +3,41 @@
   overflow: hidden;
   position: relative;
   &__oranle-ellipse {
-    &--top, &--middle, &--bottom{
-      position: absolute;
-      z-index: 0;
-    }
-    &--top{
-      right: rem(-695px);
-      top: rem(-565px);
-    }
-    &--middle{
-      left: rem(-940px);
-      top: rem(1690px);
-    }
-    &--bottom{
-      right: rem(-700px);
-      top: rem(4070px);
+   &-big {
+     &--top, &--middle, &--bottom{
+       position: absolute;
+       z-index: 0;
+     }
+     &--top{
+       right: rem(-695px);
+       top: rem(-565px);
+     }
+     &--middle{
+       left: rem(-940px);
+       top: rem(1690px);
+     }
+     &--bottom{
+       right: rem(-700px);
+       top: rem(4070px);
+     }
+   }
+    &-small {
+      &--top, &--middle, &--bottom{
+        position: absolute;
+        z-index: 0;
+      }
+      &--top{
+        right: rem(-265px);
+        top: rem(-75px);
+      }
+      &--middle{
+        left: rem(-690px);
+        top: rem(2535px);
+      }
+      &--bottom{
+        right: rem(-260px);
+        top: rem(6015px);
+      }
     }
   }
   &-card {
@@ -61,14 +81,17 @@
 }
 @media (max-width: $xs){
   .how-it-works {
+    padding: rem(8px 0 96px);
     &__oranle-ellipse {
       &--top, &--middle, &--bottom{
         position: absolute;
         z-index: 0;
       }
       &--top{
-        right: rem(-695px);
-        top: rem(-565px);
+        right: rem(-261px);
+        top: rem(-26px);
+        height: rem(496px);
+        width: rem(496px);
       }
       &--middle{
         left: rem(-940px);

@@ -1,6 +1,6 @@
 <template>
   <div class="how-it-works">
-    <div class="how-it-works__oranle-ellipse--top">
+    <div class="hidden-sm-and-down how-it-works__oranle-ellipse-big--top">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
         :height="1354"
@@ -9,7 +9,7 @@
         :min-width="496"
       />
     </div>
-    <div class="how-it-works__oranle-ellipse--middle">
+    <div class="hidden-sm-and-down how-it-works__oranle-ellipse-big--middle">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
         :height="1771"
@@ -18,13 +18,35 @@
         :min-width="496"
       />
     </div>
-    <div class="how-it-works__oranle-ellipse--bottom">
+    <div class="hidden-sm-and-down how-it-works__oranle-ellipse-big--bottom">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
         :height="1354"
-        :width="1368"
+        :width="1371"
         :min-height="496"
         :min-width="496"
+      />
+    </div>
+
+    <div class="hidden-md-and-up how-it-works__oranle-ellipse-small--top">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="496"
+        :width="502"
+      />
+    </div>
+    <div class="hidden-md-and-up how-it-works__oranle-ellipse-small--middle">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="824"
+        :width="889"
+      />
+    </div>
+    <div class="hidden-md-and-up how-it-works__oranle-ellipse-small--bottom">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="496"
+        :width="502"
       />
     </div>
     <v-layout row wrap justify-center align-center>
