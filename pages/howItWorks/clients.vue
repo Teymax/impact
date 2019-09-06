@@ -1,7 +1,34 @@
 <template>
   <div class="how-it-works">
+    <div class="how-it-works__oranle-ellipse--top">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="1354"
+        :width="1368"
+        :min-height="496"
+        :min-width="496"
+      />
+    </div>
+    <div class="how-it-works__oranle-ellipse--middle">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="1771"
+        :width="1797"
+        :min-height="496"
+        :min-width="496"
+      />
+    </div>
+    <div class="how-it-works__oranle-ellipse--bottom">
+      <v-img
+        :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
+        :height="1354"
+        :width="1368"
+        :min-height="496"
+        :min-width="496"
+      />
+    </div>
     <v-layout row wrap justify-center align-center>
-      <v-flex xs11 grow pa-4>
+      <v-flex xs11 grow pa-4 class="text-lg-center text-xs-center">
         <TopCard
           :header="howItWorksC.header"
           :content="howItWorksC.content"

@@ -1,5 +1,29 @@
 .how-it-works {
+  padding: rem(8px 0 168px);
+  overflow: hidden;
+  position: relative;
+  &__oranle-ellipse {
+    &--top, &--middle, &--bottom{
+      position: absolute;
+      z-index: 0;
+    }
+    &--top{
+      right: rem(-695px);
+      top: rem(-565px);
+    }
+    &--middle{
+      left: rem(-940px);
+      top: rem(1690px);
+    }
+    &--bottom{
+      right: rem(-700px);
+      top: rem(4070px);
+    }
+  }
   &-card {
+    position: relative;
+    z-index: 1;
+    background: #fff;
     padding: rem(60px);
     &__header, &__description{
       text-align: center;
@@ -18,9 +42,13 @@
     }
     &__content{
       padding: rem(0 20px);
+      &--title{
+        font-weight: 600;
+      }
       &--txt{
         font-size: rem(20px);
         line-height: rem(40px);
+        font-weight: 300;
       }
       &--txt:not(:last-child) {
         margin-bottom: rem(35px);
@@ -28,6 +56,90 @@
     }
     &__img {
       margin: auto;
+    }
+  }
+}
+@media (max-width: $xs){
+  .how-it-works {
+    &__oranle-ellipse {
+      &--top, &--middle, &--bottom{
+        position: absolute;
+        z-index: 0;
+      }
+      &--top{
+        right: rem(-695px);
+        top: rem(-565px);
+      }
+      &--middle{
+        left: rem(-940px);
+        top: rem(1690px);
+      }
+      &--bottom{
+        right: rem(-700px);
+        top: rem(4070px);
+      }
+    }
+    &-card {
+      padding: rem(40px 30px);
+      &__header{
+        padding: rem(0 0 32px);
+        font-size: rem(25px);
+        line-height: rem(40px);
+      }
+      &__description{
+        padding: rem(0);
+        font-size: rem(18px);
+        line-height: rem(32px);
+      }
+      &__content{
+        padding: 0;
+        &--title{
+          width: rem(100%);
+          display: block;
+        }
+        &--txt{
+          font-size: rem(16px);
+          line-height: rem(32px);
+        }
+        &--txt:not(:last-child) {
+          margin-bottom: rem(30px);
+        }
+      }
+      &__img{
+        margin: rem(25px auto);
+      }
+    }
+  }
+}
+@media (min-width: $xs) and (max-width: $md){
+  .how-it-works {
+    &__oranle-ellipse {
+      &--top, &--middle, &--bottom{
+        position: absolute;
+        z-index: 0;
+      }
+      &--top{
+        right: rem(-695px);
+        top: rem(-565px);
+      }
+      &--middle{
+        left: rem(-940px);
+        top: rem(1690px);
+      }
+      &--bottom{
+        right: rem(-700px);
+        top: rem(4070px);
+      }
+    }
+    &-card {
+      &__description{
+        padding: rem(20px);
+        font-size: rem(31px);
+        line-height: rem(48px);
+      }
+      &__img{
+        margin: rem(10px auto);
+      }
     }
   }
 }

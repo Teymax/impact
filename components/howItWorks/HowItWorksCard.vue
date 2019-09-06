@@ -20,7 +20,8 @@
       <v-flex xs12 sm12 md12 lg6>
         <div v-if="content" class="how-it-works-card__content">
           <p v-for="contentItem in content" :key="contentItem.id" class="how-it-works-card__content--txt">
-            <span class="primary--text">{{ contentItem.title }}</span> {{ contentItem.text }}
+            <span class="primary--text how-it-works-card__content--title">
+              {{ contentItem.title }}</span> {{ contentItem.text }}
           </p>
         </div>
       </v-flex>
