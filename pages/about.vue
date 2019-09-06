@@ -3,13 +3,13 @@
     <div class="about__oranle-ellipse">
       <v-img
         :src="require('@/assets/images/about/orangeEllipse.png')"
-        :height="494"
-        :width="403"
+        :height="496"
+        :width="496"
       />
     </div>
     <v-layout row wrap justify-center align-center>
       <v-flex xs11 grow pa-4>
-        <AboutCard
+        <TopCard
           :header="aboutWorkImpact.header"
           :content="aboutWorkImpact.content"
         />
@@ -63,14 +63,14 @@
 import evolvingImg from '@/assets/images/about/evolvingImg.png';
 import wild from '@/assets/images/about/wild.png';
 import multiCircle from '@/assets/images/about/multiCircle.png';
-import AboutCard from '@/components/about/AboutCard';
+import TopCard from '@/components/general/TopCard';
 import AboutImageCard from '@/components/about/AboutImageCard';
 import AboutSignUp from '@/components/about/AboutSignUp';
 
 export default {
   name: 'About',
   components: {
-    AboutCard,
+    TopCard,
     AboutImageCard,
     AboutSignUp
   },
