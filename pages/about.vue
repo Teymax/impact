@@ -44,7 +44,7 @@
         />
       </v-flex>
       <v-flex xs11 grow pa-4>
-        <about-sign-up
+        <AboutSignUp
           :title="signUpTitle"
         />
       </v-flex>
