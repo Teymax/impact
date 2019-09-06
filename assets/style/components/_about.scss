@@ -1,93 +1,95 @@
-.about{
+.about {
   padding-top: rem(8px);
-  &__oranle-ellipse{
+  overflow-x: hidden;
+  &__oranle-ellipse {
     position: absolute;
     left: 0;
     top: rem(270px);
     z-index: 0;
   }
-  &__blue-ellipse{
+  &__blue-ellipse {
     position: absolute;
     right: rem(-10px);
     bottom: rem(302px);
     z-index: 0;
   }
- &-card{
-   margin: rem(24px 0);
-   padding: rem(64px 60px);
-   position: relative;
-   z-index: 1;
-   background-color: #fff;
-   &__header {
-     padding: rem(20px 0 40px);
-     font-size: rem(49px);
-     font-weight: bold;
-     text-align: center;
-   }
-   &__content{
-     padding: rem(10px 125px 0px);
-     &--txt{
-       font-weight: 300;
-       font-size: rem(25px);
-       line-height: rem(48px);
-     }
-     &--txt:not(:last-child){
-       margin-bottom: rem(49px);
-     }
-   }
- }
- &-image-card{
-   margin: rem(24px 0);
-   position: relative;
-   z-index: 1;
-   background-color: #fff;
-   padding: rem(64px 60px);
-   &__img{
-     margin: auto;
-     top: rem(50px);
-   }
-   &__title{
-     padding: rem(64px 0);
-     font-size: rem(39px);
-     line-height: rem(47px);
-     color: $black;
-   }
-   &__content{
-     padding: rem(0 17px);
-     &--txt{
-       font-weight: 300;
-       font-size: rem(20px);
-       line-height: rem(40px);
-     }
-     &--txt:not(:last-child){
-       margin-bottom: rem(35px);
-     }
-   }
-   &__description{
-     margin-top: rem(46px);
-     text-align: center;
-     color: $warm-orange;
-     font-size: rem(31px);
-   }
- }
- &-sign-up{
-   &__title{
-     padding: rem(33px 0 10px);
-     font-size: rem(39px);
-   }
-   &__btn{
-     margin-bottom: rem(165px);
-   }
-   &__btn-txt{
-     padding: rem(0 46px);
-   }
- }
+  &-card {
+    margin: rem(24px 0);
+    padding: rem(64px 60px);
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    &__header {
+      padding: rem(20px 0 40px);
+      font-size: rem(49px);
+      font-weight: bold;
+      text-align: center;
+    }
+    &__content {
+      padding: rem(10px 125px 0px);
+      &--txt {
+        font-weight: 300;
+        font-size: rem(25px);
+        line-height: rem(48px);
+      }
+      &--txt:not(:last-child) {
+        margin-bottom: rem(49px);
+      }
+    }
+  }
+  &-image-card {
+    margin: rem(24px 0);
+    position: relative;
+    z-index: 1;
+    background-color: #fff;
+    padding: rem(64px 60px);
+    &__img {
+      top: rem(50px);
+      margin: auto;
+    }
+    &__title {
+      padding: rem(64px 0);
+      font-size: rem(39px);
+      line-height: rem(47px);
+      color: $black;
+    }
+    &__content {
+      padding: rem(0 17px);
+      &--txt {
+        font-weight: 300;
+        font-size: rem(20px);
+        line-height: rem(40px);
+      }
+      &--txt:not(:last-child) {
+        margin-bottom: rem(35px);
+      }
+    }
+    &__description {
+      margin-top: rem(46px);
+      text-align: center;
+      color: $warm-orange;
+      font-size: rem(31px);
+    }
+  }
+  &-sign-up {
+    &__title {
+      padding: rem(33px 0 10px);
+      font-size: rem(39px);
+    }
+    &__btn {
+      margin-bottom: rem(165px);
+    }
+    &__btn-txt {
+      padding: rem(0 46px);
+    }
+  }
 }
+
 @media (max-width: $xs) {
   .about {
     padding-top: 0;
-    &__oranle-ellipse{
-      top: rem(370px);
+    &__oranle-ellipse {
+      top: rem(305px);
     }
     &-card {
       margin: 0;
@@ -99,15 +101,60 @@
       }
       &__content {
         padding: rem(0 30px);
-        &--txt{
+        &--txt {
+          font-size: rem(16px);
+          line-height: rem(32px);
+        }
+        &--txt:not(:last-child) {
+          margin-bottom: rem(25px);
+        }
+      }
+    }
+    &-image-card {
+      padding: rem(0 20px);
+      &__img {
+        top: 0;
+        margin: rem(32px 20px);
+      }
+      &__title {
+        margin: rem(5px 0 30px);
+        padding: rem(0 20px);
+        font-size: rem(25px);
+        line-height: rem(30px);
+      }
+      &__content {
+        padding: 0;
+        &--txt {
           font-size: rem(16px);
           line-height: rem(32px);
         }
       }
+      &__description {
+        margin: rem(34px 0 50px);
+        font-size: rem(16px);
+      }
+    }
+    &-sign-up {
+      &__title {
+        font-size: rem(20px);
+      }
+      &__btn-txt {
+        font-size: rem(20px);
+      }
+    }
+  }
+}
+@media (max-width: $sm){
+  .about{
+    &-card{
+      &__content{
+        padding: rem(0 17px);
+      }
     }
     &-image-card{
-      margin: 0;
-      padding: rem(0 30px);
+      &__img {
+        top: 0;
+      }
     }
   }
 }
