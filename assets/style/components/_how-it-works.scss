@@ -1,5 +1,33 @@
 .how-it-works {
-  &-image-card {
-
+  &-card {
+    padding: rem(60px);
+    &__header, &__description{
+      text-align: center;
+    }
+    &__header{
+      padding: rem(0 40px 32px);
+      font-size: rem(39px);
+      line-height: rem(47px);
+    }
+    &__description{
+      padding: rem(20px 220px);
+      font-style: italic;
+      font-weight: 300;
+      font-size: rem(31px);
+      line-height: rem(48px);
+    }
+    &__content{
+      padding: rem(0 20px);
+      &--txt{
+        font-size: rem(20px);
+        line-height: rem(40px);
+      }
+      &--txt:not(:last-child) {
+        margin-bottom: rem(35px);
+      }
+    }
+    &__img {
+      margin: auto;
+    }
   }
 }
