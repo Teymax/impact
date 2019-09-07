@@ -13,7 +13,7 @@
             round
           >
             <span class="about-sign-up__btn-txt">
-              Sign Up
+              {{ btnText }}
             </span>
           </v-btn>
         </div>
@@ -27,6 +27,10 @@ export default {
   name: 'AboutSignUp',
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    btnText: {
       type: String,
       default: ''
     }

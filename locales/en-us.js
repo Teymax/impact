@@ -1,5 +1,7 @@
 import postJob from './modules/postJob';
 import dashboard from './dashboard';
+import about from './about';
+import howItWorks from './howItWorks';
 
 export default {
   navigation: {
@@ -195,5 +197,7 @@ export default {
     imageUploadSucceed: 'Image has been successful uploaded',
     imageUploadFailed: 'Your image upload has been failed. Please try again.'
   },
-  dashboard
+  dashboard,
+  about,
+  howItWorks
 };
