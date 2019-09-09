@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <div class="about__oranle-ellipse">
+    <div class="about__orange-ellipse">
       <v-img
         :src="require('@/assets/images/about/orangeEllipse.png')"
         :height="496"

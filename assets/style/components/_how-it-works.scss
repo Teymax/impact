@@ -2,7 +2,7 @@
   padding: rem(8px 0 168px);
   overflow: hidden;
   position: relative;
-  &__oranle-ellipse {
+  &__orange-ellipse {
    &-big {
      &--top, &--middle, &--bottom{
        position: absolute;
@@ -82,7 +82,7 @@
 @media (max-width: $xs){
   .how-it-works {
     padding: rem(8px 0 96px);
-    &__oranle-ellipse {
+    &__orange-ellipse {
       &--top, &--middle, &--bottom{
         position: absolute;
         z-index: 0;
@@ -136,7 +136,7 @@
 }
 @media (min-width: $xs) and (max-width: $md){
   .how-it-works {
-    &__oranle-ellipse {
+    &__orange-ellipse {
       &--top, &--middle, &--bottom{
         position: absolute;
         z-index: 0;

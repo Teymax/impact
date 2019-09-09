@@ -1,7 +1,7 @@
 .about {
   padding-top: rem(8px);
   overflow-x: hidden;
-  &__oranle-ellipse {
+  &__orange-ellipse {
     position: absolute;
     left: rem(-90px);
     top: rem(270px);
@@ -64,7 +64,7 @@
 @media (max-width: $xs) {
   .about {
     padding-top: 0;
-    &__oranle-ellipse {
+    &__orange-ellipse {
       top: rem(305px);
       display: flex;
       left: 0;
