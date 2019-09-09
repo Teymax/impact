@@ -61,7 +61,7 @@
           :card-number="index+1"
           :header="card.header"
           :description="card.description"
-          :img="card.img"
+          :img="require(`../../assets/images/howItWorks/freelancers/${card.img}`)"
           :img-height="card.imgHeight"
           :img-width="card.imgWidth"
           :content="card.content"
@@ -77,12 +77,6 @@ import TopCard from '@/components/general/TopCard';
 import HowItWorksCard from '@/components/howItWorks/HowItWorksCard';
 import textTranslations from '@/mixins/textTranslations';
 
-import profileImg from '@/assets/images/howItWorks/freelancers/profileImg.png';
-import applyForJobsImg from '@/assets/images/howItWorks/freelancers/applyForJobsImg.png';
-import getHiredImg from '@/assets/images/howItWorks/freelancers/getHiredImg.png';
-import startWorkingImg from '@/assets/images/howItWorks/freelancers/startWorkingImg.png';
-import getPaidImg from '@/assets/images/howItWorks/freelancers/getPaidImg.png';
-
 export default {
   name: 'freelancers',
   components: {
@@ -93,21 +87,11 @@ export default {
   data: () => ({
     translationScope: 'howItWorks',
     howItWorksF: {},
-    cards: [],
-    cardsImages: [
-      profileImg,
-      applyForJobsImg,
-      getHiredImg,
-      startWorkingImg,
-      getPaidImg
-    ]
+    cards: []
   }),
   created() {
     this.howItWorksF = this.t('freelancers.howItWorksF');
     this.cards = this.t('freelancers.cards');
-    this.cards.forEach((item, index) => {
-      item.img = this.cardsImages[index];
-    });
   }
 };
 </script>

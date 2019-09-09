@@ -10,6 +10,7 @@ export default {
       {
         header: 'Create Your Profile',
         description: 'When you sign up for Work for Impact, you’ll be able to customize your profile to let potential clients know your skills, qualifications, interests, and more.',
+        img: 'profileImg.png',
         imgHeight: 351,
         imgWidth: 488,
         content: [
@@ -30,6 +31,7 @@ export default {
       {
         header: 'Apply for Jobs',
         description: 'Once your profile is completed, you’re ready to start looking for new and exciting projects.',
+        img: 'applyForJobsImg.png',
         imgHeight: 369,
         imgWidth: 403,
         content: [
@@ -51,6 +53,7 @@ export default {
       {
         header: 'Get Hired',
         description: 'After your proposals have been submitted, you’ll be able to speak with clients who are interested in your services.',
+        img: 'getHiredImg.png',
         imgHeight: 319,
         imgWidth: 480,
         content: [
@@ -71,6 +74,7 @@ export default {
       {
         header: 'Start Working',
         description: 'Work for Impact’s custom workspace allows you to easily collaborate with clients.',
+        img: 'startWorkingImg.png',
         imgHeight: 400,
         imgWidth: 371,
         content: [
@@ -92,6 +96,7 @@ export default {
       {
         header: 'Get Paid',
         description: 'Once the client has approved your work you’ll receive prompt and timely payment, thanks to our payment protection services.',
+        img: 'getPaidImg.png',
         imgHeight: 319,
         imgWidth: 471,
         content: [
@@ -122,6 +127,7 @@ export default {
       {
         header: 'Create Your Profile',
         description: 'When you sign up for Work for Impact, you’ll be able to customize your profile to let freelancers know more about your organization and what you stand for.',
+        img: 'profileImg.png',
         imgHeight: 389,
         imgWidth: 465,
         content: [
@@ -142,6 +148,7 @@ export default {
       {
         header: 'Post Your Job',
         description: 'Once your profile is completed, you’re ready to advertise any available jobs you have to our pool of talented freelancers.',
+        img: 'postJobImg.png',
         imgHeight: 326,
         imgWidth: 481,
         content: [
@@ -163,6 +170,7 @@ export default {
       {
         header: 'Hire Freelancers',
         description: 'After your job is posted you’ll be able to start evaluating potential candidates.',
+        img: 'hireFreelancersImg.png',
         imgHeight: 312,
         imgWidth: 515,
         content: [
@@ -183,6 +191,7 @@ export default {
       {
         header: 'Get to Work',
         description: 'Work for Impact’s custom workspace allows you to easily collaborate with freelancers.',
+        img: 'getToWorkImg.png',
         imgHeight: 304,
         imgWidth: 501,
         content: [
@@ -204,6 +213,7 @@ export default {
       {
         header: 'Make Payments',
         description: 'When your project has been completed you’ll be able to pay your freelancer safely and securely.',
+        img: 'makePaymentsImg.png',
         imgHeight: 336,
         imgWidth: 452,
         content: [
