@@ -1,6 +1,6 @@
 export default {
   freelancers: {
-    howItWorksF: {
+    howItWorksFreelancers: {
       header: 'How it Works for Freelancers',
       content: [
         'Are you a talented freelancer who’s looking for projects that will make a difference? Work for Impact offers paid freelance jobs solely from socially, environmentally responsible and nonprofit organizations.'
@@ -117,7 +117,7 @@ export default {
     ]
   },
   clients: {
-    howItWorksC: {
+    howItWorksClients: {
       header: 'How it Works for Clients',
       content: [
         'Are you a socially and environmentally responsible business, or a nonprofit organization? Work for Impact can help you find the right freelancers so you can bring your projects to life.'

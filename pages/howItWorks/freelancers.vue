@@ -3,57 +3,57 @@
     <div class="hidden-sm-and-down how-it-works__orange-ellipse-big--top">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="1354"
-        :width="1368"
-        :min-height="496"
-        :min-width="496"
+        height="1354"
+        width="1368"
+        min-height="496"
+        min-width="496"
       />
     </div>
     <div class="hidden-sm-and-down how-it-works__orange-ellipse-big--middle">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="1771"
-        :width="1797"
-        :min-height="496"
-        :min-width="496"
+        height="1771"
+        width="1797"
+        min-height="496"
+        min-width="496"
       />
     </div>
     <div class="hidden-sm-and-down how-it-works__orange-ellipse-big--bottom">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="1354"
-        :width="1371"
-        :min-height="496"
-        :min-width="496"
+        height="1354"
+        width="1371"
+        min-height="496"
+        min-width="496"
       />
     </div>
 
     <div class="hidden-md-and-up how-it-works__orange-ellipse-small--top">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="496"
-        :width="502"
+        height="496"
+        width="502"
       />
     </div>
     <div class="hidden-md-and-up how-it-works__orange-ellipse-small--middle">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="824"
-        :width="889"
+        height="824"
+        width="889"
       />
     </div>
     <div class="hidden-md-and-up how-it-works__orange-ellipse-small--bottom">
       <v-img
         :src="require('@/assets/images/howItWorks/ellipses/ellipse.png')"
-        :height="496"
-        :width="502"
+        height="496"
+        width="502"
       />
     </div>
     <v-layout row wrap justify-center align-center>
       <v-flex xs11 grow pa-4 class="text-lg-center text-xs-center">
         <TopCard
-          :header="howItWorksF.header"
-          :content="howItWorksF.content"
+          :header="howItWorksFreelancers.header"
+          :content="howItWorksFreelancers.content"
         />
       </v-flex>
       <v-flex v-for="(card, index) in cards" :key="card.id" xs11 grow pa-4>
@@ -86,11 +86,11 @@ export default {
   mixins: [textTranslations],
   data: () => ({
     translationScope: 'howItWorks',
-    howItWorksF: {},
+    howItWorksFreelancers: {},
     cards: []
   }),
   created() {
-    this.howItWorksF = this.t('freelancers.howItWorksF');
+    this.howItWorksFreelancers = this.t('freelancers.howItWorksFreelancers');
     this.cards = this.t('freelancers.cards');
   }
 };

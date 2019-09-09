@@ -3,8 +3,8 @@
     <div class="about__orange-ellipse">
       <v-img
         :src="require('@/assets/images/about/orangeEllipse.png')"
-        :height="496"
-        :width="496"
+        height="496"
+        width="496"
       />
     </div>
     <v-layout row wrap justify-center align-center>
@@ -53,8 +53,8 @@
     <div class="about__blue-ellipse hidden-sm-and-down">
       <v-img
         :src="require('@/assets/images/about/blueEllipse.png')"
-        :height="292"
-        :width="233"
+        height="292"
+        width="233"
       />
     </div>
   </div>
