@@ -30,6 +30,12 @@
           </div>
         </div>
         <h3>{{ useTitle }}</h3>
+        <v-img
+          :src="tableTop"
+        />
+        <v-img
+          :src="tableBottom"
+        />
       </v-flex>
     </v-layout>
   </div>
@@ -37,12 +43,16 @@
 
 <script>
 import textTranslations from '@/mixins/textTranslations';
+import tableTop from '@/assets/images/cookies/tableTop.png';
+import tableBottom from '@/assets/images/cookies/tableBottom.png';
 
 export default {
   name: 'CookieNotice',
   mixins: [textTranslations],
   data: () => ({
     translationScope: 'cookieNotice',
+    tableTop,
+    tableBottom,
     header: '',
     whatAreTitle: '',
     controlTitle: '',
