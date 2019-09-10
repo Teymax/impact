@@ -37,7 +37,11 @@
         </v-stepper-items>
       </v-stepper>
     </v-flex>
-    <v-flex xs12 text-xs-center>
+    <v-flex
+      v-if="currentStep > 1"
+      xs12
+      text-xs-center
+    >
       <v-btn flat round base class="step__postpone text-none no-bg-hover">
         {{ t('continueLater') }}
         <v-icon>

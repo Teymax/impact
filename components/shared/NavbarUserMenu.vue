@@ -127,6 +127,7 @@ export default {
   methods: {
     logOut() {
       this.$auth.logout();
+      this.$intercom.shutdown();
     }
   }
 };

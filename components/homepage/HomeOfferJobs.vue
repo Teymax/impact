@@ -5,7 +5,7 @@
     <v-layout justify-center wrap>
       <Categories
         scope="jobs"
-        :categories="allJobsCategories"
+        :categories="categories"
       />
       <v-flex
         xs11
@@ -61,7 +61,7 @@ export default {
   },
   computed: {
     ...mapState({
-      allJobsCategories: state => state.homepage.allJobsCategories,
+      categories: state => state.homepage.categories,
       jobsOffers: state => state.homepage.jobsOffers
     })
   }

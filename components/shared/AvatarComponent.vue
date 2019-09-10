@@ -1,7 +1,7 @@
 <template>
   <v-flex shrink>
     <div
-      v-if="name"
+      v-if="!img && name"
       class="avatar"
       :class="avatarClasses"
     >
@@ -41,11 +41,16 @@ export default {
     size: {
       type: String,
       required: true
+    },
+    mobileSize: {
+      type: String,
+      required: false,
+      default: () => 'sm'
     }
   },
   computed: {
     avatarClasses() {
-      return this.name ? `avatar--${this.size}` : `avatar-img--${this.size}`;
+      return [`avatar--${this.size}`, `avatar-mobile--${this.mobileSize}`];
     },
     imageSize() {
       switch (this.size) {
@@ -55,6 +60,12 @@ export default {
           return 40;
         case 'sm':
           return 48;
+        case 'md':
+          return 72;
+        case 'lg':
+          return 96;
+        case 'xl':
+          return 120;
         default:
           return 0;
       }

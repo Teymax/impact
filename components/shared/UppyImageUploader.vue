@@ -10,7 +10,6 @@
       type="file"
       @change="addFile"
     >
-    <p> {{ message }}</p>
   </div>
 </template>
 
@@ -34,7 +33,6 @@ export default {
   data() {
     return {
       translationScope: 'uploads',
-      message: '',
       uppy: Uppy({
         id: this.uploadId,
         autoProceed: true,
@@ -62,22 +60,28 @@ export default {
           mime_type: file.type
         }
       };
-      this.$emit('upload-succeed', imageData);
-      this.message = this.t('imageUploadSucceed');
+      this.handleImageUppload(imageData);
     });
     this.uppy.on('upload-error', () => {
-      this.message = this.t('imageUploadFailed');
+      this.handleImageUppload(null);
     });
   },
   methods: {
     addFile(e) {
       const file = e.target.files[0];
 
-      this.uppy.addFile({
-        name: file.name,
-        type: file.type,
-        data: file
-      });
+      try {
+        this.uppy.addFile({
+          name: file.name,
+          type: file.type,
+          data: file
+        });
+      } catch (error) {
+        this.handleImageUppload(null);
+      }
+    },
+    handleImageUppload(data) {
+      this.$emit('handle-image-uppload', data);
     }
   }
 };

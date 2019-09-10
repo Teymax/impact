@@ -1,11 +1,6 @@
 <template>
   <v-container class="dashboard__content">
     <v-layout row wrap>
-      <v-flex xs12>
-        <h4 class="dashboard__header">
-          {{ t('dashboardHeader') }}
-        </h4>
-      </v-flex>
       <v-flex xs12 class="dashboard__setup">
         <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard">
           <template v-slot:client="{ clientScope }">
@@ -33,6 +28,11 @@
             </v-layout>
           </template>
         </DashboardSetupCard>
+      </v-flex>
+      <v-flex xs12>
+        <h4 class="dashboard__header">
+          {{ t('dashboardHeader') }}
+        </h4>
       </v-flex>
       <v-flex xs12 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>

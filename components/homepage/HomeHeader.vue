@@ -68,7 +68,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import textTranslations from '@/mixins/textTranslations';
 import watchBreakPoints from '@/mixins/watchBreakPoints';
 
@@ -82,9 +81,6 @@ export default {
     };
   },
   computed: {
-    ...mapState({
-      testimonials: state => state.homepage.testimonials
-    }),
     imageWidth() {
       if (this.breakpoint.xs) {
         return 188;

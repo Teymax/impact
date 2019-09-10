@@ -59,6 +59,11 @@
         </v-flex>
       </v-layout>
     </v-container>
+    <div
+      class="intercom__container--absolute hidden-md-and-down"
+    >
+      <IntercomComponent />
+    </div>
     <div class="main-footer__block">
       © 2019 WFI® Inc.
     </div>
@@ -68,8 +73,10 @@
 <script>
 import textTranslations from '@/mixins/textTranslations';
 import watchBreakPoints from '@/mixins/watchBreakPoints';
+import IntercomComponent from '@/components/shared/IntercomComponent';
 
 export default {
+  components: { IntercomComponent },
   mixins: [textTranslations, watchBreakPoints],
   data() {
     return {

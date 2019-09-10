@@ -1,22 +1,22 @@
 export const actions = {
   fetchJobImpacts({ commit }) {
     const jobImpacts = {
-      value1: '25',
-      value2: '17'
+      jobsRatingsCount: '25',
+      impactsProposalsCount: '17'
     };
     commit('SAVE_JOB_IMPACTS', jobImpacts);
   },
   fetchFreelancerRating({ commit }) {
     const freelancerRating = {
-      value1: '93%',
-      value2: '56%'
+      jobsRatingsCount: '93%',
+      impactsProposalsCount: '56%'
     };
     commit('SAVE_FREELANCER_RATING', freelancerRating);
   },
   fetchMyJobsAndProposals({ commit }) {
     const myJobsAndProposals = {
-      value1: '0',
-      value2: '12',
+      currentJobs: '0',
+      activeProposals: '12',
       items: [
         {
           type: 'Job',
@@ -54,11 +54,11 @@ export const actions = {
   },
   fetchFinances({ commit }) {
     const freelancerFinances = {
-      value1: '$100',
-      value2: '$500',
+      balance: '$100',
+      earnedLastWeek: '$500',
       profit: '+$25',
-      point1: '$345',
-      interval1: 'May 15 - May 21'
+      maxProfit: '$345',
+      interval: 'May 15 - May 21'
     };
     commit('FETCH_FINANCES', freelancerFinances);
   }

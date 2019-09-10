@@ -1,11 +1,6 @@
 <template>
   <v-container class="dashboard__content">
     <v-layout row wrap>
-      <v-flex xs12>
-        <h4 class="dashboard__header">
-          {{ t('dashboardHeader') }}
-        </h4>
-      </v-flex>
       <v-flex xs12 order-xs1 class="dashboard__setup">
         <DashboardSetupCard v-if="needSetup" :show="needSetup" @closeSetup="closeSetupCard">
           <template v-slot:freelancer="{ freelancerScope }">
@@ -33,7 +28,12 @@
           </template>
         </DashboardSetupCard>
       </v-flex>
-      <v-flex xs12 order-xs3 order-sm2 class="dashboard__content-row">
+      <v-flex xs12 order-xs2>
+        <h4 class="dashboard__header">
+          {{ t('dashboardHeader') }}
+        </h4>
+      </v-flex>
+      <v-flex xs12 order-xs4 order-sm3 class="dashboard__content-row">
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerBaseCard
@@ -53,7 +53,7 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex class="dashboard__content-row" xs12 order-xs2 order-sm3>
+      <v-flex class="dashboard__content-row" xs12 order-xs3 order-sm4>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <FreelancerJobAndProposals
@@ -69,7 +69,7 @@
           </v-flex>
         </v-layout>
       </v-flex>
-      <v-flex class="dashboard__content-row" xs12 order-xs4>
+      <v-flex class="dashboard__content-row" xs12 order-xs5>
         <v-layout row wrap align-space-around fill-height>
           <v-flex xs12 sm6 class="dashboard__open-jobs-freelancers">
             <DashboardCommunityArticles
@@ -129,10 +129,10 @@ export default {
       get() {
         const localization = this.t('jobsImpactsCard');
         return {
-          headline1: localization.newJobs,
-          description1: localization.jobsWaiting,
-          headline2: localization.impacts,
-          description2: localization.leftForProposals
+          jobsRatingsHeading: localization.newJobs,
+          jobsRatingsDescription: localization.jobsWaiting,
+          impactsProposalsHeadline: localization.impacts,
+          impactsProposalsDescription: localization.leftForProposals
         };
       }
     },
@@ -140,10 +140,10 @@ export default {
       get() {
         const localization = this.t('ratingCard');
         return {
-          headline1: localization.yourRating,
-          description1: localization.increase,
+          jobsRatingsHeading: localization.yourRating,
+          jobsRatingsDescription: localization.increase,
           percentage: localization.percentage,
-          headline2: localization.acceptedProposalRate
+          impactsProposalsHeadline: localization.acceptedProposalRate
         };
       }
     },
@@ -168,8 +168,8 @@ export default {
         const localization = this.t('myJobsAndProposalsCard');
         return {
           header: localization.myJobsAndProposals,
-          description1: localization.currentJobs,
-          description2: localization.activeProposals
+          currentJobsDescription: localization.currentJobs,
+          activeProposalsDescription: localization.activeProposals
         };
       }
     },
@@ -178,11 +178,11 @@ export default {
         const localization = this.t('financesCard');
         return {
           header: localization.myJobsAndProposals,
-          description1: localization.balance,
-          description2: localization.earnedLastWeek,
-          button1: localization.withdraw,
-          button2: localization.statistics,
-          button3: localization.profits
+          balanceDescription: localization.balance,
+          earnedLastWeekDescription: localization.earnedLastWeek,
+          withdraw: localization.withdraw,
+          statistics: localization.statistics,
+          profits: localization.profits
         };
       }
     }

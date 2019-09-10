@@ -8,7 +8,7 @@
     class="main-navbar__drawer pt-3 pl-5"
     @input="closeDrawer"
   >
-    <v-layout wrap>
+    <v-layout column fill-height>
       <v-flex xs12>
         <v-list>
           <v-list-tile
@@ -96,19 +96,27 @@
           </v-list-group>
         </v-list>
       </v-flex>
+      <v-spacer />
+      <v-flex>
+        <div class="hidden-lg-and-up intercom__container--drawer">
+          <IntercomComponent />
+        </div>
+      </v-flex>
     </v-layout>
   </v-navigation-drawer>
 </template>
 
 <script>
 import mobileDrawer from '@/mixins/mobileDrawer';
+import IntercomComponent from '@/components/shared/IntercomComponent';
 
 export default {
+  components: { IntercomComponent },
   mixins: [mobileDrawer],
   props: {
-    // eslint-disable-next-line vue/require-prop-types
     isFreelancer: {
-      required: true
+      required: true,
+      type: [Object, Boolean]
     }
   },
   computed: {

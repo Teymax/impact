@@ -8,8 +8,8 @@
     class="main-navbar__drawer"
     @input="closeDrawer"
   >
-    <v-layout wrap>
-      <v-flex xs12 mb-4>
+    <v-layout column fill-height>
+      <v-flex shrink mb-4>
         <v-layout justify-center>
           <v-btn
             flat
@@ -76,14 +76,22 @@
           </v-list-tile>
         </v-list>
       </v-flex>
+      <v-spacer />
+      <v-flex>
+        <div class="hidden-lg-and-up intercom__container--drawer">
+          <IntercomComponent />
+        </div>
+      </v-flex>
     </v-layout>
   </v-navigation-drawer>
 </template>
 
 <script>
 import mobileDrawer from '@/mixins/mobileDrawer';
+import IntercomComponent from '@/components/shared/IntercomComponent';
 
 export default {
+  components: { IntercomComponent },
   mixins: [mobileDrawer],
   computed: {
     mainLinks() {

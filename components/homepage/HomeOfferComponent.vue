@@ -7,19 +7,23 @@
     wrap
   >
     <v-flex
-      xs4
+      shrink
     >
-      <v-img
-        :src="require(`@/assets/images/home/${offer.img}`)"
-        contain
-        round
-        :max-height="130"
-        :position="breakpoint.xs ? 'left center' : 'center center'"
-      />
+      <v-layout class="offer-card__avatar-box">
+        <Avatar
+          :img="offer.client.logo"
+          :name="offer.client.name"
+          size="xl"
+          mobile-size="lg"
+        />
+      </v-layout>
     </v-flex>
-    <v-flex xs7 sm8>
+    <v-flex
+      xs8
+      lg9
+    >
       <h3 class="offer-card__header hidden-xs-only mb-3">
-        {{ offer.header }}
+        {{ offer.title }}
       </h3>
       <v-layout wrap mb-2>
         <v-flex
@@ -31,27 +35,28 @@
           <p
             class="ma-0 primary--text font-weight-bold mr-2"
           >
-            {{ offer.payForm === 'fixed'? t('fixedPrice') : t('perHour') }}
+            {{ offer.jobType === 'per_hour'? t('perHour') : t('fixedPrice') }}
           </p>
           <p class="ma-0">
-            {{ offer.ammount }}
+            {{ `$${offer.budget}` }}
           </p>
         </v-flex>
-        <v-flex xs12 sm5 md3 class="offer-card__icon-box">
+        <!-- TODO: Insert when rating is ready -->
+        <!-- <v-flex xs12 sm5 md3 class="offer-card__icon-box">
           <p class="ma-0 primary--text font-weight-bold mr-2">
             {{ t('clientRating') }}
           </p>
           <p class="ma-0">
             {{ offer.review }}
           </p>
-        </v-flex>
+        </v-flex> -->
       </v-layout>
       <p class="font-weight-light offer-card__description hidden-xs-only">
-        {{ truncateText(offer.description, 20) }}
+        {{ truncateText(offer.description, 30) }}
       </p>
     </v-flex>
-    <h3 class="offer-card__header hidden-sm-and-up mt-3">
-      {{ offer.header }}
+    <h3 class="font-size-h3 hidden-sm-and-up mt-3">
+      {{ offer.title }}
     </h3>
   </v-layout>
 </template>
@@ -60,8 +65,10 @@
 import textTranslations from '@/mixins/textTranslations';
 import watchBreakPoints from '@/mixins/watchBreakPoints';
 import truncateWords from '@/mixins/truncateWholeWords';
+import Avatar from '@/components/shared/AvatarComponent';
 
 export default {
+  components: { Avatar },
   mixins: [textTranslations, watchBreakPoints, truncateWords],
   props: {
     offer: {

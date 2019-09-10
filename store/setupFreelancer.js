@@ -5,6 +5,9 @@ export const mutations = {
 
   ADD_SKILLS_ITEM(state, skill) {
     state.skillItems.push(skill);
+  },
+  REMOVE_PORTFOLIO_ITEM_BY_TITLE(state, title) {
+    state.portfolioItems = state.portfolioItems.filter(item => item.title !== title);
   }
 };
 
@@ -13,7 +16,7 @@ export const actions = {
     const freelancerId = payload.data.id;
     const { status } = await this.$axios.patch(`/freelancers/${freelancerId}`, payload);
 
-    return (status >= 200 && status < 211);
+    return (status === 200);
   },
   async createPortfolio(context, payload) {
     const { status } = await this.$axios.post('/portfolios', payload);

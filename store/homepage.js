@@ -1,94 +1,48 @@
 export const actions = {
-  fetchTestimonials({ commit }) {
-    // fetching stuff
-    const testimonials = [
-      {
-        description: 'Work for impact enabled us to reach a global pool of talented freelancers and form amazing collaborations.',
-        author: 'Mr. Robot',
-        company: 'Galaxy Invadors',
-        img: '@/assets/images/home/WWF.png'
-      },
-      {
-        description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas dolorem corporis tempora veniam consequuntur, optio forrupti sed inventore placeat, facere eveniet, alias perferendis nisi assumenda rem.',
-        author: 'yoda',
-        company: 'bright side',
-        img: '@/assets/images/home/WWF.png'
-      }
-    ];
-    commit('SAVE_TESTIMONIALS', testimonials);
+  async fetchCategories({ commit }, query) {
+    try {
+      const { data, status } = await this.$axios.get(`/expertises?fields[expertises]=name&sort=name&include=category&page[size]=${query.length}&page[number]=1`);
+
+      if (status !== 200) throw Error;
+      delete data.included;
+      delete data.data;
+
+      commit('SAVE_CATEGORIES', data);
+    } catch (e) {
+      console.log(e);
+    }
   },
 
-  fetchCategories({ commit }) {
-    // fetching categories
-    const categories = [
-      'all categories',
-      'ux design',
-      'web development',
-      'admin support',
-      'water',
-      'education',
-      'animals'
-    ];
+  async fetchJobsPerCategory({ commit }, category) {
+    try {
+      let baseUrl = 'job_offers?&include=expertise,client&page[size]=3&page[number]=1';
+      if (category) baseUrl += `&filter[expertiseNameEq]=${category}`;
 
-    commit('SAVE_JOBS_CATEGORIES', categories);
+      const { data } = await this.$axios.get(baseUrl);
+      delete data.included;
+      delete data.data;
+
+      commit('SAVE_JOB_OFFERS', data);
+    } catch (e) {
+      console.error(e);
+    }
   },
 
-  fetchFreelancersCategories({ commit }) {
-    // fetching
-    const categories = [
-      'all categories',
-      'ux design',
-      'painting',
-      'no support',
-      'fire',
-      'breaking the wall',
-      'animals'
-    ];
+  async fetchFreelancerPerCategory({ commit }, category) {
+    try {
+      let baseUrl = 'freelancers?&fields[skills]=name&include=expertise,user,skills&page[size]=3&page[number]=1';
+      if (category) baseUrl += `&filter[expertiseNameEq]=${category}`;
 
-    commit('SAVE_FREELANCERS_CATEGORIES', categories);
-  },
+      const { data } = await this.$axios.get(baseUrl);
+      delete data.included;
+      delete data.data;
+      console.log(data);
 
-  // eslint-disable-next-line no-unused-vars
-  fetchJobsPerCategory({ commit }, category) {
-    const jobsOffers = [
-      {
-        id: 242,
-        header: 'Digital Performance channel audits',
-        ammount: '$200',
-        payForm: 'hour',
-        localization: 'UK',
-        review: '80%',
-        description: 'We are looking for a digital marketing specialist in performance who can audit the business right now - AdWords, paid social, SEO...',
-        img: 'catLogo1.png'
-      },
-      {
-        id: 52352,
-        header: 'Marketing Assistant/Project Manager',
-        ammount: '$30',
-        payForm: 'hour',
-        localization: 'Remote',
-        review: '95%',
-        description: 'We need one or two people who know ZOHO and its suite of marketing applications to implement our marketing strategy and build',
-        img: 'catLogo2.png'
-      },
-      {
-        id: 523523,
-        header: 'UX Designer',
-        ammount: '$1500',
-        payForm: 'fixed',
-        localization: 'AUS',
-        review: '90%',
-        description: 'We are looking for an expert UX designer to assist in improving the customer journey of potential borrowers and b2b business partners.',
-        img: 'WWF.png'
-      }
-    ];
+      // commit('SAVE_JOB_OFFERS', data);
+    } catch (e) {
+      console.error(e);
+    }
 
-    commit('SAVE_JOB_OFFERS', jobsOffers);
-  },
-
-  // eslint-disable-next-line no-unused-vars
-  fetchFreelancerPerCategory({ commit }, category) {
-    // fetching
     const freelancersOffers = [
       {
         fullName: 'Kevin Lim',
@@ -129,16 +83,12 @@ export const actions = {
 };
 
 export const mutations = {
-  SAVE_TESTIMONIALS(state, testimonials) {
-    state.testimonials = testimonials;
+  SAVE_CATEGORIES(state, categories) {
+    state.categories = categories;
   },
 
-  SAVE_JOBS_CATEGORIES(state, categories) {
-    state.allJobsCategories = categories;
-  },
-
-  SAVE_FREELANCERS_CATEGORIES(state, categories) {
-    state.allFreelancersCategories = categories;
+  TOGGLE_CATEGORY(state, category) {
+    state.currentCategory = category;
   },
 
   SAVE_JOB_OFFERS(state, jobsOffers) {
@@ -155,9 +105,8 @@ export const mutations = {
 };
 
 export const state = () => ({
-  testimonials: null,
-  allJobsCategories: null,
-  allFreelancersCategories: null,
+  currentCategory: null,
+  categories: null,
   jobsOffers: null,
   freelancersOffers: null,
   isMenuShow: false

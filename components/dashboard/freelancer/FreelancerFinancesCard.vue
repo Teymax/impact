@@ -16,10 +16,10 @@
       <v-flex xs12 lg6>
         <v-layout row wrap align-center justify-center class="text-xs-left text-sm-center">
           <v-flex xs5 sm12 class="freelancer-card__number-primary">
-            {{ freelancerFinances.value1 }}
+            {{ freelancerFinances.balance }}
           </v-flex>
           <v-flex xs7 sm12 class="freelancers__freelancer-name base-card__subheader">
-            {{ localization.description1 }}
+            {{ localization.balanceDescription }}
           </v-flex>
           <v-flex mt-3>
             <v-btn
@@ -27,7 +27,7 @@
               round
               class="text-none azure base homepage__btn white--text ml-0 hidden-xs-only"
             >
-              {{ localization.button1 }}
+              {{ localization.withdraw }}
             </v-btn>
           </v-flex>
         </v-layout>
@@ -42,7 +42,7 @@
               freelancer-card--line-height-fix-xs freelancer-card--padding-top-xs--1"
           >
             <span>
-              {{ freelancerFinances.value2 }}
+              {{ freelancerFinances.earnedLastWeek }}
             </span>
             <span class="font-weight-regular subheading">
               (<span class="azure--text font-weight-regular subheading">{{ freelancerFinances.profit }}</span>)
@@ -53,7 +53,7 @@
             sm12
             class="freelancers__freelancer-name base-card__subheader freelancer-card--line-height-fix-xs"
           >
-            {{ localization.description2 }}
+            {{ localization.earnedLastWeekDescription }}
           </v-flex>
           <v-layout
             flex
@@ -66,12 +66,12 @@
           >
             <v-flex>
               <nuxt-link to="#" class="base-card__link">
-                {{ localization.button2 }}
+                {{ localization.statistics }}
               </nuxt-link>
             </v-flex>
             <v-flex justify-between>
               <nuxt-link to="#" class="base-card__link">
-                {{ localization.button3 }}
+                {{ localization.profits }}
               </nuxt-link>
             </v-flex>
           </v-layout>
@@ -82,7 +82,7 @@
               mt-4
               class="text-none azure base homepage__btn white--text hidden-sm-and-up"
             >
-              {{ localization.button1 }}
+              {{ localization.withdraw }}
             </v-btn>
           </v-layout>
         </v-layout>
@@ -116,28 +116,19 @@ export default {
     freelancerFinances: {
       type: Object,
       default: () => ({
-        value1: 0,
-        value2: 0,
-        items: [
-          {
-            value1: '$0',
-            value2: '$0',
-            profit: '',
-            point1: '',
-            interval1: ''
-          }
-        ]
+        balance: 0,
+        earnedLastWeek: 0
       })
     },
     localization: {
       type: Object,
       default: () => ({
         header: 'Finances',
-        description1: '',
-        description2: '',
-        button1: '',
-        button2: '',
-        button3: ''
+        balanceDescription: '',
+        earnedLastWeekDescription: '',
+        withdraw: '',
+        statistics: '',
+        profits: ''
       })
     }
   },

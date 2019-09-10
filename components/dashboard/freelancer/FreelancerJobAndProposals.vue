@@ -18,20 +18,20 @@
       <v-flex xs12 md6>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
           <v-flex xs3 md12 class="freelancer-card__number-primary">
-            {{ myJobsAndProposals.value1 }}
+            {{ myJobsAndProposals.currentJobs }}
           </v-flex>
           <v-flex class="freelancer-card__title">
-            {{ localization.description1 }}
+            {{ localization.currentJobsDescription }}
           </v-flex>
         </v-layout>
       </v-flex>
       <v-flex xs12 md6>
         <v-layout row wrap align-center class="text-md-center text-xs-left">
           <v-flex xs3 md12 class="freelancer-card__number-primary">
-            {{ myJobsAndProposals.value2 }}
+            {{ myJobsAndProposals.activeProposals }}
           </v-flex>
           <v-flex md12 class="freelancer-card__title">
-            {{ localization.description2 }}
+            {{ localization.activeProposalsDescription }}
           </v-flex>
         </v-layout>
       </v-flex>
@@ -75,8 +75,8 @@ export default {
     myJobsAndProposals: {
       type: Object,
       default: () => ({
-        value1: 0,
-        value2: 0,
+        currentJobs: 0,
+        activeProposals: 0,
         items: [
           {
             type: 'Job',
@@ -91,8 +91,8 @@ export default {
       type: Object,
       default: () => ({
         header: 'My Jobs and Proposals',
-        description1: '',
-        description2: ''
+        currentJobsDescription: '',
+        activeProposalsDescription: ''
       })
     }
   },

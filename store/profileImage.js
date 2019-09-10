@@ -1,8 +1,13 @@
 // eslint-disable-next-line import/prefer-default-export
 export const actions = {
   async updateProfileImage(context, payload) {
-    const { status } = await this.$axios.post('/images', payload);
+    try {
+      const { status, data } = await this.$axios.post('/images', payload);
+      if (status !== 201) throw Error;
 
-    return (status >= 200 && status < 211);
+      return data;
+    } catch (e) {
+      return null;
+    }
   }
 };

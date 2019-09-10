@@ -67,26 +67,6 @@
         <v-flex my-3 xs10>
           <v-divider class="step__divider" />
         </v-flex>
-        <v-flex>
-          <label
-            class="base-input-label"
-          >
-            {{ t('roleTitle') }}
-            <span
-              v-if="form.name"
-              class="primary--text"
-            > {{ form.name }} </span>
-            <v-text-field
-              v-model="form.roleTitle"
-              v-validate="'required'"
-              :error-messages="errors.collect(t('roleTitle'))"
-              :data-vv-name="t('roleTitle')"
-              class="base-input mt-2"
-              solo
-              required
-            />
-          </label>
-        </v-flex>
         <v-flex xs10>
           <label
             for="timezone"
@@ -149,7 +129,6 @@ export default {
         description: '',
         url: '',
         nonProfitCategory: '',
-        roleTitle: '',
         timezone: ''
       }
     };
@@ -163,7 +142,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client');
+      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
     }
   }
 };

@@ -1,6 +1,9 @@
 import postJob from './modules/postJob';
-import dashboard from './dashboard';
-import freelancerDashboard from './freelancerDashboard';
+import dashboard from './modules/dashboard';
+import freelancerDashboard from './modules/freelancerDashboard';
+import notifications from './modules/notifications';
+import about from './about';
+import howItWorks from './howItWorks';
 
 export default {
   navigation: {
@@ -81,7 +84,8 @@ export default {
     hire: 'hire',
     rating: '{number}% Rating',
     // eslint-disable-next-line no-template-curly-in-string
-    fee: '${number} / hour'
+    fee: '${number} / hour',
+    allCategory: 'All categories'
   },
   footer: {
     whoWe: 'Who we are',
@@ -139,9 +143,9 @@ export default {
     speclialization: 'Specialization',
     expertise: 'Expertise',
     profileTitle: 'Profile Title',
-    locationTimezone: 'Your location and timezone',
+    location: 'Your location',
     timezone: 'Your timezone',
-    englishProficiency: 'Your English proficiency',
+    languageProficiency: 'Your {language} proficiency',
     hourlyRate: 'Hourly rate',
     availiability: 'Availiability',
     saveNgo: 'Save & go to next step',
@@ -188,13 +192,17 @@ export default {
     addFunds: 'Add Funds to Your Account',
     dashboardReturn: 'Return to dashboard',
     companyType: 'Company Type',
-    suggestedActions: 'Suggested Actions'
+    suggestedActions: 'Suggested Actions',
+    showAllLocations: 'Show all locations'
   },
-  postJob,
   uploads: {
     imageUploadSucceed: 'Image has been successful uploaded',
     imageUploadFailed: 'Your image upload has been failed. Please try again.'
   },
   dashboard,
-  freelancerDashboard
+  freelancerDashboard,
+  notifications,
+  postJob,
+  about,
+  howItWorks
 };

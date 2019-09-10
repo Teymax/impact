@@ -12,20 +12,20 @@
         <v-layout row wrap align-center justify-space-between>
           <v-flex xs4 class="freelancer-card--flex-basis_auto">
             <p class="home-info__percentage freelancer-card__percentage my-0">
-              {{ freelancerData.value1 }}
+              {{ freelancerData.jobsRatingsCount }}
             </p>
           </v-flex>
           <v-flex xs7>
             <p class="freelancers__freelancer-name base-card__subheader">
-              {{ localization.headline1 }}
+              {{ localization.jobsRatingsHeading }}
             </p>
             <p class="base-card__regular-text">
               <template v-if="targetComponent === 'freelancerCardRightSide'">
                 (<span class="azure--text">{{ localization.percentage }}</span>
-                {{ localization.description1 }})
+                {{ localization.jobsRatingsDescription }})
               </template>
               <template v-else>
-                {{ localization.description1 }}
+                {{ localization.jobsRatingsDescription }}
               </template>
             </p>
           </v-flex>
@@ -35,15 +35,15 @@
         <v-layout row wrap align-center justify-space-between>
           <v-flex xs4 class="freelancer-card--flex-basis_auto">
             <p class="home-info__percentage freelancer-card__percentage my-0">
-              {{ freelancerData.value2 }}
+              {{ freelancerData.impactsProposalsCount }}
             </p>
           </v-flex>
           <v-flex xs7>
             <p class="freelancers__freelancer-name base-card__subheader">
-              {{ localization.headline2 }}
+              {{ localization.impactsProposalsHeadline }}
             </p>
             <p class="base-card__regular-text">
-              {{ localization.description2 }}
+              {{ localization.impactsProposalsDescription }}
             </p>
           </v-flex>
         </v-layout>
@@ -62,8 +62,8 @@ export default {
     freelancerData: {
       type: Object,
       default: () => ({
-        value1: 0,
-        value2: 0
+        jobsRatingsCount: 0,
+        impactsProposalsCount: 0
       })
     },
     img: {
@@ -73,10 +73,10 @@ export default {
     localization: {
       type: Object,
       default: () => ({
-        headline1: '',
-        description1: '',
-        headline2: '',
-        description2: ''
+        jobsRatingsHeading: '',
+        jobsRatingsDescription: '',
+        impactsProposalsHeadline: '',
+        impactsProposalsDescription: ''
       })
     },
     targetComponent: {
