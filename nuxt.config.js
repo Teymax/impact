@@ -1,8 +1,9 @@
 import VuetifyLoaderPlugin from 'vuetify-loader/lib/plugin';
 import nodeExternals from 'webpack-node-externals';
 import pkg from './package';
-
 import authConfig from './config/auth';
+
+require('dotenv').config();
 
 const isDevelopment = process.env.NODE_ENV === 'development';
 
@@ -61,6 +62,10 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
     ]
   },
+  env: {
+    intercomKey: isDevelopment ? null : process.env.INTERCOM_KEY
+  },
+
   router: {
     mode: 'history'
   },
@@ -71,6 +76,7 @@ export default {
 
 
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/axios',
     '@nuxtjs/auth',
     ['nuxt-i18n', {
@@ -103,7 +109,7 @@ export default {
     baseURL: isDevelopment ? 'http://localhost:3001/api/v1' : 'https://work-for-impact-web.herokuapp.com'
   },
 
-  plugins: ['@/plugins/vuetify', '@/plugins/vee-validate', '@/plugins/axios'],
+  plugins: ['@/plugins/vuetify', '@/plugins/vee-validate', '@/plugins/axios', '@/plugins/vueIntercom'],
 
   auth: {
     ...authConfig,
