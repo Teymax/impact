@@ -1,0 +1,26 @@
+.cookie-notice{
+  &__header {
+    text-align: center;
+  }
+  &__item{
+    margin-bottom: 20px;
+    color: #000001;
+    font-weight: 300;
+    font-size: rem(15px);
+  &-list{
+    &--link{
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+  }
+}
+@media (max-width: $sm) {
+  .privacy-policy{
+    &__item{
+      font-size: rem(13px);
+    }
+  }
+}
+

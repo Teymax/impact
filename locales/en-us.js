@@ -2,6 +2,8 @@ import postJob from './modules/postJob';
 import dashboard from './dashboard';
 import about from './about';
 import howItWorks from './howItWorks';
+import privacyPolicy from './privacyPolicy';
+import cookieNotice from './cookieNotice';
 
 export default {
   navigation: {
@@ -199,5 +201,7 @@ export default {
   },
   dashboard,
   about,
-  howItWorks
+  howItWorks,
+  privacyPolicy,
+  cookieNotice
 };
