@@ -62,6 +62,8 @@ export default {
           return 48;
         case 'md':
           return 72;
+        case 'lg':
+          return 96;
         case 'xl':
           return 120;
         default:

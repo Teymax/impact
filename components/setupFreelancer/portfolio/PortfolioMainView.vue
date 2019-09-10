@@ -45,6 +45,7 @@
             }"
             @switch-component="switchComponent"
             @next-step="nextStep"
+            @remove-item="title => removePortfolioItem(title)"
             @new-item-added="newItemAdded = true"
           />
         </v-fade-transition>
@@ -54,7 +55,9 @@
 </template>
 
 <script>
-import { mapState, mapActions, mapGetters } from 'vuex';
+import {
+  mapMutations, mapState, mapActions, mapGetters
+} from 'vuex';
 import uuid from 'uuid/v4';
 import serializeData from '@/mixins/serializeData';
 import textTranslations from '@/mixins/textTranslations';
@@ -84,6 +87,9 @@ export default {
   methods: {
     ...mapActions({
       createPortfolio: 'setupFreelancer/createPortfolio'
+    }),
+    ...mapMutations({
+      removePortfolioItem: 'setupFreelancer/REMOVE_PORTFOLIO_ITEM_BY_TITLE'
     }),
     switchComponent() {
       if (this.activeComponent === 'PortfolioList') {

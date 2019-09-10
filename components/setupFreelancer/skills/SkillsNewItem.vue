@@ -10,21 +10,7 @@
           </h3>
 
           <v-form>
-            <label class="base-input-label">
-              {{ t('skills') }}
-              <v-select
-                v-model="form.skill"
-                v-validate="'required'"
-                :items="skillItems"
-                return-object
-                append-icon="keyboard_arrow_down"
-                :data-vv-name="t('skills')"
-                :error-messages="errors.collect(t('skills'))"
-                required
-                class="base-input mt-2"
-                solo
-              />
-            </label>
+            <SkillsInput @skill-changed="skillId => skill = skillId" />
           </v-form>
         </v-layout>
       </v-flex>
@@ -67,8 +53,10 @@
 <script>
 import { mapMutations } from 'vuex';
 import textTranslations from '@/mixins/textTranslations';
+import SkillsInput from '@/components/shared/Inputs/SkillsInput';
 
 export default {
+  components: { SkillsInput },
   mixins: [textTranslations],
   data() {
     return {

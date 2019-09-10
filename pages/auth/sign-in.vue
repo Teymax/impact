@@ -158,9 +158,10 @@
 import serializeData from '@/mixins/serializeData';
 import textTranslations from '@/mixins/textTranslations';
 import passwordValidator from '@/mixins/passwordValidator';
+import intercomMethods from '@/mixins/intercomMethods';
 
 export default {
-  mixins: [textTranslations, serializeData, passwordValidator],
+  mixins: [textTranslations, serializeData, passwordValidator, intercomMethods],
   data() {
     return {
       errorOccured: false,
@@ -195,7 +196,6 @@ export default {
   methods: {
     async loginUser() {
       const isFormValid = await this.$validator.validate();
-
       if (!isFormValid) return;
 
       const data = {
@@ -205,6 +205,8 @@ export default {
       const serializedData = this.serializeData(data);
       try {
         await this.$auth.loginWith('local', { data: serializedData });
+
+        this.updateIntercomState();
       } catch (error) {
         this.errorOccured = true;
       }

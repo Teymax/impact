@@ -4,6 +4,12 @@
     font-weight: bold;
   }
 
+  &--close-positioned {
+    position: absolute;
+    top: 0;
+    right: rem(calc(1% + 15px));
+  }
+
   &__setup {
     margin-top: rem(48px);
     margin-bottom: rem(72px);
@@ -69,7 +75,7 @@
     line-height: rem(24px);
   }
 
-  &__open-jobs-freeelancers {
+  &__open-jobs-freelancers {
     padding-right: rem(26px);
     padding-bottom: 0;
   }
@@ -87,9 +93,25 @@
   }
 }
 
+.v-sheet {
+  margin-top: rem(30px);
+
+  svg {
+    height: 100%;
+  }
+
+  path {
+    stroke: $azure;
+  }
+}
+
 @media (max-width: $md) {
   .dashboard {
-    &__open-jobs-freeelancers {
+    &__icon {
+      display: none;
+    }
+
+    &__open-jobs-freelancers {
       padding-right: rem(15px);
       padding-bottom: 0;
     }
@@ -106,11 +128,15 @@
       margin-left: 0;
     }
   }
+
+  .homepage__btn {
+    margin-top: rem(15px)
+  }
 }
 
 @media (max-width: $xs) {
   .dashboard {
-    &__open-jobs-freeelancers {
+    &__open-jobs-freelancers {
       padding-right: 0;
       padding-bottom: rem(32px);
     }
@@ -119,6 +145,10 @@
       padding-left: 0;
       padding-right: 0;
       padding-bottom: rem(32px);
+    }
+
+    &__article-title {
+      font-size: rem(14px);
     }
   }
 }

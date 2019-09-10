@@ -97,7 +97,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client');
+      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
     }
   }
 };

@@ -32,6 +32,7 @@
         icon
         small
         class="baseGrey--text"
+        @click="$emit('remove-item', itemContent.header)"
       >
         <v-icon>close</v-icon>
       </v-btn>

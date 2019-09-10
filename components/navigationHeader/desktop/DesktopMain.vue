@@ -83,6 +83,7 @@ export default {
   methods: {
     logout() {
       this.$auth.logout();
+      this.$intercom.shutdown();
     },
     resetSearchBarVisibility() {
       if (window.innerWidth < 1264) this.areItemsHidden = false;

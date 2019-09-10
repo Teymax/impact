@@ -9,6 +9,7 @@
     >
       <SingleItem
         :item-content="{header: getItemName(item)}"
+        @remove-item="value => $emit('remove-item', value)"
       />
     </v-flex>
     <v-flex xs12 sm9 d-flex justify-center>

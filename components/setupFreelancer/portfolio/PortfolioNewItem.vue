@@ -10,31 +10,15 @@
         <v-layout column>
           <v-flex>
             <v-layout align-center>
-              <v-flex>
-                <label class="base-input-label">
-                  {{ t('expertise') }}
-                  <v-select
-                    v-model="form.speclialization"
-                    v-validate="'required'"
-                    :items="specializationItems"
-                    return-object
-                    append-icon="keyboard_arrow_down"
-                    :data-vv-name="t('expertise')"
-                    :error-messages="errors.collect(t('expertise'))"
-                    required
-                    class="base-input mt-2"
-                    solo
-                  />
-                </label>
-              </v-flex>
+              <SkillsInput @skill-changed="skillId => form.skillId = skillId" />
               <v-flex shrink>
                 <v-btn
-                  depressed
-                  fab
-                  class="xsmall azure white--text step__btn-box"
+                  icon
+                  small
+                  class="xsmall step__btn-box azure--text"
                 >
-                  <v-icon class="step__btn">
-                    add
+                  <v-icon size="28">
+                    add_circle
                   </v-icon>
                 </v-btn>
               </v-flex>
@@ -62,7 +46,11 @@
                     </label>
                   </v-flex>
                   <v-flex shrink>
-                    <v-btn depressed fab class="xsmall step__btn-box">
+                    <v-btn
+                      icon
+                      small
+                      class="xsmall step__btn-box azure--text"
+                    >
                       <span class="step__btn--mark" />
                     </v-btn>
                   </v-flex>
@@ -157,18 +145,22 @@
 
 <script>
 import { mapMutations, mapState } from 'vuex';
-import textTranslations from '@/mixins/textTranslations';
 import uuid from 'uuid/v4';
+import textTranslations from '@/mixins/textTranslations';
 import UppyImageUploader from '@/components/shared/UppyImageUploader';
+import SkillsInput from '@/components/shared/Inputs/SkillsInput';
 
 export default {
-  components: { UppyImageUploader },
+  components: {
+    UppyImageUploader,
+    SkillsInput
+  },
   mixins: [textTranslations],
   data() {
     return {
       translationScope: 'setupAccount',
       form: {
-        speclialization: '',
+        skillId: '',
         title: '',
         url: '',
         description: '',
@@ -177,10 +169,7 @@ export default {
     };
   },
   computed: {
-    ...mapState({ freelancerId: state => state.auth.user.freelancer.id }),
-    specializationItems() {
-      return ['Design | UX/UI design', 'Developer | front-end', 'Developer | back-end'];
-    }
+    ...mapState({ freelancerId: state => state.auth.user.freelancer.id })
   },
   methods: {
     ...mapMutations({

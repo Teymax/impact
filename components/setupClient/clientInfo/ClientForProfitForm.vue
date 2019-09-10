@@ -51,24 +51,6 @@
 
         <v-flex xs10>
           <label
-            for="url"
-            class="base-input-label"
-          >
-            {{ t('roleTitle') }}
-            <span class="primary--text"> {{ form.name }} </span>
-          </label>
-          <v-text-field
-            v-model="form.roleTitle"
-            v-validate="'required'"
-            :error-messages="errors.collect(t('roleTitle'))"
-            :data-vv-name="t('roleTitle')"
-            class="base-input mt-2"
-            solo
-            required
-          />
-        </v-flex>
-        <v-flex xs10>
-          <label
             for="timezone"
             class="base-input-label"
           >
@@ -128,7 +110,6 @@ export default {
         name: '',
         description: '',
         url: '',
-        roleTitle: '',
         timezone: ''
       }
     };
@@ -143,7 +124,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client');
+      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
     }
   }
 };

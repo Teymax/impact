@@ -1,5 +1,5 @@
 <template>
-  <v-card class="base-card base-card_default base-card-shadow">
+  <v-card class="base-card base-card--default base-card-shadow">
     <v-card-title class="base-card__title">
       <h4 class="base-card__header primary--text text-no-wrap">
         {{ t('myFreelancers.myFreelancersHeader') }}
