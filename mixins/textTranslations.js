@@ -1,7 +1,8 @@
 export default {
   methods: {
-    t(text, params) {
-      return this.$t(`${this.translationScope}.${text}`, params);
+    t(text, params, customScope) {
+      const scope = customScope || this.translationScope;
+      return this.$t(`${scope}.${text}`, params);
     }
   }
 };
