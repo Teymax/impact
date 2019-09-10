@@ -1,4 +1,4 @@
-14yuio<template>
+<template>
   <v-app class="white">
     <v-fade-transition mode="out-in">
       <component

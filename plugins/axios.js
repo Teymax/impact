@@ -13,8 +13,6 @@ export default function({ $axios }) {
     if (!data) return;
     const normalizedDAta = {};
     Object.assign(normalizedDAta, dataFormatter.deserialize(data));
-    delete data.data;
-    delete data.jsonapi;
 
     Object.assign(data, normalizedDAta);
   });

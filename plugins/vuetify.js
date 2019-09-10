@@ -25,7 +25,7 @@ import Vuetify, {
 } from 'vuetify/lib';
 
 Vue.use(Vuetify, {
-  iconfont: 'mdi',
+  iconfont: 'md' || 'mdi',
   components: {
     VApp,
     VContainer,
@@ -54,6 +54,7 @@ Vue.use(Vuetify, {
     primary: '#FF6A00',
     baseGrey: '#495057',
     azure: '#0A91FF',
+    aqua: '#4ec1e0',
     lightestGrey: '#F8F9FA',
     error: '#FF0000',
     success: '#20F583'
