@@ -6,7 +6,7 @@
           {{ header }}
         </h1>
       </v-flex>
-      <v-flex xs9 grow pa-4>
+      <v-flex xs9 grow pa-2>
         <ol class="terms-of-use__list">
           <li
             v-for="item in items"
