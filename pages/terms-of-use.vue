@@ -8,13 +8,27 @@
       </v-flex>
       <v-flex xs9 grow pa-4>
         <ol class="terms-of-use__list">
-          <li v-for="item in items" :key="item.id" class="terms-of-use__list-item">
+          <li
+            v-for="item in items"
+            :key="item.id"
+            class="terms-of-use__list-item"
+          >
             <b>{{ item.title }}</b>
             <ol class="terms-of-use__list">
-              <li v-for="subItem in item.list" :key="subItem.id" class="terms-of-use__list-sub-item">
+              <li
+                v-for="subItem in item.list"
+                :key="subItem.id"
+                :class="[item.list.length<=1?
+                  'terms-of-use__list-sub-item--without-marker' :
+                  'terms-of-use__list-sub-item']"
+              >
                 {{ subItem.listTitle }}
                 <ul :class="[subItem.type!=='letter'?'terms-of-use__list-deep':'terms-of-use__list-letter']">
-                  <li v-for="subListItem in subItem.subList" :key="subListItem.id">
+                  <li
+                    v-for="subListItem in subItem.subList"
+                    :key="subListItem.id"
+                    :class="[subListItem.withoutMarker?'terms-of-use__list-item--without-marker':'']"
+                  >
                     <span><b>{{ subListItem.subTitle }} </b>{{ subListItem.content }}</span>
                     <ul v-if="subListItem.contentList" class="terms-of-use__list-roman">
                       <li
