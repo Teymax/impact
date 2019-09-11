@@ -1,0 +1,36 @@
+.terms-of-use{
+  &__header{
+    text-align: center;
+  }
+  &__list {
+    counter-reset: item;
+    color: #000001;
+    font-weight: 300;
+    font-size: rem(15px);
+    &-roman{
+      list-style-type: lower-roman;
+    }
+    &-letter{
+      list-style-type: lower-alpha;
+    }
+    &-deep{
+      list-style-type: none;
+    }
+    &-sub-item{
+      display: block;
+      margin-bottom: 20px;
+      &:before{
+        counter-increment: item;
+        content: counters(item, ".") " ";
+      }
+    }
+    &-item {
+      display: block;
+      margin-bottom: 20px;
+      &:before{
+        counter-increment: item;
+        content: counters(item, ".") ". ";
+      }
+    }
+  }
+}

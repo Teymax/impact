@@ -4,6 +4,7 @@ import about from './about';
 import howItWorks from './howItWorks';
 import privacyPolicy from './privacyPolicy';
 import cookieNotice from './cookieNotice';
+import termsOfUse from './termsOfUse';
 
 export default {
   navigation: {
@@ -203,5 +204,6 @@ export default {
   about,
   howItWorks,
   privacyPolicy,
-  cookieNotice
+  cookieNotice,
+  termsOfUse
 };
