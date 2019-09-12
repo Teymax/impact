@@ -20,7 +20,9 @@
                 class="pb-3 main-footer__link text-xs-center text-md-left"
               >
                 <nuxt-link
+                  :target="link.newTab?'_blank':''"
                   :to="link.to"
+                  :href="link.href?link.href:''"
                   class="text-capitalize"
                 >
                   {{ link.name }}
@@ -91,7 +93,7 @@ export default {
           {
             id: 1,
             name: this.t('whoWe'),
-            to: '/'
+            to: '/about'
           },
           {
             id: 2,
@@ -112,16 +114,23 @@ export default {
           },
           {
             id: 2,
+            name: this.t('faq'),
+            to: '/',
+            href: 'http://faq.workforimpact.com/en/',
+            newTab: true
+          },
+          {
+            id: 3,
             name: this.t('articlesFreelancers'),
             to: '/'
           },
           {
-            id: 3,
+            id: 4,
             name: this.t('articlesClients'),
             to: '/'
           },
           {
-            id: 4,
+            id: 5,
             name: this.t('bugsIdeas'),
             to: '/'
           }
@@ -129,12 +138,12 @@ export default {
         2: [
           {
             id: 1,
-            name: this.t('terms'),
+            name: this.t('legal'),
             to: '/'
           },
           {
             id: 2,
-            name: this.t('legal'),
+            name: this.t('terms'),
             to: '/'
           },
           {

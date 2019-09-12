@@ -35,7 +35,7 @@
           <v-list-tile
             v-for="item in mainLinks"
             :key="item.id"
-            to="item.to"
+            :to="localePath(item.to)"
             nuxt
             class="main-navbar__drawer-list-item"
           >
@@ -99,17 +99,17 @@ export default {
         {
           id: 0,
           name: this.t('main'),
-          to: this.localePath('index')
+          to: { path: '/' }
         },
         {
           id: 1,
           name: this.t('forClients'),
-          to: this.localePath('index')
+          to: { path: '/how-it-works/clients' }
         },
         {
           id: 2,
           name: this.t('forFreelancers'),
-          to: this.localePath('index')
+          to: { path: '/how-it-works/freelancers' }
         }
       ];
     },

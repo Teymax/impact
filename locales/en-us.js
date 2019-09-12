@@ -92,6 +92,7 @@ export default {
     getInvolved: 'Get Involved',
     ourMission: 'Our Mission',
     community: 'Community',
+    faq: 'FAQ',
     articlesFreelancers: 'Articles for Freelancers',
     articlesClients: 'Articles for Clients',
     bugsIdeas: 'Bugs & Ideas',
