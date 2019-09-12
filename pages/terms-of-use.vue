@@ -23,14 +23,14 @@
                   'terms-of-use__list-sub-item']"
               >
                 {{ subItem.listTitle }}
-                <ul :class="[subItem.type!=='letter'?'terms-of-use__list-deep':'terms-of-use__list-letter']">
+                <ul :class="[subItem.type!=='letter'?'terms-of-use__list--deep':'terms-of-use__list--letter']">
                   <li
                     v-for="subListItem in subItem.subList"
                     :key="subListItem.id"
                     :class="[subListItem.withoutMarker?'terms-of-use__list-item--without-marker':'']"
                   >
                     <span><b>{{ subListItem.subTitle }} </b>{{ subListItem.content }}</span>
-                    <ul v-if="subListItem.contentList" class="terms-of-use__list-roman">
+                    <ul v-if="subListItem.contentList" class="terms-of-use__list--roman">
                       <li
                         v-for="contentListItem in subListItem.contentList"
                         :key="contentListItem.id"

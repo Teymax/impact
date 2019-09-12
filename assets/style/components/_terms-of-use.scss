@@ -7,41 +7,41 @@
     color: #000001;
     font-weight: 300;
     font-size: rem(15px);
-    &-roman{
+    &--roman{
       list-style-type: lower-roman;
     }
-    &-letter{
+    &--letter{
       list-style-type: lower-alpha;
     }
-    &-deep{
+    &--deep{
       list-style-type: none;
     }
-    &-sub-item{
-      display: block;
-      margin-bottom: 20px;
-      &--without-marker{
-        list-style-type: none;
-        &:before{
-          content: '';
-        }
-      }
+  }
+  &__list-item {
+    display: block;
+    margin-bottom: 20px;
+    &:before{
+      counter-increment: item;
+      content: counters(item, ".") ". ";
+    }
+    &--without-marker{
+      width: calc(100% + 24px);
+      list-style-type: none;
+      margin-left: rem(-24px);
+    }
+  }
+  &__list-sub-item{
+    display: block;
+    margin-bottom: 20px;
+    &--without-marker{
+      list-style-type: none;
       &:before{
-        counter-increment: item;
-        content: counters(item, ".") " ";
+        content: '';
       }
     }
-    &-item {
-      &--without-marker{
-        width: calc(100% + 24px);
-          list-style-type: none;
-        margin-left: rem(-24px);
-      }
-      display: block;
-      margin-bottom: 20px;
-      &:before{
-        counter-increment: item;
-        content: counters(item, ".") ". ";
-      }
+    &:before{
+      counter-increment: item;
+      content: counters(item, ".") " ";
     }
   }
 }
