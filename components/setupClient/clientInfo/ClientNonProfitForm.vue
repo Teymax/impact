@@ -37,55 +37,21 @@
             <span class="font-weight-bold"> {{ t('uploadLogo') }}</span>
           </UppyImageUploader>
         </v-flex>
-        <v-flex xs10>
-          <label
-            for="nonProfitCategory"
-            class="base-input-label"
-          >
-            {{ t('nonProfitCategory') }}
-          </label>
-          <v-select
-            v-model="form.nonProfitCategory"
-            v-validate="'required'"
-            :items="nonProfitCategories"
-            :data-vv-name="t('nonProfitCategory')"
-            return-object
-            :error-messages="errors.collect(t('nonProfitCategory'))"
-            append-icon="keyboard_arrow_down"
-            class="base-input mt-2"
-            solo
-          />
-        </v-flex>
-
+         <ImpactAreasInput
+           @impact-area-changed="areaId => form.impactArea.id = areaId"
+         />
         <FormDescription
           @set-input-data="setInputData"
         />
         <FormUrl
           @set-input-data="setInputData"
         />
-
         <v-flex my-3 xs10>
           <v-divider class="step__divider" />
         </v-flex>
-        <v-flex xs10>
-          <label
-            for="timezone"
-            class="base-input-label"
-          >
-            {{ t('timezone') }}
-          </label>
-          <v-select
-            v-model="form.timezone"
-            v-validate="'required'"
-            :items="timezoneItems"
-            :data-vv-name="t('timezone')"
-            return-object
-            :error-messages="errors.collect(t('timezone'))"
-            append-icon="keyboard_arrow_down"
-            class="base-input mt-2"
-            solo
-          />
-        </v-flex>
+        <TimezonesInput
+          @timezone-changed="timezone => form.timezone = timezone"
+        />
         <v-layout
           justify-center
           mt-4
@@ -103,19 +69,26 @@
   </v-flex>
 </template>
 <script>
-import { mapState } from 'vuex';
 import textTranslations from '@/mixins/textTranslations';
 import serializeData from '@/mixins/serializeData';
 import saveProfileImageData from '@/components/setupMixins/saveProfileImageData';
 import UppyImageUploader from '@/components/shared/UppyImageUploader';
 import FormDescription from '@/components/setupClient/commonForms/ClientDescription';
 import FormUrl from '@/components/setupClient/commonForms/ClientUrl';
+import ImpactAreasInput from '@/components/shared/Inputs/ImpactAreasInput';
+import TimezonesInput from '@/components/shared/Inputs/TimezonesInput';
 
 export default {
-  components: { UppyImageUploader, FormDescription, FormUrl },
+  components: {
+    UppyImageUploader,
+    FormDescription,
+    FormUrl,
+    TimezonesInput,
+    ImpactAreasInput
+  },
   mixins: [textTranslations, saveProfileImageData, serializeData],
   props: {
-    newClientId: {
+    clientId: {
       type: String,
       required: true
     }
@@ -123,18 +96,18 @@ export default {
   data() {
     return {
       translationScope: 'setupAccount',
-      timezoneItems: ['Kiev, Ukraine(+3 UTC)', 'Wroclaw, Poland(+1 UTC)'],
       form: {
         name: '',
         description: '',
         url: '',
-        nonProfitCategory: '',
-        timezone: ''
+        timezone: '',
+        impactArea: {
+          id: '',
+          type: 'impactArea'
+        },
+        relationshipNames: ['impactArea']
       }
     };
-  },
-  computed: {
-    ...mapState('setupClient', ['nonProfitCategories'])
   },
   methods: {
     async saveData() {
@@ -142,7 +115,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
+      this.saveProfileImageData(imageData, this.clientId, 'client', { type: 'Logo' });
     }
   }
 };

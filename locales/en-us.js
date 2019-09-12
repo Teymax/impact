@@ -193,7 +193,8 @@ export default {
     dashboardReturn: 'Return to dashboard',
     companyType: 'Company Type',
     suggestedActions: 'Suggested Actions',
-    showAllLocations: 'Show all locations'
+    showAllLocations: 'Show all locations',
+    impactAreas: 'Impact Areas'
   },
   uploads: {
     imageUploadSucceed: 'Image has been successful uploaded',

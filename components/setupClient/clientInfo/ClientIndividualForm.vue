@@ -72,7 +72,7 @@ export default {
   components: { UppyImageUploader, FormDescription, FormUrl },
   mixins: [textTranslations, saveProfileImageData, serializeData],
   props: {
-    newClientId: {
+    clientId: {
       type: String,
       required: true
     }
@@ -97,7 +97,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
+      this.saveProfileImageData(imageData, this.clientId, 'client', { type: 'Logo' });
     }
   }
 };

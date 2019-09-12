@@ -44,7 +44,7 @@
           >
             <component
               :is="clientTypeFormComponentName"
-              :new-client-id="newClientId"
+              :client-id="clientId"
               @save-data="updateClientBasicInfo"
             />
           </v-fade-transition>
@@ -63,6 +63,7 @@ import nextStepBtn from '@/components/setupMixins/nextStepBtn';
 import ClientIndividualForm from '@/components/setupClient/clientInfo/ClientIndividualForm';
 import ClientNonProfitForm from '@/components/setupClient/clientInfo/ClientNonProfitForm';
 import ClientForProfitForm from '@/components/setupClient/clientInfo/ClientForProfitForm';
+import fromCamelToSnake from '@/filters/fromCamelToSnake';
 
 export default {
   name: 'ClientBasicStep',
@@ -79,7 +80,12 @@ export default {
     };
   },
   computed: {
-    ...mapState('setupClient', ['clientTypes', 'newClientId']),
+    ...mapState(
+      {
+        clientTypes: state => state.setupClient.clientTypes,
+        clientId: state => state.auth.user.activeProfile.id
+      }
+    ),
     clientTypeToggler() {
       return this.clientTypes.map(type => ({
         name: `${type}Type`,
@@ -96,14 +102,14 @@ export default {
     }),
     async updateClientBasicInfo(value) {
       const form = value;
-      const data = {
-        id: this.newClientId,
+      const payload = {
+        id: this.clientId,
         type: 'client',
-        clientType: this.activeClientType,
+        clientType: fromCamelToSnake(this.activeClientType),
         ...form
       };
 
-      this.updateClient(this.serializeData(data));
+      this.updateClient(this.serializeData(payload));
       this.goToNextStep();
     }
   }

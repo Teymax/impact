@@ -1,6 +1,8 @@
 export const actions = {
   async fetchLanguageProficiencyLevels({ commit }) {
-    const { data, status } = await this.$axios.get('/language_proficiency_levels');
+    const { data, status } = await this.$axios.get(
+      '/language_proficiency_levels?fields[language_proficiency_levels]=name&sort=name'
+    );
 
     try {
       if (status !== 200) throw Error;
@@ -14,7 +16,7 @@ export const actions = {
   },
 
   async fetchTimezones({ commit }) {
-    const { data, status } = await this.$axios.get('/timezones');
+    const { data, status } = await this.$axios.get('/timezones?fields[timezones]=name&sort=name');
 
     try {
       if (status !== 200) throw Error;
@@ -42,7 +44,7 @@ export const actions = {
   },
 
   async fetchLocations({ commit }) {
-    const { data, status } = await this.$axios.get('/locations');
+    const { data, status } = await this.$axios.get('/locations?fields[locations]=name&sort=name');
 
     try {
       if (status !== 200) throw Error;
@@ -67,6 +69,20 @@ export const actions = {
     } catch (e) {
       // TODOD: Error handling
     }
+  },
+
+  async fetchImpactAreas({ commit }) {
+    const { data, status } = await this.$axios.get('/impact_areas?fields[impactAreas]=name&sort=name');
+
+    try {
+      if (status !== 200) throw Error;
+      delete data.included;
+      delete data.data;
+
+      commit('SAVE_IMPACT_AREAS', data);
+    } catch (e) {
+      console.error(e);
+    }
   }
 };
 
@@ -74,8 +90,10 @@ export const getters = {
   languageProficiencyLevels: state => Object.values(state.languageProficiencyLevels).map(level => level.name),
   timezones: state => Object.values(state.timezones).map(timezone => timezone.name),
   expertises: state => Object.values(state.expertises).map(exp => ({ name: exp.name, value: exp.id })),
-  locations: state => Object.values(state.locations).map(location => ({ name: location.name, value: location.id })),
-  skills: state => Object.values(state.skills).map(skill => ({ name: skill.name, value: skill.id }))
+  locations: state => Object.values(state.locations).map(location => ({ name: location.name, value: location.code })),
+  skills: state => Object.values(state.skills).map(skill => ({ name: skill.name, value: skill.id })),
+  impactAreas: state => Object.values(state.impactAreas).map(area => ({ name: area.name, value: area.id }))
+
 };
 
 export const mutations = {
@@ -93,6 +111,9 @@ export const mutations = {
   },
   SAVE_SKILLS(state, skills) {
     state.skills = skills;
+  },
+  SAVE_IMPACT_AREAS(state, impactAreas) {
+    state.impactAreas = impactAreas;
   }
 };
 
@@ -112,5 +133,6 @@ export const state = () => ({
     { id: 'BD', name: 'Bangladesh' },
     { id: 'CA', name: 'Canada' }
   ],
-  skills: []
+  skills: [],
+  impactAreas: []
 });

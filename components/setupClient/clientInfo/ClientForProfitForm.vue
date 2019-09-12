@@ -48,26 +48,9 @@
         <v-flex my-3 xs10>
           <v-divider class="step__divider" />
         </v-flex>
-
-        <v-flex xs10>
-          <label
-            for="timezone"
-            class="base-input-label"
-          >
-            {{ t('timezone') }}
-          </label>
-          <v-select
-            v-model="form.timezone"
-            v-validate="'required'"
-            :items="timezoneItems"
-            :data-vv-name="t('timezone')"
-            return-object
-            :error-messages="errors.collect(t('timezone'))"
-            append-icon="keyboard_arrow_down"
-            class="base-input mt-2"
-            solo
-          />
-        </v-flex>
+        <TimezonesInput
+          @timezone-changed="timezone => form.timezone = timezone"
+        />
         <v-layout
           justify-center
           mt-4
@@ -92,12 +75,18 @@ import textTranslations from '@/mixins/textTranslations';
 import saveProfileImageData from '@/components/setupMixins/saveProfileImageData';
 import FormDescription from '@/components/setupClient/commonForms/ClientDescription';
 import FormUrl from '@/components/setupClient/commonForms/ClientUrl';
+import TimezonesInput from '@/components/shared/Inputs/TimezonesInput';
 
 export default {
-  components: { UppyImageUploader, FormDescription, FormUrl },
+  components: {
+    UppyImageUploader,
+    FormDescription,
+    FormUrl,
+    TimezonesInput
+  },
   mixins: [textTranslations, serializeData, saveProfileImageData],
   props: {
-    newClientId: {
+    clientId: {
       type: String,
       required: true
     }
@@ -105,7 +94,6 @@ export default {
   data() {
     return {
       translationScope: 'setupAccount',
-      timezoneItems: ['Kiev, Ukraine(+3 UTC)', 'Wroclaw, Poland(+1 UTC)'],
       form: {
         name: '',
         description: '',
@@ -124,7 +112,7 @@ export default {
       if (isValid) this.$emit('save-data', this.form);
     },
     updateClientLogo(imageData) {
-      this.saveProfileImageData(imageData, this.newClientId, 'client', { type: 'Logo' });
+      this.saveProfileImageData(imageData, this.clientId, 'client', { type: 'Logo' });
     }
   }
 };
