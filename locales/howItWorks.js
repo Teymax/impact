@@ -3,7 +3,8 @@ export default {
     howItWorksFreelancers: {
       header: 'How it Works for Freelancers',
       content: [
-        'Are you a talented freelancer who’s looking for projects that will make a difference? Work for Impact offers paid freelance jobs solely from socially, environmentally responsible and nonprofit organizations.'
+        'Are you a talented freelancer who’s looking for projects that will make a difference? Work for Impact offers paid freelance jobs solely from socially, environmentally responsible and nonprofit organizations.',
+        'Here’s how the platform works:'
       ]
     },
     cards: [
@@ -23,14 +24,14 @@ export default {
             text: 'Take Work for Impact’s unique verification tests so you can show off your skills to clients.'
           },
           {
-            title: 'Items:',
-            text: 'Upload Portfolio Items: Upload samples of your previous work and display them on your profile.'
+            title: 'Upload Portfolio Items:',
+            text: 'Upload samples of your previous work and display them on your profile.'
           }
         ]
       },
       {
         header: 'Apply for Jobs',
-        description: 'Once your profile is completed, you’re ready to start looking for new and exciting projects.',
+        description: 'Once your profile is complete and your skills have been verified, you can begin to apply for jobs in your chosen fields.',
         img: 'applyForJobsImg.png',
         imgHeight: 369,
         imgWidth: 403,
@@ -59,15 +60,15 @@ export default {
         content: [
           {
             title: 'Get Notified of Potential Jobs:',
-            text: 'Recieve notifications if clients want to speak to you further about a potential job.'
+            text: 'Receive notifications if clients want to speak to you further about a potential job.'
           },
           {
-            title: 'Set-Up Interview:',
+            title: 'Set Up Interview:',
             text: 'Use Work for Impact’s built-in chat and video call functionality to schedule and conduct interviews with clients.'
           },
           {
             title: 'Receive Job Offers:',
-            text: 'Job offers will be sent to you through the site, which you can either accept or decline.'
+            text: 'Job offers will be sent to you through the site; you can either accept or decline.'
           }
         ]
       },
@@ -83,26 +84,30 @@ export default {
             text: 'Recieve and share files that are necessary to complete the project.'
           },
           {
-            title: 'Give Updates:',
-            text: 'Provide clients with updates on your work to let them know that everything is on schedule.'
+            title: 'Track Your Hours:',
+            text: 'Time-tracking software lets you easily track how many hours you’ve worked on a project.'
+          },
+          {
+            title: 'Collaborate Using Our Custom Workspace:',
+            text: 'Use work boards and lists to keep track of tasks, objectives, and goals.'
           },
           {
             title: 'Receive Feedback on Your Work:',
-            text: 'Quickly and easily receive feedback on completed tasks to allow you to make any necessary changes.'
+            text: 'Quickly and easily receive feedback on completed tasks so you can make any necessary changes.'
           }
         ],
         isReverse: true
       },
       {
         header: 'Get Paid',
-        description: 'Once the client has approved your work you’ll receive prompt and timely payment, thanks to our payment protection services.',
+        description: 'Once the client has approved your work, you’ll receive prompt and timely payment, thanks to our payment protection services.',
         img: 'getPaidImg.png',
         imgHeight: 319,
         imgWidth: 471,
         content: [
           {
             title: 'Choose Your Preferred Payment Method:',
-            text: 'Get paid via direct deposit, PayPal, or wire transfer.'
+            text: 'Get paid via direct deposit to your bank account.'
           },
           {
             title: 'Always Get Paid:',
@@ -120,7 +125,8 @@ export default {
     howItWorksClients: {
       header: 'How it Works for Clients',
       content: [
-        'Are you a socially and environmentally responsible business, or a nonprofit organization? Work for Impact can help you find the right freelancers so you can bring your projects to life.'
+        'Are you a socially and environmentally responsible organization or nonprofit? Work for Impact can help you find the right freelancers so you can bring your projects to life.',
+        'Here’s how the platform works:'
       ]
     },
     cards: [
@@ -140,8 +146,8 @@ export default {
             text: 'Write a brief summary of your organization, explaining who you are and what you do.'
           },
           {
-            title: 'Identify Your Causes:',
-            text: 'Does your organization support any specific causes? (Animal rights, poverty, clean drinking water etc.) Include those here.'
+            title: 'Opportunity to Add Causes:',
+            text: 'Does your organization support any specific causes? (Animal rights, poverty, clean drinking water, etc.) Include those here.'
           }
         ]
       },
@@ -162,14 +168,14 @@ export default {
           },
           {
             title: 'Set Your Budget:',
-            text: 'Decide on a budget and whether you want to pay per-hour or per-project.'
+            text: 'Decide on a budget and whether you want to pay per hour or per project.'
           }
         ],
         isReverse: true
       },
       {
         header: 'Hire Freelancers',
-        description: 'After your job is posted you’ll be able to start evaluating potential candidates.',
+        description: 'After your job is posted, you’ll be able to start evaluating potential candidates.',
         img: 'hireFreelancersImg.png',
         imgHeight: 312,
         imgWidth: 515,
@@ -180,11 +186,11 @@ export default {
           },
           {
             title: 'Interview Candidates:',
-            text: 'Use Work for Impact’s built-in chat and video call functionality to interview freelances who you think would be a good fit.'
+            text: 'Use Work for Impact’s built-in chat and video call functionality to interview freelancers who you think would be a good fit.'
           },
           {
             title: 'Hire Your Freelancer:',
-            text: 'Award the contract to the freelancer who you feel is most qualified.'
+            text: 'Award the contract to the freelancer you feel is most qualified.'
           }
         ]
       },
@@ -201,7 +207,11 @@ export default {
           },
           {
             title: 'Track Job Progress:',
-            text: 'Get updates on the progress of your project to ensure tasks are being completed on schedule.'
+            text: 'Time-tracking software lets you know how many hours your freelancers have worked and allows you to track their progress.'
+          },
+          {
+            title: 'Collaborate Using Our Custom Workspace:',
+            text: 'Create work boards and lists to keep track of tasks, objectives, and goals.'
           },
           {
             title: 'Give Feedback:',
@@ -212,7 +222,7 @@ export default {
       },
       {
         header: 'Make Payments',
-        description: 'When your project has been completed you’ll be able to pay your freelancer safely and securely.',
+        description: 'When your project has been completed, you’ll be able to pay your freelancer safely and securely.',
         img: 'makePaymentsImg.png',
         imgHeight: 336,
         imgWidth: 452,
@@ -223,7 +233,7 @@ export default {
           },
           {
             title: 'Choose Your Preferred Payment Method:',
-            text: 'Pay your freelancer via MasterCard, Visa, American Express, Discover, or PayPal.'
+            text: 'Pay your freelancer via MasterCard, Visa, American Express, or Discover.'
           },
           {
             title: 'Access Invoices and Payment History:',
