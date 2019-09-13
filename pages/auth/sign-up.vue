@@ -163,8 +163,26 @@
                     :data-vv-name="t('termsConfirm')"
                     on-icon="check_box"
                     off-icon="check_box_outline_blank"
-                    label="I Agree to Terms of Service and ..."
-                  />
+                  >
+                    <template v-slot:label>
+                      <div>
+                        I Agree to the
+                        <nuxt-link
+                          target="_blank"
+                          to="/terms-of-use"
+                        >
+                          Terms of Use
+                        </nuxt-link>
+                        and
+                        <nuxt-link
+                          target="_blank"
+                          to="/privacy-policy"
+                        >
+                          Privacy Policy
+                        </nuxt-link>
+                      </div>
+                    </template>
+                  </v-checkbox>
                 </v-flex>
               </v-layout>
             </v-container>
