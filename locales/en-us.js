@@ -4,6 +4,9 @@ import freelancerDashboard from './modules/freelancerDashboard';
 import notifications from './modules/notifications';
 import about from './about';
 import howItWorks from './howItWorks';
+import privacyPolicy from './privacyPolicy';
+import cookieNotice from './cookieNotice';
+import termsOfUse from './termsOfUse';
 
 export default {
   navigation: {
@@ -206,5 +209,8 @@ export default {
   notifications,
   postJob,
   about,
-  howItWorks
+  howItWorks,
+  privacyPolicy,
+  cookieNotice,
+  termsOfUse
 };

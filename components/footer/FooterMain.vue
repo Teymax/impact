@@ -50,10 +50,12 @@
                 :key="i"
                 class="mr-3 mt-3 ml-0"
                 :class="{ 'mt-5': breakpoint.smAndDown }"
+                :href="btn.link"
+                target="_blank"
                 icon
               >
                 <v-img
-                  :src="require(`@/assets/images/icons/${btn}.svg`)"
+                  :src="require(`@/assets/images/icons/${btn.img}.svg`)"
                 />
               </v-btn>
             </v-flex>
@@ -83,7 +85,24 @@ export default {
   data() {
     return {
       translationScope: 'footer',
-      socialBtns: ['fb', 'twitter', 'linkedin', 'yt']
+      socialBtns: [
+        {
+          img: 'fb',
+          link: 'https://www.facebook.com/WorkForImpact/'
+        },
+        {
+          img: 'twitter',
+          link: 'https://twitter.com/workforimpact'
+        },
+        {
+          img: 'linkedin',
+          link: 'https://www.linkedin.com/company/workforimpact'
+        },
+        {
+          img: 'yt',
+          link: 'https://www.youtube.com/channel/UChnr75Gu1fsHQe6-TTvQQKA'
+        }
+      ]
     };
   },
   computed: {
