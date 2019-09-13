@@ -163,10 +163,20 @@ export default {
           {
             id: 2,
             name: this.t('terms'),
-            to: '/'
+            to: '/terms-of-use'
           },
           {
             id: 3,
+            name: this.t('policy'),
+            to: '/privacy-policy'
+          },
+          {
+            id: 4,
+            name: this.t('cookie'),
+            to: '/cookie-notice'
+          },
+          {
+            id: 5,
             name: this.t('contacts'),
             to: '/'
           }

@@ -100,6 +100,8 @@ export default {
     articlesClients: 'Articles for Clients',
     bugsIdeas: 'Bugs & Ideas',
     terms: 'Terms of Use',
+    policy: 'Privacy Policy',
+    cookie: 'Cookie Notice',
     legal: 'Legal Information',
     contacts: 'Contacts',
     subheader: 'Have any questions or concerns?',
