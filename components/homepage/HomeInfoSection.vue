@@ -76,11 +76,11 @@ export default {
       translationScope: 'homepage',
       percentageItems: [
         {
-          percent: '3%',
+          percent: '10%',
           description: 'transactionFee'
         },
         {
-          percent: '10%',
+          percent: '3%',
           description: 'projectFee'
         }
       ]
