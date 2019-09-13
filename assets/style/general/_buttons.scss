@@ -1,0 +1,66 @@
+.v-btn.theme--light.base {
+  height: rem(44px);
+  padding: rem(0 32px);
+  font-size: rem(20.25px);
+  font-weight: bold;
+
+  &.toggle {
+    border: 2px solid $azure;
+    border-radius: 0;
+    color: $azure;
+
+    &:first-of-type {
+      border-top-left-radius: rem(8px);
+      border-bottom-left-radius: rem(8px);
+    }
+
+    &:nth-of-type(2):not(:last-of-type) {
+      border-right: none;
+      border-left: none;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: rem(8px);
+      border-bottom-right-radius: rem(8px);
+    }
+
+    &.active {
+      border-color: $azure;
+      background-color: $azure;
+      color: $white;
+    }
+  }
+}
+
+.v-btn.v-btn--outline.base {
+  border-width: rem(2px);
+}
+
+.v-btn.v-btn--floating.xsmall {
+  height: rem(25px);
+  width: rem(25px);
+}
+
+.v-btn.v-btn--round {
+  border-radius: rem(8px);
+}
+
+.v-btn.v-btn--small.theme--light.xxs {
+  @include SQUARE_SIZE(28px);
+}
+
+// disable hover when no-bg-hover class is added
+.no-bg-hover.v-btn--active:before,
+.no-bg-hover.v-btn:hover:before,
+.no-bg-hover.v-btn:focus:before {
+  background-color: $none;
+}
+
+@media (max-width: $xs) {
+  .v-btn.theme--light.base.toggle {
+    height: rem(40px);
+    width: 45%;
+    padding: rem(0 28px);
+    font-size: rem(18px);
+  }
+}

@@ -1,0 +1,16 @@
+@mixin SET_ICON($icon-name) {
+  background-image: url('~assets/images/icons/'+$icon-name+'.svg');
+  background-position: center center;
+  background-size: contain;
+}
+
+@mixin SET_BG($path) {
+  background-image: url('~assets/images/'+$path+'.png');
+  background-position: center center;
+  background-size: cover;
+}
+
+@mixin SQUARE_SIZE($value) {
+  width: rem($value);
+  height: rem($value);
+}

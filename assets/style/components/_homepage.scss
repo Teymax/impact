@@ -1,0 +1,393 @@
+.homepage {
+  &__main {
+    box-shadow: 0px 6px 6px rgba(178, 178, 178, 0.33);
+  }
+
+  &__container {
+    padding: rem(32px 0);
+  }
+
+  &__header-box {
+    margin-right: rem(32px);
+  }
+
+  &__head-box {
+    max-width: rem(600px);
+  }
+
+  &__header {
+    font-size: rem(61px);
+    line-height: rem(73px);
+    letter-spacing: 0.007em;
+  }
+
+  &__subheader {
+    margin: rem(40px 0);
+    font-size: rem(32px);
+  }
+
+  &__intro-header {
+    margin: rem(0 0 32px 0);
+    font-size: rem(39px);
+    line-height: rem(56px);
+  }
+
+  &__intro-subheader {
+    max-width: rem(840px);
+    font-size: rem(31px);
+    font-weight: 300;
+    letter-spacing: -0.02em;
+  }
+
+  &__btn--wide {
+    width: rem(229px);
+  }
+
+  &__category-btn.v-btn.theme--light {
+    font-size: rem(14px);
+
+    &.active {
+      font-weight: 800;
+    }
+  }
+
+  &__category-box {
+    justify-content: space-around;
+    margin-top: rem(36px);
+  }
+
+  &__opinion-box {
+    position: relative;
+    height: rem(160px);
+    padding: rem(25px 0);
+    border-radius: rem(10px);
+    box-shadow: 0px 8px 15px rgba(206, 206, 206, 0.6) !important;
+    text-align: center;
+    background-color: $white;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 50%;
+      right: rem(-15px);
+      width: rem(32px);
+      height: rem(32px);
+      transform: translateY(50%) rotate(-45deg);
+      box-shadow: 11px 9px 10px rgba(222, 221, 221, 0.35);
+      background-color: $white;
+    }
+  }
+}
+
+.intro {
+  &__container {
+    padding: rem(89px 0);
+  }
+
+  &__header {
+    margin: rem(16px 0);
+    font-size: rem(20.25px);
+    font-weight: bold;
+    text-align: center;
+  }
+
+  &__subheader {
+    max-width: rem(280px);
+    font-weight: 300;
+    text-align: center;
+  }
+
+  &__card:last-of-type .intro__text-box {
+    border-right: 2px solid $none;
+    padding: rem(0 16px);
+  }
+
+  &__cards-box {
+    margin-top: rem(41px);
+  }
+
+  &__text-box {
+    padding: rem(0 32px);
+    border-right: 2px solid $light-grey;
+  }
+}
+
+.home-offer {
+  &__container.container {
+    padding: rem(90px 0);
+  }
+
+  &__box {
+    margin-top: rem(48px);
+  }
+
+  &__header {
+    font-size: rem(39px);
+
+    &--large {
+      max-width: rem(690px);
+      margin-top: rem(35px);
+      font-size: rem(39px);
+    }
+  }
+}
+
+.offer-card {
+  border-radius: rem(10px);
+
+  &__avatar-box {
+    justify-content: center;
+    align-items: center;
+    margin-right: rem(32px);
+  }
+
+  &__header {
+    font-size: rem(21px);
+  }
+
+  &__icon-box {
+    display: flex;
+    align-items: flex-end;
+    font-size: rem(14px);
+  }
+
+  &__description {
+    line-height: rem(24px);
+  }
+}
+
+.work-steps {
+  &__container {
+    padding: rem(90px 0);
+    box-shadow: 0px 6px 6px rgba(178, 178, 178, 0.33);
+  }
+
+  &__header {
+    font-size: rem(39px);
+    text-transform: capitalize;
+  }
+
+  &__description {
+    max-width: rem(280px);
+  }
+
+  &__iteration {
+    font-size: rem(95px);
+  }
+}
+
+.home-info {
+  &__head-container {
+    margin-bottom: rem(80px);
+    padding-bottom: rem(80px);
+    border-bottom: 1px solid $orange-tint;
+  }
+
+  &__header {
+    padding: rem(0 10px);
+    font-size: rem(40px);
+    font-weight: 300;
+  }
+
+  &__percentage {
+    font-size: rem(61px);
+    line-height: rem(61px);
+    font-weight: bold;
+    color: $warm-orange;
+  }
+
+  &__description {
+    font-size: rem(20px);
+    font-weight: 300;
+  }
+
+  &__btn.v-btn {
+    font-size: rem(20px);
+  }
+}
+
+@media (max-width: $md) {
+  .homepage {
+    &__head-box {
+      justify-content: center;
+      max-width: 100%;
+    }
+
+    &__header {
+      margin-top: rem(16px);
+      font-size: rem(62px);
+      line-height: 1.2em;
+    }
+
+    &__subheader {
+      padding: rem(0 40px);
+    }
+
+    &__img-box {
+      order: -1;
+    }
+
+    &__intro-subheader {
+      font-size: rem(25px);
+    }
+
+    &__intro-header {
+      font-size: rem(31.25px);
+    }
+  }
+}
+
+@media (min-width: $xs) and (max-width: $sm) {
+  .homepage {
+    &__container {
+      padding-top: rem(32px);
+    }
+
+    &__header {
+      font-size: rem(60px);
+    }
+
+    &__subheader {
+      font-size: rem(25px);
+    }
+
+    &__opinion-box::before {
+      bottom: 0;
+      right: 50%;
+      transform: translate(50%, 50%) rotate(-45deg);
+      box-shadow: -9px 15px 10px rgba(222, 221, 221, 0.35);
+    }
+  }
+
+  .home-offer {
+    &__header {
+      font-size: rem(31.25px);
+    }
+  }
+
+  .home-info {
+    &__header {
+      font-size: rem(31px);
+    }
+  }
+
+  .intro {
+    &__text-box {
+      padding: rem(0 20px);
+      border-right: 0;
+    }
+
+    &__header,
+    &__subheader {
+      font-size: rem(16px);
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .homepage {
+    &__container,
+    &__main.container {
+      padding: rem(28px 0);
+    }
+
+    &__header {
+      font-size: rem(40px);
+    }
+
+    &__subheader {
+      margin: rem(24px 0);
+      font-size: rem(20px);
+    }
+
+    &__intro-header {
+      margin: rem(0 0 8px 0);
+      font-size: rem(20.25px);
+    }
+
+    &__intro-subheader {
+      font-size: rem(16px);
+    }
+
+    &__opinion-box {
+      height: rem(210px);
+    }
+
+    &__btn.v-btn.theme--light:not(.toggle) {
+      width: 100%;
+
+      &:first-of-type {
+        margin-bottom: rem(24px);
+      }
+    }
+  }
+  .home-info {
+    &__head-container {
+      padding: rem(16px 0);
+    }
+    &__header {
+      padding: 0;
+      font-size: rem(20px);
+    }
+  }
+
+  .home-offer {
+    &__container.container {
+      padding: rem(28px 0);
+    }
+
+    &__header {
+      font-size: rem(25px);
+    }
+
+    &__header--large {
+      font-size: rem(25px);
+    }
+  }
+
+  .work-steps {
+    &__container {
+      padding: rem(28px 16px);
+    }
+  }
+
+  .offer-card {
+    &__avatar-box {
+      justify-content: start;
+      align-items: center;
+      margin-right: 0;
+    }
+
+    &__icon-box {
+      margin: rem(0 0 12px 12px);
+    }
+  }
+
+  .intro {
+    &__container {
+      padding: rem(28px 0);
+    }
+
+    &__card {
+      margin-top: rem(24px);
+    }
+
+    &__cards-box {
+      margin-top: rem(16px);
+    }
+
+    &__text-box {
+      padding: rem(0);
+      border-right: 0;
+    }
+
+    &__header {
+      margin: rem(8px 0);
+      font-size: rem(20.25px);
+    }
+
+    &__intro-subheader {
+      font-size: rem(16px);
+    }
+  }
+}

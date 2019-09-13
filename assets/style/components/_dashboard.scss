@@ -1,0 +1,154 @@
+.dashboard {
+  &__header {
+    font-size: rem(39px);
+    font-weight: bold;
+  }
+
+  &--close-positioned {
+    position: absolute;
+    top: 0;
+    right: rem(calc(1% + 15px));
+  }
+
+  &__setup {
+    margin-top: rem(48px);
+    margin-bottom: rem(72px);
+    font-size: rem(25px);
+    font-weight: 300;
+    color: $darkest-grey;
+  }
+
+  &__setup-avatar {
+    height: rem(48px);
+    width: rem(48px);
+    border-radius: 100%;
+    background: $warm-orange;
+  }
+
+  &__progress-container {
+    height: rem(16px);
+    width: rem(232px);
+    margin-right: rem(52px);
+    display: flex;
+    align-items: center;
+  }
+
+  &__progress-bar {
+    border-radius: rem(10px);
+  }
+
+  &__job-title {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(24px);
+    color: $darkest-grey;
+  }
+
+  &__job-proposals {
+    margin-left: rem(24px);
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: $warm-orange;
+  }
+
+  &__job-new-proposals {
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: $azure;
+  }
+
+  &__jobs-list {
+    padding-top: rem(44px);
+  }
+
+  &__freelancer-row {
+    padding-bottom: rem(25px);
+  }
+
+  &__articles-row {
+    padding-bottom: rem(15px);
+  }
+
+  &__article-title {
+    font-size: rem(20px);
+    line-height: rem(24px);
+  }
+
+  &__open-jobs-freelancers {
+    padding-right: rem(26px);
+    padding-bottom: 0;
+  }
+
+  &__jobs-in-progress-articles {
+    padding-left: rem(26px);
+  }
+
+  &__content.container {
+    padding-bottom: rem(96px);
+  }
+
+  &__content-row {
+    margin-bottom: rem(32px);
+  }
+}
+
+.v-sheet {
+  margin-top: rem(30px);
+
+  svg {
+    height: 100%;
+  }
+
+  path {
+    stroke: $azure;
+  }
+}
+
+@media (max-width: $md) {
+  .dashboard {
+    &__icon {
+      display: none;
+    }
+
+    &__open-jobs-freelancers {
+      padding-right: rem(15px);
+      padding-bottom: 0;
+    }
+
+    &__jobs-in-progress-articles {
+      padding-left: rem(15px);
+    }
+
+    &__job-title {
+      align-items: center;
+    }
+
+    &__job-proposals {
+      margin-left: 0;
+    }
+  }
+
+  .homepage__btn {
+    margin-top: rem(15px)
+  }
+}
+
+@media (max-width: $xs) {
+  .dashboard {
+    &__open-jobs-freelancers {
+      padding-right: 0;
+      padding-bottom: rem(32px);
+    }
+
+    &__jobs-in-progress-articles {
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: rem(32px);
+    }
+
+    &__article-title {
+      font-size: rem(14px);
+    }
+  }
+}

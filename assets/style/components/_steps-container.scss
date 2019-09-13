@@ -1,0 +1,277 @@
+.step {
+  &__layout.container {
+    min-height: 80vh;
+    padding: rem(60px 0);
+  }
+
+  &__container.layout {
+    justify-content: center;
+    min-height: rem(176px);
+    margin-top: rem(80px);
+    padding: rem(100px 36px);
+    box-shadow: 0px 8px 15px rgba(206, 206, 206, 0.6);
+    border-radius: rem(10px);
+    background-color: $white;
+  }
+
+  &__stepper--step:not(:last-of-type) {
+    margin-right: rem(56px);
+  }
+
+  &__box {
+    padding: rem(30px 0);
+  }
+
+  &__main-header {
+    font-size: rem(39px);
+    color: $darkest-grey;
+  }
+
+  &__btn-box.v-btn {
+    margin-left: rem(20px);
+  }
+
+  &__pf-img-btn.v-btn.v-btn--floating {
+    @include SQUARE_SIZE(96px);
+  }
+
+  &__btn.v-icon {
+    font-size: rem(21px);
+    font-weight: bold;
+  }
+
+  &__add-btn.v-btn.v-btn--block {
+    max-width: rem(400px);
+    border-width: 2px;
+  }
+
+  &__action-text {
+    font-size: rem(22px);
+    font-weight: bold;
+    color: $darkest-grey;
+  }
+
+  &__card-title-text {
+    margin-bottom: rem(24px);
+    font-size: rem(25px);
+    font-weight: bold;
+    color: $warm-orange;
+  }
+
+  &__article-title-text {
+    margin: rem(0 0 0 8px);
+    font-size: rem(20px);
+    font-weight: 600;
+    color: $darkest-grey;
+    transition: all 0.2s ease-out;
+  }
+
+  &__btn--mark {
+    @include SET_ICON('question');
+    @include SQUARE_SIZE(24px);
+    color: $white;
+  }
+
+  &__divider {
+    margin: rem(28px 0 48px 0);
+
+    &--large {
+      margin: rem(48px 0);
+    }
+  }
+
+  &__input-box {
+    margin-bottom: rem(20px);
+  }
+
+  &__input {
+    &--hour.v-input {
+      max-width: rem(100px);
+    }
+
+    &--availiability.v-input {
+      max-width: rem(200px);
+    }
+  }
+
+  &__header {
+    color: $darkest-grey;
+
+    &--mid {
+      margin-bottom: rem(56px);
+      font-size: rem(25px);
+    }
+  }
+
+  &__postpone.v-btn.v-btn--flat {
+    font-size: rem(25px);
+    font-weight: bold;
+    color: $azure;
+  }
+
+  &__info-text {
+    margin-top: rem(40px);
+    text-align: center;
+    font-size: rem(20px);
+    font-weight: 300;
+    color: $darkest-grey;
+  }
+
+  &__btn--large.v-btn {
+    width: rem(240px);
+    max-width: rem(240px);
+  }
+
+  &__add-portfolio.v-btn.v-btn--depressed.theme--light:not(.v-btn--icon) {
+    @include SQUARE_SIZE(64px);
+    min-width: rem(64px);
+    background-color: $dark-grey;
+  }
+
+  &__final-card.flex {
+    max-width: rem(580px) !important;
+    margin: rem(40px 16px);
+    padding: rem(36px);
+    border-radius: rem(10px);
+    box-shadow: 0px 8px 15px rgba(206, 206, 206, 0.6);
+  }
+
+  &__final-card__icon.v-icon {
+    font-size: rem(28px);
+    max-width: rem(28px);
+    justify-content: start;
+  }
+
+  &__card-list-item:not(:last-of-type):not(.article) {
+    margin-top: rem(8px);
+    padding-bottom: rem(8px);
+    border-bottom: 1px solid $light-grey;
+  }
+
+  &__combo-input {
+    height: rem(80px);
+
+    &--checkbox {
+      width: rem(196px);
+      margin-right: rem(16px);
+    }
+
+    &__rating {
+      width: rem(120px);
+    }
+  }
+
+  &__custom-question {
+    width: 100%;
+    padding: rem(12px);
+    margin: rem(10px 0);
+    border-radius: rem(8px);
+    border: 1px solid $input-border;
+    color: $darkest-grey;
+  }
+
+  &__boost-container {
+    display: flex;
+    align-items: center;
+    height: rem(100px);
+    padding: rem(36px);
+    margin: rem(24px 0);
+    border-radius: rem(10px);
+    background-color: $lightest-grey;
+  }
+}
+
+.theme--light
+  .v-stepper__step.v-stepper__step--complete
+  .v-stepper__step__step {
+  background-color: $success !important;
+}
+
+@media (max-width: $sm) {
+  .step {
+    &__info-text {
+      padding: rem(0 16px);
+    }
+
+    &__card-title-text {
+      font-size: rem(22px);
+    }
+
+    &__action-text {
+      font-size: rem(20px);
+    }
+
+    &__article-title-text {
+      margin-bottom: 0;
+      font-size: 1rem;
+    }
+
+    &__card-list-item > .v-list__tile {
+      padding: 0;
+    }
+
+    &__card-list-item .v-list__tile__action {
+      min-width: rem(38px);
+    }
+
+    &__card-list-item .v-list__tile__content {
+      max-width: 100%;
+    }
+  }
+}
+
+@media (max-width: $xs) {
+  .step {
+    &__main-header {
+      font-size: rem(28px);
+    }
+
+    &__container.layout {
+      margin: 0;
+      padding: rem(60px 20px);
+      box-shadow: none;
+    }
+
+    &__divider {
+      margin: rem(8px 0 24px 0);
+    }
+
+    &__input {
+      &--hour.v-input,
+      &--availiability.v-input {
+        max-width: rem(280px);
+      }
+    }
+
+    &__btn-box--column {
+      flex-direction: column;
+    }
+
+    &__btn.v-btn.base {
+      width: 100%;
+      max-width: 100%;
+    }
+
+    &__final-card.flex {
+      padding: rem(20px);
+    }
+
+    &__card-title-text {
+      font-size: rem(20px);
+    }
+
+    &__action-text {
+      font-size: 1rem;
+    }
+
+    &__final-card__icon.v-icon {
+      max-width: rem(24px);
+      font-size: rem(24px);
+    }
+
+    &__stepper--step.v-stepper__step {
+      margin: 0;
+      padding: rem(16px);
+    }
+  }
+}

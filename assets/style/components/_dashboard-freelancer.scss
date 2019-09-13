@@ -1,0 +1,29 @@
+.freelancers {
+  &__freelancer-name {
+    font-weight: bold;
+    font-size: rem(20px);
+    line-height: rem(150%);
+  }
+
+  &__freelancer-spec {
+    font-weight: 300;
+    font-size: rem(20px);
+    line-height: rem(150%);
+  }
+  &__hours {
+    margin-left: rem(24px);
+    font-weight: bold;
+    font-size: rem(16px);
+    line-height: rem(24px);
+    color: $warm-orange;
+  }
+  @media (max-width: $md) {
+    &__hours {
+      margin-left: 0;
+      font-weight: bold;
+      font-size: rem(16px);
+      line-height: rem(24px);
+      color: $warm-orange;
+    }
+  }
+}

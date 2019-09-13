@@ -1,0 +1,29 @@
+.notification {
+  &__container {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: rem(48px);
+    border-radius: rem(8px);
+    border-left: 8px solid;
+    box-shadow: $main-shadow;
+
+    &--short {
+      max-width: rem(560px);
+      margin: rem(16px 0);
+    }
+
+    &--success {
+      border-color: $success;
+    }
+
+    &--error {
+      border-color: $red;
+    }
+  }
+
+  &__message {
+    font-size: rem(20px);
+    font-weight: 300;
+  }
+}
