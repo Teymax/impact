@@ -71,18 +71,18 @@ export default {
         {
           id: 0,
           name: this.$t('navigation.forClients'),
-          to: { path: '/for-clients' }
+          to: { path: '/how-it-works/clients' }
         },
         {
           id: 1,
           name: this.$t('navigation.forFreelancers'),
-          to: { path: '/for-freelancers' }
+          to: { path: '/how-it-works/freelancers' }
         }
       ];
     },
     listItems() {
       return [
-        { title: this.t('whoWe'), to: 'index' },
+        { title: this.t('whoWe'), to: 'about' },
         { title: this.t('getInvolved'), to: 'index' },
         { title: this.t('ourMission'), to: 'index' },
         { title: this.t('community'), to: 'index' },
