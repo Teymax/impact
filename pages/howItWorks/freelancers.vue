@@ -78,7 +78,7 @@ import HowItWorksCard from '@/components/howItWorks/HowItWorksCard';
 import textTranslations from '@/mixins/textTranslations';
 
 export default {
-  name: 'freelancers',
+  name: 'Freelancers',
   components: {
     TopCard,
     HowItWorksCard
