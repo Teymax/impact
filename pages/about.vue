@@ -6,7 +6,7 @@
         height="496"
         width="496"
       />
-    </div>
+    </div><!--test-->
     <v-layout row wrap justify-center align-center>
       <v-flex xs11 grow pa-4>
         <TopCard
